@@ -1,0 +1,2 @@
+04_RAW_DATA/EXP004/goldbach_pairs.csv filter=lfs diff=lfs merge=lfs -text
+04_RAW_DATA/EXP005/goldbach_pairs.csv filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,1 @@
+Validated pair rows=25366983, malformed=0, count_mismatches=0

@@ -1,0 +1,36 @@
+# Generated native binaries and build products
+**/*.exe
+**/*.obj
+**/*.o
+**/*.dll
+**/*.pdb
+**/.lake/
+**/build/
+**/bin/
+
+# Local caches and temporary files
+.cache/
+.pytest_cache/
+__pycache__/
+*.tmp
+*.log
+
+# Credentials and environment files
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+credentials.*
+secrets.*
+
+# Frozen external source/cache is reproducible from the recorded commit and URLs.
+# Do not publish its generated checkout or third-party build artifacts here.
+12_ARCHIVE/EXTERNAL_SOURCE/goldbach-lean-main/
+12_ARCHIVE/EXTERNAL_SOURCE/elan-init.ps1
+
+# The two local raw pair files exceed ordinary GitHub blob limits. They remain
+# preserved locally and are documented in 12_ARCHIVE/LARGE_DATASET_STORAGE.md.
+04_RAW_DATA/EXP004/goldbach_pairs.csv
+04_RAW_DATA/EXP005/goldbach_pairs.csv

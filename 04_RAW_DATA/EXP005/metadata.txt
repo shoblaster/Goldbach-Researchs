@@ -1,0 +1,11 @@
+experiment_id=EXP005
+program=goldbach_baseline.cpp
+counting_convention=unordered pairs p<=q; p=q allowed; 2 included
+range_start=4
+range_end=100000
+numbers_tested=49999
+min_G=1
+max_G=2168
+zero_G=0
+validation=fixed cases plus external validation required; per-value check skipped
+elapsed_seconds=31.5374

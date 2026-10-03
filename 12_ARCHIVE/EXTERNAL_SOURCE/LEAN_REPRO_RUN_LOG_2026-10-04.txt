@@ -1,0 +1,47 @@
+Lean reproducibility run log (2026-10-04)
+Checkout: goldbach-lean-main
+Commit: 09b97db5764ade1246bfb77206baa1b124760958
+
+Toolchain:
+  elan 4.2.4 (227caca13 2026-08-25)
+  Lean (version 4.33.0-rc1, x86_64-w64-windows-gnu, commit 62eed1db4d67327ec8120be05f1a1b0847d74561, Release)
+  Lake version 5.0.0-src+62eed1d
+
+RUN 1
+Command: lake exe cache get
+Observed: 8679 files announced; approximately 99%; 8239 decompressed; 393 failed decompressions; 10 failed downloads.
+Errors: Recv failure: Connection was reset; The system cannot find the path specified (os error 3); Decompression error: leantar exited with code 1.
+Termination: Ctrl-C after idle; exit 1.
+
+RUN 2
+Command: lake build Goldbach.OnePlusOneNine
+Result: exit 1; error: build failed.
+Representative error: failed to read Lean/Elab/Tactic/BuiltinTactic.olean.private.
+Lake summary: 23 required targets logged failures.
+
+RUN 3
+Command: lake env lean .lake/packages/mathlib/Mathlib/Data/Int/Log.lean
+Result: exit 0.
+
+RUN 4
+Command: lake build Goldbach.OnePlusOneNine (incremental rerun)
+Result: error: build failed; wrapper printed lake_exit=1.
+Representative errors: failed to read Lean/Elab/DeclNameGen.olean.private; failed to read Init/Data/Range/Polymorphic/Lemmas.olean.private.
+Lake summary: 39 required targets logged failures.
+
+RUN 5
+Command: lake env lean Goldbach/OnePlusOneNine.lean
+Result: exit 1.
+Error: object file MathlibNt/SieveTheory/LiLiuGoldbachG11AuthorQuantitative.olean does not exist.
+
+RUN 6
+Command: lake -KmaxJobs=1 build Goldbach.OnePlusOneNine
+Observation: progress still showed parallel jobs; the option did not serialize this Lake version.
+Termination: Ctrl-C after additional .olean.private failures and native std::bad_alloc; one reported Lean exit code was 3221226505.
+
+RUN 7 (source-only diagnostic; no source file edited)
+Method: load scripts/check.py in memory and replace only module normalization with
+  str(path.relative_to(ROOT).with_suffix("")).replace("\\", ".").replace("/", ".")
+Result: source_modules=2514; reachable_modules=1745; default_library_glob_modules=2514; default_build_modules=2514; issues=[]
+
+Interpretation: these are reproducibility/environment observations only. No full Lean build, kernel axiom report, leanchecker replay, or mathematical theorem conclusion was obtained.
