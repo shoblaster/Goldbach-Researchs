@@ -1171,6 +1171,50 @@
 **Next verification required:**
 - Any attempt to turn an exceptional-set estimate into Strong Goldbach must establish eventual zero exceptions, not merely a sublinear count, and must verify all constants and quantifiers.
 
+### 2026-10-04 — `(1+1.9)` witness-count split
+
+- Objective: Test whether the source-reported Li--Liu `(1+1.9)` theorem can be converted into a binary Goldbach proof by counting its witnesses.
+- Work performed: Inspected Li--Liu arXiv HTML v2 (CIT-019), including the exact definition of Proposition `(1+a)` and Theorem 1.1. Added `08_PROOFS/PROOF_FRONTIER_009_ALMOST_PRIME_SPLIT.md` with an exact partition into `r=1` and `r>1` witnesses.
+- Results: The source reports `D_(1,1.9)(N)>0.0004*C(N)*N/log^2(N)` for sufficiently large even `N`, but the count includes prime `r>1`, so `r*q` can be composite. Binary Goldbach would follow if the composite-witness subcount were strictly smaller than that lower bound; no such estimate was found or proved.
+- Literature status: CIT-019 verified against the actual arXiv HTML v2. The source theorem is recorded as SOURCE-REPORTED; its analytic proof was not independently checked.
+- Data generated: `08_PROOFS/PROOF_FRONTIER_009_ALMOST_PRIME_SPLIT.md`; no numerical computation or Lean build was run in this stage.
+
+### Verification Checkpoint
+
+**Claims made:**
+- Li--Liu's source defines the witness form with `r=1` or prime and states the quoted positive lower bound for the total count.
+- The total count partitions exactly into `r=1` and `r>1` subcounts.
+- An upper bound on the `r>1` subcount below the positive lower bound would imply a binary representation; that estimate is not proved here.
+
+**Sources used:**
+- CIT-019, arXiv HTML v2 inspected on 2026-10-04.
+- Self-contained counting reduction in `08_PROOFS/PROOF_FRONTIER_009_ALMOST_PRIME_SPLIT.md`.
+
+**Citations verified:**
+- CIT-019 checked against the exact definition and Theorem 1.1 in the source.
+
+**Claims not independently verified:**
+- Li--Liu's underlying analytic proof and all imported constants.
+- Any estimate controlling the composite-witness subcount.
+- Any Strong Goldbach theorem.
+
+**Computations actually run:**
+- No numerical computation, Lean build, or formalization replay was run in this stage.
+
+**Proof status:**
+- Witness-count partition and conditional implication: PROVED as elementary counting logic.
+- Composite-witness upper bound: PROOF GAP — NOT PROVED.
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED; this is a source audit and logical reduction.
+
+**Known uncertainties:**
+- Whether the Li--Liu paper or later work supplies a sufficiently small uniform composite-witness bound; this stage did not independently reprove the analytic estimates.
+
+**Next verification required:**
+- Any claimed conversion from `(1+1.9)` to binary Goldbach must explicitly bound `D_comp(N)` with matching constants and quantifiers.
+
 ## Failed approaches
 
 - EXP002: A hard-coded experiment ID meant the output directory and metadata disagreed. Preserved in `04_RAW_DATA/EXP002`; see `INVALID_METADATA_DO_NOT_USE.md`. The correction was an explicit experiment-ID argument and a rerun into a new directory.
