@@ -1259,6 +1259,47 @@
 **Next verification required:**
 - Any proposed `r=1` extraction must be located explicitly and checked with its exact hypotheses and constants.
 
+### 2026-10-04 — elementary composite-witness bound
+
+- Objective: Attempt to bound the `r>1` part of the Li--Liu witness count using only factor enumeration.
+- Work performed: Added `08_PROOFS/PROOF_FRONTIER_011_ELEMENTARY_COMPOSITE_BOUND.md`, counting possible `(r,q)` pairs by splitting at `sqrt(N)` and applying the harmonic-sum bound.
+- Results: For the composite-witness count, `D_comp(N) <= 2N + N log N` after dropping primality and exponent restrictions. This is valid but far too weak for the `N/log^2(N)`-scale bound required by the conditional reduction; simultaneous primality/correlation information is unavoidable.
+- Literature status: No new external source was used in this stage. The result is a self-contained proved limitation.
+- Data generated: `08_PROOFS/PROOF_FRONTIER_011_ELEMENTARY_COMPOSITE_BOUND.md`; no numerical computation or Lean build was run.
+
+### Verification Checkpoint
+
+**Claims made:**
+- The factor-pair split at `sqrt(N)` and harmonic estimate give `D_comp(N) <= 2N + N log N`.
+- This bound does not reach the scale needed to subtract composite witnesses from Li--Liu's lower bound.
+
+**Sources used:**
+- Self-contained derivation in `08_PROOFS/PROOF_FRONTIER_011_ELEMENTARY_COMPOSITE_BOUND.md`.
+
+**Citations verified:**
+- No new external citation was used.
+
+**Claims not independently verified:**
+- Any sharper sieve or prime-correlation estimate for `D_comp(N)`.
+- Any Strong Goldbach theorem.
+
+**Computations actually run:**
+- No numerical computation, Lean build, or formalization replay was run in this stage.
+
+**Proof status:**
+- Crude factor-pair limitation: PROVED.
+- Required composite-witness upper bound: PROOF GAP — NOT PROVED.
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED.
+
+**Known uncertainties:**
+- Whether an external theorem supplies the needed correlation estimate; no new theorem was substituted without verification.
+
+**Next verification required:**
+- Any sharper bound must retain the primality of `p=N-r*q` and be compared with Li--Liu's exact constants and quantifiers.
+
 ## Failed approaches
 
 - EXP002: A hard-coded experiment ID meant the output directory and metadata disagreed. Preserved in `04_RAW_DATA/EXP002`; see `INVALID_METADATA_DO_NOT_USE.md`. The correction was an explicit experiment-ID argument and a rerun into a new directory.
