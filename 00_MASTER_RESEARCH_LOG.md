@@ -1083,6 +1083,50 @@
 **Next verification required:**
 - Obtain a complete reproducible build/cache, then capture the four theorem-type/axiom reports, module replay, and isolated reconstruction outputs.
 
+### 2026-10-04 — binary circle-method proof frontier
+
+- Objective: Continue the proof analysis by isolating a concrete sufficient inequality for a binary circle-method proof and verifying the literature statement about the missing minor-arc estimate.
+- Work performed: Inspected Helfgott's arXiv PDF *The ternary Goldbach problem* (CIT-017), including the Chen-theorem summary and equations (1.2)--(1.4). Wrote `08_PROOFS/PROOF_FRONTIER_007_BINARY_CIRCLE_METHOD.md`, which derives the major-arc domination condition from Fourier inversion and the triangle inequality.
+- Results: For any nonnegative finitely supported prime-supported weight, if the real part of the major-arc contribution exceeds the absolute minor-arc bound `integral_m |S(alpha)|^2`, then the weighted binary representation count is positive and supplies a prime pair. No uniform proof of this inequality was obtained. The cited source explicitly identifies this binary minor-arc comparison as the point where the circle method fails; this is recorded as a proof gap, not as an impossibility result.
+- Literature status: CIT-017 verified against the actual arXiv PDF. Its historical Chen statement is source-reported as prime plus a product of at most two primes, so it does not close the binary gap.
+- Data generated: `08_PROOFS/PROOF_FRONTIER_007_BINARY_CIRCLE_METHOD.md`; no numerical experiment or Lean build was run in this stage.
+
+### Verification Checkpoint
+
+**Claims made:**
+- The conditional major-arc domination lemma follows from Fourier orthogonality and the triangle inequality under the file's stated finite-support weight assumptions.
+- Helfgott's source states that the binary circle-method route fails at the corresponding minor-arc comparison and describes the lack of sufficient minor-arc control.
+- Chen's theorem as summarized by the source is an almost-prime result, not a binary Goldbach proof.
+
+**Sources used:**
+- CIT-017, the arXiv PDF inspected at the cited sections/pages.
+- Self-contained derivation in `08_PROOFS/PROOF_FRONTIER_007_BINARY_CIRCLE_METHOD.md`.
+
+**Citations verified:**
+- CIT-017 source and the narrow claims above were checked against the PDF text on 2026-10-04.
+
+**Claims not independently verified:**
+- The underlying proofs of Chen's theorem or Helfgott's cited historical results.
+- Any claim that the binary minor-arc obstacle is logically impossible to overcome.
+- Any Strong Goldbach theorem.
+
+**Computations actually run:**
+- No numerical computation, Lean build, or external formalization replay was run in this stage.
+
+**Proof status:**
+- Conditional major-arc implication: PROVED under the explicitly stated assumptions.
+- Uniform minor-arc domination: PROOF GAP — NOT PROVED.
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED; the file is an audit of a standard analytic step.
+
+**Known uncertainties:**
+- Whether newer work has established a different sufficient estimate; this stage did not perform an exhaustive literature search.
+
+**Next verification required:**
+- Any proposed replacement estimate must be checked against its exact hypotheses, quantifiers, and error terms before it can be used in the proof.
+
 ## Failed approaches
 
 - EXP002: A hard-coded experiment ID meant the output directory and metadata disagreed. Preserved in `04_RAW_DATA/EXP002`; see `INVALID_METADATA_DO_NOT_USE.md`. The correction was an explicit experiment-ID argument and a rerun into a new directory.
