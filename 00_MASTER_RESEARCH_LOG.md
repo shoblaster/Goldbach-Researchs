@@ -1127,6 +1127,50 @@
 **Next verification required:**
 - Any proposed replacement estimate must be checked against its exact hypotheses, quantifiers, and error terms before it can be used in the proof.
 
+### 2026-10-04 — exceptional-set quantifier frontier
+
+- Objective: Check whether a current exceptional-set theorem closes the remaining all-even-integers quantifier in Strong Goldbach.
+- Work performed: Inspected Zhao's arXiv HTML v2 (CIT-018), including the abstract, definition of `E(X)`, and Theorem 1.1. Added `08_PROOFS/PROOF_FRONTIER_008_EXCEPTIONAL_SET.md` with the exact source-reported statement and an elementary quantifier audit.
+- Results: The source reports `E(X)=O(X^(7/10))` with an ineffective implied constant, where `E(X)` counts even integers up to `X` not representable as two odd primes. Dividing by `X` gives density zero, but a sublinear nonnegative integer-valued exceptional count need not become zero; hence this does not prove Strong Goldbach or provide a computable threshold.
+- Literature status: CIT-018 was verified against the actual arXiv HTML v2. The theorem is recorded as SOURCE-REPORTED; its proof was not independently checked.
+- Data generated: `08_PROOFS/PROOF_FRONTIER_008_EXCEPTIONAL_SET.md`; no numerical computation or Lean build was run in this stage.
+
+### Verification Checkpoint
+
+**Claims made:**
+- Zhao's source states the exact exceptional-set definition and `O(X^(7/10))` bound with ineffective constant.
+- The bound implies density zero by division by `X`.
+- The bound alone does not imply eventual absence of exceptions; this is an elementary quantifier observation.
+
+**Sources used:**
+- CIT-018, arXiv HTML v2 inspected on 2026-10-04.
+- Self-contained logical analysis in `08_PROOFS/PROOF_FRONTIER_008_EXCEPTIONAL_SET.md`.
+
+**Citations verified:**
+- CIT-018 checked against the abstract and Section 1 of the actual source.
+
+**Claims not independently verified:**
+- Zhao's underlying proof of Theorem 1.1.
+- Any effective value of the implied constant or a finite threshold.
+- Any Strong Goldbach theorem.
+
+**Computations actually run:**
+- No numerical computation, Lean build, or formalization replay was run in this stage.
+
+**Proof status:**
+- Density-zero consequence: PROVED conditional on the source-reported big-O statement.
+- Eventual-zero exceptional set: PROOF GAP — NOT PROVED.
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED; this is a literature/quantifier audit.
+
+**Known uncertainties:**
+- Whether a later paper improves the exceptional-set exponent or makes the bound effective; no exhaustive search was performed.
+
+**Next verification required:**
+- Any attempt to turn an exceptional-set estimate into Strong Goldbach must establish eventual zero exceptions, not merely a sublinear count, and must verify all constants and quantifiers.
+
 ## Failed approaches
 
 - EXP002: A hard-coded experiment ID meant the output directory and metadata disagreed. Preserved in `04_RAW_DATA/EXP002`; see `INVALID_METADATA_DO_NOT_USE.md`. The correction was an explicit experiment-ID argument and a rerun into a new directory.
