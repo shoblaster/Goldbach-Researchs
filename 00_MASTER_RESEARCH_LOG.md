@@ -1215,6 +1215,50 @@
 **Next verification required:**
 - Any claimed conversion from `(1+1.9)` to binary Goldbach must explicitly bound `D_comp(N)` with matching constants and quantifiers.
 
+### 2026-10-04 — Li--Liu source-boundary audit
+
+- Objective: Check the Li--Liu proof text for any hidden step that converts its `(1+1.9)` mixed witness count into an `r=1` binary witness.
+- Work performed: Inspected the source's definition of `D_(1,a)(N)` and the proof's sieve-weight case analysis in CIT-019, especially equations (4.4)--(4.7) and the explicit `w(n)=1` characterization.
+- Results: The source weight is explicitly one on either a prime or a product of two primes in the relevant range. The displayed lower bound therefore counts a mixed prime/semiprime set; no `r=1` extraction appears in the inspected step. This confirms the conditional split in `PROOF_FRONTIER_009_ALMOST_PRIME_SPLIT.md` and does not provide a binary proof.
+- Literature status: CIT-019 was rechecked against the actual HTML v2 source at the cited locations. The analytic estimates remain source-reported and were not independently rederived.
+- Data generated: `08_PROOFS/PROOF_FRONTIER_010_LIL_SOURCE_BOUNDARY.md`; no numerical computation or Lean build was run in this stage.
+
+### Verification Checkpoint
+
+**Claims made:**
+- The source defines `D_(1,a)` using `N-p=r*q` with `r=1` or prime.
+- The displayed sieve weight counts a prime or a two-prime product in the relevant case.
+- No `r=1` conversion is present in the inspected source step; this is a scope audit, not a claim that no other future argument could exist.
+
+**Sources used:**
+- CIT-019, arXiv HTML v2 inspected on 2026-10-04.
+- Self-contained source audit in `08_PROOFS/PROOF_FRONTIER_010_LIL_SOURCE_BOUNDARY.md`.
+
+**Citations verified:**
+- CIT-019 rechecked at the definition, theorem, and sieve-weight locations.
+
+**Claims not independently verified:**
+- The correctness of Li--Liu's analytic estimates and numerical constants.
+- Any estimate controlling the semiprime portion.
+- Any Strong Goldbach theorem.
+
+**Computations actually run:**
+- No numerical computation, Lean build, or formalization replay was run in this stage.
+
+**Proof status:**
+- Source-scope audit: VERIFIED for the inspected text.
+- `r>1` elimination: PROOF GAP — NOT PROVED.
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED.
+
+**Known uncertainties:**
+- Whether an uninspected later argument in the paper yields a separate `r=1` estimate; none appears in the audited definition/lower-bound step.
+
+**Next verification required:**
+- Any proposed `r=1` extraction must be located explicitly and checked with its exact hypotheses and constants.
+
 ## Failed approaches
 
 - EXP002: A hard-coded experiment ID meant the output directory and metadata disagreed. Preserved in `04_RAW_DATA/EXP002`; see `INVALID_METADATA_DO_NOT_USE.md`. The correction was an explicit experiment-ID argument and a rerun into a new directory.
