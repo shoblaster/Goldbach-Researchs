@@ -1390,3 +1390,47 @@
 
 - EXP002: A hard-coded experiment ID meant the output directory and metadata disagreed. Preserved in `04_RAW_DATA/EXP002`; see `INVALID_METADATA_DO_NOT_USE.md`. The correction was an explicit experiment-ID argument and a rerun into a new directory.
 - EXP004: Per-value trial-division validation caused a 4–100000 run to exceed the execution window. A partial pair file was preserved and marked unusable. EXP005 deferred full validation to separately executed validators.
+
+### 2026-10-05 — Barca arXiv proof-claim audit
+
+- Objective: Audit an actual arXiv source that claims to prove binary Goldbach, without treating the claim as established.
+- Work performed: Inspected the source HTML for the Main Theorem, Lemma 1.2, Lemma 1.4, and Lemma 3.1. Compared the quantifiers in the fixed-ε convergence statement with the later (k)-dependent tolerance ε_k = Δ p_k^2/(m_k-p_k^2). Checked the source's displayed density inequality at the moving level h=k.
+- Result: The source supplies ordinary fixed-ε convergence but then asserts a shrinking-ε_k estimate uniformly over 1≤h≤k. The source's Step 5/Step 4 transition does not provide the required quantitative rate; its own text says the extension is “reasonable”/an assumption. The displayed bound at h=k allows an error factor δ_k/Δ times ε_k, so it does not establish the needed error <ε_k. This is a concrete PROOF GAP — NOT PROVED, not a disproof of the theorem.
+- Literature status: CIT-021 added and checked against the actual arXiv HTML on 2026-10-05. The paper remains a source-reported claimed proof; no independent proof verification or novelty claim is made.
+- Data generated: `08_PROOFS/PROOF_FRONTIER_014_BARCA_CLAIM_AUDIT.md`; no numerical computation, Lean build, or formalization replay was run.
+
+### Verification Checkpoint
+
+**Claims made:**
+- Barca's source states a binary Goldbach theorem and a density argument involving Lemmas 1.2, 1.4, and 3.1.
+- The source does not justify the required shrinking-tolerance estimate uniformly over the moving range (1\le h\le k).
+- The resulting lower-bound step is a PROOF GAP — NOT PROVED; this does not show the source theorem false.
+
+**Sources used:**
+- CIT-021, actual arXiv HTML for arXiv:1207.4802v14.
+- Self-contained logical audit in `08_PROOFS/PROOF_FRONTIER_014_BARCA_CLAIM_AUDIT.md`.
+
+**Citations verified:**
+- CIT-021 checked at HTML lines 26--41, 63--133, 189--253, and 337--397 on 2026-10-05.
+
+**Claims not independently verified:**
+- Any prior-paper lemma cited by Barca.
+- The source's sieve-density estimates beyond the displayed text.
+- Any Strong Goldbach theorem.
+
+**Computations actually run:**
+- No numerical computation, Lean build, or formalization replay was run in this stage.
+
+**Proof status:**
+- Source-level quantifier/rate diagnosis: PROVED as a logical insufficiency of the cited steps.
+- Barca's claimed lower-bound step: PROOF GAP — NOT PROVED.
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED.
+
+**Known uncertainties:**
+- A separate quantitative estimate might conceivably repair the source's argument; none was found or substituted here.
+
+**Next verification required:**
+- If pursuing this line, reconstruct the exact permitted-tuple definitions from the cited prior paper and test whether an explicit uniform rate can be proved. Do not treat the current source claim as a theorem until that step is independently established.
