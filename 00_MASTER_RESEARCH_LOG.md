@@ -1344,6 +1344,48 @@
 **Next verification required:**
 - Seek a theorem controlling simultaneous primality of `r`, `q`, and `N-r*q` with matching uniformity and constants.
 
+### 2026-10-04 — source-stated switching barrier
+
+- Objective: Determine whether the Li--Liu source itself describes why elementary counting cannot control the composite-witness range.
+- Work performed: Inspected Section 8.1 of CIT-019, including the term `G` with `p` up to `N^(1/2)` and the discussion of Chen's switching principle.
+- Results: The source states that an upper bound without switching has the wrong order in the large-prime range, calls switching indispensable there, and reports that avoiding it leaves constants too poor for a nontrivial lower bound. This corroborates the current proof frontier but does not provide an `r=1` extraction or a `D_comp(N)` upper bound.
+- Literature status: CIT-019 reverified against the actual HTML v2 at the cited lines. The analytic estimates remain source-reported.
+- Data generated: `08_PROOFS/PROOF_FRONTIER_013_SOURCE_STATED_SIEVE_BARRIER.md`; no numerical computation or Lean build was run.
+
+### Verification Checkpoint
+
+**Claims made:**
+- The Li--Liu source explicitly identifies a large-prime switching barrier and poor constants without it.
+- This is relevant evidence for the missing composite-witness estimate, not a proof that no alternative method exists.
+
+**Sources used:**
+- CIT-019, Section 8.1.
+- Self-contained interpretation in `08_PROOFS/PROOF_FRONTIER_013_SOURCE_STATED_SIEVE_BARRIER.md`.
+
+**Citations verified:**
+- CIT-019 checked at lines 2180--2197 of the actual arXiv HTML v2.
+
+**Claims not independently verified:**
+- The correctness of the source's switching estimates and constants.
+- Any `D_comp(N)` correlation bound or Strong Goldbach theorem.
+
+**Computations actually run:**
+- No numerical computation, Lean build, or formalization replay was run in this stage.
+
+**Proof status:**
+- Source-stated sieve barrier: VERIFIED for the cited text.
+- Composite-witness elimination: PROOF GAP — NOT PROVED.
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED.
+
+**Known uncertainties:**
+- Whether a different, non-switching correlation argument could overcome the stated barrier.
+
+**Next verification required:**
+- Any proposed replacement must be checked for the same large-prime range and constant loss.
+
 ## Failed approaches
 
 - EXP002: A hard-coded experiment ID meant the output directory and metadata disagreed. Preserved in `04_RAW_DATA/EXP002`; see `INVALID_METADATA_DO_NOT_USE.md`. The correction was an explicit experiment-ID argument and a rerun into a new directory.
