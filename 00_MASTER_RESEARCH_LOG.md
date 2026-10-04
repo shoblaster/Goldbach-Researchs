@@ -1300,6 +1300,50 @@
 **Next verification required:**
 - Any sharper bound must retain the primality of `p=N-r*q` and be compared with Li--Liu's exact constants and quantifiers.
 
+### 2026-10-04 — prime-density composite-witness bound
+
+- Objective: Strengthen the elementary `D_comp(N)` limitation using a source-verified prime-counting estimate.
+- Work performed: Inspected Bennett--Martin--O'Bryant--Rechnitzer (CIT-020), Theorem 1.3, and derived its fixed-modulus consequence `pi(x)=O(x/log x)` by summing the two reduced classes modulo 3. Applied this to the factor split in `08_PROOFS/PROOF_FRONTIER_012_PRIME_DENSITY_BOUND.md`.
+- Results: The composite-witness count improves from `O(N log N)` to `O(N)` after using prime density, but this remains far above the `N/log^2(N)` scale needed to force an `r=1` witness. The missing ingredient is correlation involving `p=N-r*q`, not prime density alone.
+- Literature status: CIT-020 verified against the actual arXiv HTML theorem statement. The analytic proof and constants were not independently rederived.
+- Data generated: `08_PROOFS/PROOF_FRONTIER_012_PRIME_DENSITY_BOUND.md`; no numerical computation or Lean build was run.
+
+### Verification Checkpoint
+
+**Claims made:**
+- CIT-020 supplies a fixed-modulus `pi(x)=O(x/log x)` input after an elementary reduction.
+- Combining it with the factor split gives `D_comp(N)=O(N)`.
+- This bound is insufficient for the Li--Liu subtraction target.
+
+**Sources used:**
+- CIT-020, Theorem 1.3.
+- Self-contained deduction in `08_PROOFS/PROOF_FRONTIER_012_PRIME_DENSITY_BOUND.md`.
+
+**Citations verified:**
+- CIT-020 checked against the actual arXiv HTML on 2026-10-04.
+
+**Claims not independently verified:**
+- The proof of CIT-020's analytic estimate.
+- Any correlation estimate for `p=N-r*q`.
+- Any Strong Goldbach theorem.
+
+**Computations actually run:**
+- No numerical computation, Lean build, or formalization replay was run in this stage.
+
+**Proof status:**
+- `D_comp(N)=O(N)` deduction: PROVED conditional on CIT-020.
+- Required `N/log^2(N)` composite-witness bound: PROOF GAP — NOT PROVED.
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED.
+
+**Known uncertainties:**
+- Whether stronger correlation results can lower the composite-witness count to the required scale; no such result was substituted without verification.
+
+**Next verification required:**
+- Seek a theorem controlling simultaneous primality of `r`, `q`, and `N-r*q` with matching uniformity and constants.
+
 ## Failed approaches
 
 - EXP002: A hard-coded experiment ID meant the output directory and metadata disagreed. Preserved in `04_RAW_DATA/EXP002`; see `INVALID_METADATA_DO_NOT_USE.md`. The correction was an explicit experiment-ID argument and a rerun into a new directory.
