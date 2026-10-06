@@ -1434,3 +1434,48 @@
 
 **Next verification required:**
 - If pursuing this line, reconstruct the exact permitted-tuple definitions from the cited prior paper and test whether an explicit uniform rate can be proved. Do not treat the current source claim as a theorem until that step is independently established.
+
+### 2026-10-06 — author-exposition density-transfer audit
+
+- Objective: Check whether the author’s own explanatory material identifies the density-transfer step used in the claimed proof.
+- Work performed: Inspected Ricardo Barca’s explanatory page and verified its definitions of the periodic permitted-tuple sequence, the full-period density, and the transition to the left/right subintervals.
+- Result: The page explicitly says to suppose that permitted tuples are approximately regularly placed, then uses that supposition to infer that both subinterval densities are close to the full-period density and to conclude a positive left-block count. A full-period average alone does not imply a positive count in a specified initial subinterval; an elementary periodic-set construction demonstrates this logical non-implication. This corroborates the arXiv quantifier/rate gap in PROOF_FRONTIER_014.
+- Literature status: CIT-022 added and checked against the actual author page on 2026-10-06. It is used as source documentation, not as peer-reviewed confirmation of the theorem.
+- Data generated: `08_PROOFS/PROOF_FRONTIER_015_BARCA_AUTHOR_EXPOSITION_GAP.md`; no numerical computation, Lean build, or formalization replay was run.
+
+### Verification Checkpoint
+
+**Claims made:**
+- The author’s own exposition uses an approximately-regular-placement supposition to transfer full-period density to the initial interval.
+- That transfer is not a consequence of the full-period average alone.
+- The claimed Goldbach proof therefore retains a SOURCE-CONFIRMED PROOF GAP — NOT PROVED at this bridge.
+
+**Sources used:**
+- CIT-022, actual author exposition at `ricardobarca.wordpress.com/very-easy/`.
+- `08_PROOFS/PROOF_FRONTIER_015_BARCA_AUTHOR_EXPOSITION_GAP.md`.
+- CIT-021 and `08_PROOFS/PROOF_FRONTIER_014_BARCA_CLAIM_AUDIT.md` for the arXiv follow-up audit.
+
+**Citations verified:**
+- CIT-022 checked at HTML lines 82--94 on 2026-10-06.
+
+**Claims not independently verified:**
+- The truth of Barca’s theorem or any cited prior-paper lemma.
+- Any quantitative distribution estimate for the CRT-constrained permitted set.
+- Any Strong Goldbach theorem.
+
+**Computations actually run:**
+- No numerical computation, Lean build, or formalization replay was run in this stage.
+
+**Proof status:**
+- Full-period density ⇒ initial-interval density: NOT VALID WITHOUT AN ADDITIONAL DISTRIBUTION THEOREM.
+- Barca’s claimed lower-bound bridge: PROOF GAP — NOT PROVED.
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED.
+
+**Known uncertainties:**
+- A separate, rigorous distribution estimate for the particular permitted set might repair the bridge; none was supplied or substituted here.
+
+**Next verification required:**
+- Reconstruct the exact CRT-permitted set and seek a quantitative interval-distribution estimate. Any such estimate must be proved for the moving (k)-dependent interval, not inferred from the period average.
