@@ -1479,3 +1479,46 @@
 
 **Next verification required:**
 - Reconstruct the exact CRT-permitted set and seek a quantitative interval-distribution estimate. Any such estimate must be proved for the moving (k)-dependent interval, not inferred from the period average.
+
+### 2026-10-06 — finite Sieve II residue-selection audit
+
+- Objective: Test the exact finite residue-selection model underlying Barca’s Sieve II density transfer, without extrapolating finite output to an unbounded theorem.
+- Work performed: Added `03_CODE/barca_sieve2_exhaustive.py`. For every (k\le5), enumerated one forbidden residue modulo 2 and two forbidden residues modulo each later prime (p\le p_k), then counted permitted (n\) in (1\le n\le p_k^2). Preserved the exact terminal output in `06_EXPERIMENTS/EXP007_BARCA_SIEVE2_SMALL/RAW_OUTPUT.txt`.
+- Result: The left-block minimum counts were 2, 1, 2, 2, and 3 for (k=1,2,3,4,5), with minimum normalized densities (1, 1/3, 2/5, 2/7,) and (3/11). At (k=5), the full-period density is (135/210=0.642857), while the minimum left-block density is (3/11=0.272727). This demonstrates finite residue-selection variability and that full-period density is not automatically the left-block density in the tested range.
+- Literature status: The finite model definitions were cross-checked against CIT-022’s actual author exposition. No new external theorem was substituted; no asymptotic claim was made.
+- Data generated: `06_EXPERIMENTS/EXP007_BARCA_SIEVE2_SMALL/README.md`, `RAW_OUTPUT.txt`, and the source script; computation was actually run with Python on 2026-10-06.
+
+### Verification Checkpoint
+
+**Claims made:**
+- In the exact finite model tested, residue choices materially change the number of permitted indices in the initial interval.
+- For (k\le5), the minimum initial-interval density is not equal to the full-period density.
+- This is a finite computational observation only and does not disprove an eventual asymptotic statement or Strong Goldbach.
+
+**Sources used:**
+- CIT-022 for the Sieve II residue-selection definitions and full-period-density normalization.
+- `03_CODE/barca_sieve2_exhaustive.py` and preserved raw output.
+
+**Citations verified:**
+- CIT-022’s relevant definitions and density formula were checked against the actual author page on 2026-10-06.
+
+**Claims not independently verified:**
+- Any asymptotic lower bound for the minimum left-block density as (k\to\infty).
+- Barca’s claimed theorem or any Strong Goldbach theorem.
+
+**Computations actually run:**
+- `python 03_CODE/barca_sieve2_exhaustive.py` completed successfully on 2026-10-06; exact output is preserved in `06_EXPERIMENTS/EXP007_BARCA_SIEVE2_SMALL/RAW_OUTPUT.txt`.
+
+**Proof status:**
+- Finite enumeration result: COMPUTATIONAL OBSERVATION, validated within the tested model and range.
+- Full-period density ⇒ eventual left-block density: PROOF GAP — NOT PROVED.
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED.
+
+**Known uncertainties:**
+- The test stops at (k=5); it gives no conclusion about the source’s (k>2800) asymptotic claim.
+
+**Next verification required:**
+- Derive or verify a quantitative interval-distribution bound for the exact CRT-constrained permitted set before attempting any asymptotic conclusion.
