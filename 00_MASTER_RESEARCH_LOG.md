@@ -1562,4 +1562,42 @@
 - The Outlook connector remains unconnected; sending is pending user confirmation and successful connection.
 
 **Next verification required:**
-- After connection, confirm the final recipient set and drafts before any send action; record any sent-message IDs and responses without inventing outcomes.
+- Confirm the final recipient set before any send action; record any sent-message IDs and responses without inventing outcomes.
+
+### 2026-10-07 — Outlook drafts created
+
+- Objective: Connect the user’s email account and stage the verified outreach drafts without sending them prematurely.
+- Work performed: Confirmed the connected Outlook profile as `shouryasharma5437@gmail.com`. Created four plain-text drafts addressed to James Maynard, Kevin Ford, Kaisa Matomäki, and Olivier Ramaré. No attachments were added.
+- Result: All four draft creation calls succeeded. No email was sent. Draft IDs and subjects are preserved in `09_LITERATURE/OUTREACH_CANDIDATES_2026-10-07.md`.
+- Data generated: Four external Outlook drafts; repository status record updated. No mathematical computation or theorem verification was performed.
+
+### Verification Checkpoint
+
+**Claims made:**
+- The connected mailbox profile is `shouryasharma5437@gmail.com`.
+- Four named emails exist as Outlook drafts and have not been sent.
+
+**Sources used:**
+- Outlook connector profile and draft creation readbacks.
+- `09_LITERATURE/OUTREACH_CANDIDATES_2026-10-07.md`.
+
+**Citations verified:**
+- No new literature citation; CIT-023 through CIT-027 remain the verified sources for recipient selection.
+
+**Claims not independently verified:**
+- Recipient responses or future delivery outcomes; none exists yet.
+
+**Computations actually run:**
+- No mathematical computation, Lean build, or formalization replay was run in this stage.
+
+**Proof status:**
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED.
+
+**Known uncertainties:**
+- No messages have been sent; final recipient approval is pending.
+
+**Next verification required:**
+- Obtain explicit confirmation of the recipients to send, then use the Outlook send action and record the returned message IDs.

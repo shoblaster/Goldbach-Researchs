@@ -104,3 +104,15 @@ Terence Tao is highly relevant scientifically, but his official contact policy e
 4. Do not claim novelty, a proof, or a disproof.
 5. Do not send until the user confirms the final recipients and drafts.
 
+## Outlook draft status — 2026-10-07
+
+The Outlook connector is connected to `shouryasharma5437@gmail.com`. Four plain-text drafts were created for review; **none has been sent**.
+
+| Recipient | Subject | Outlook draft ID | Status |
+|---|---|---|---|
+| James Maynard | Question about an interval-density step in a Goldbach sieve argument | `AQMkADAwATNiZmYAZS05YjBhLWY1N2YtMDACLTAwCgBGAAADx2r-Oh7GnE_8HEEcXv2-oAcA6NMzizhaLUStckvB4e6G7wAAAgEPAAAA6NMzizhaLUStckvB4e6G7wABKstu2AAAAA==` | DRAFT — NOT SENT |
+| Kevin Ford | Request for a sieve-theory check of a Goldbach density transfer | `AQMkADAwATNiZmYAZS05YjBhLWY1N2YtMDACLTAwCgBGAAADx2r-Oh7GnE_8HEEcXv2-oAcA6NMzizhaLUStckvB4e6G7wAAAgEPAAAA6NMzizhaLUStckvB4e6G7wABKstu2QAAAA==` | DRAFT — NOT SENT |
+| Kaisa Matomäki | Question about short-interval distribution in a Goldbach sieve model | `AQMkADAwATNiZmYAZS05YjBhLWY1N2YtMDACLTAwCgBGAAADx2r-Oh7GnE_8HEEcXv2-oAcA6NMzizhaLUStckvB4e6G7wAAAgEPAAAA6NMzizhaLUStckvB4e6G7wABKstu2gAAAA==` | DRAFT — NOT SENT |
+| Olivier Ramaré | Request for feedback on a narrowly defined Goldbach proof gap | `AQMkADAwATNiZmYAZS05YjBhLWY1N2YtMDACLTAwCgBGAAADx2r-Oh7GnE_8HEEcXv2-oAcA6NMzizhaLUStckvB4e6G7wABKstu2wAAAA==` | DRAFT — NOT SENT |
+
+Sending requires explicit final confirmation of the recipient set. The recommended first wave is Maynard and Ford only.
