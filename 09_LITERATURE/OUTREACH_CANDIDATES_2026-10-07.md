@@ -110,9 +110,9 @@ The Outlook connector is connected to `shouryasharma5437@gmail.com`. Four plain-
 
 | Recipient | Subject | Outlook draft ID | Status |
 |---|---|---|---|
-| James Maynard | Question about an interval-density step in a Goldbach sieve argument | `AQMkADAwATNiZmYAZS05YjBhLWY1N2YtMDACLTAwCgBGAAADx2r-Oh7GnE_8HEEcXv2-oAcA6NMzizhaLUStckvB4e6G7wAAAgEPAAAA6NMzizhaLUStckvB4e6G7wABKstu2AAAAA==` | DRAFT — NOT SENT |
-| Kevin Ford | Request for a sieve-theory check of a Goldbach density transfer | `AQMkADAwATNiZmYAZS05YjBhLWY1N2YtMDACLTAwCgBGAAADx2r-Oh7GnE_8HEEcXv2-oAcA6NMzizhaLUStckvB4e6G7wAAAgEPAAAA6NMzizhaLUStckvB4e6G7wABKstu2QAAAA==` | DRAFT — NOT SENT |
-| Kaisa Matomäki | Question about short-interval distribution in a Goldbach sieve model | `AQMkADAwATNiZmYAZS05YjBhLWY1N2YtMDACLTAwCgBGAAADx2r-Oh7GnE_8HEEcXv2-oAcA6NMzizhaLUStckvB4e6G7wAAAgEPAAAA6NMzizhaLUStckvB4e6G7wABKstu2gAAAA==` | DRAFT — NOT SENT |
-| Olivier Ramaré | Request for feedback on a narrowly defined Goldbach proof gap | `AQMkADAwATNiZmYAZS05YjBhLWY1N2YtMDACLTAwCgBGAAADx2r-Oh7GnE_8HEEcXv2-oAcA6NMzizhaLUStckvB4e6G7wABKstu2wAAAA==` | DRAFT — NOT SENT |
+| James Maynard | Question about an interval-density step in a Goldbach sieve argument | Draft `AQMkADAwATNiZmYAZS05YjBhLWY1N2YtMDACLTAwCgBGAAADx2r-Oh7GnE_8HEEcXv2-oAcA6NMzizhaLUStckvB4e6G7wABKstu2AAAAA==`; sent `AQMkADAwATNiZmYAZS05YjBhLWY1N2YtMDACLTAwCgBGAAADx2r-Oh7GnE_8HEEcXv2-oAcA6NMzizhaLUStckvB4e6G7wABKsuCkwAAAA==` | SENT — verified |
+| Kevin Ford | Request for a sieve-theory check of a Goldbach density transfer | Draft `AQMkADAwATNiZmYAZS05YjBhLWY1N2YtMDACLTAwCgBGAAADx2r-Oh7GnE_8HEEcXv2-oAcA6NMzizhaLUStckvB4e6G7wABKstu2QAAAA==`; sent `AQMkADAwATNiZmYAZS05YjBhLWY1N2YtMDACLTAwCgBGAAADx2r-Oh7GnE_8HEEcXv2-oAcA6NMzizhaLUStckvB4e6G7wABKsuClAAAAA==` | SENT — verified |
+| Kaisa Matomäki | Question about short-interval distribution in a Goldbach sieve model | Draft `AQMkADAwATNiZmYAZS05YjBhLWY1N2YtMDACLTAwCgBGAAADx2r-Oh7GnE_8HEEcXv2-oAcA6NMzizhaLUStckvB4e6G7wABKstu2gAAAA==`; sent `AQMkADAwATNiZmYAZS05YjBhLWY1N2YtMDACLTAwCgBGAAADx2r-Oh7GnE_8HEEcXv2-oAcA6NMzizhaLUStckvB4e6G7wABKsuClQAAAA==` | SENT — verified |
+| Olivier Ramaré | Request for feedback on a narrowly defined Goldbach proof gap | Draft `AQMkADAwATNiZmYAZS05YjBhLWY1N2YtMDACLTAwCgBGAAADx2r-Oh7GnE_8HEEcXv2-oAcA6NMzizhaLUStckvB4e6G7wABKstu2wAAAA==`; sent `AQMkADAwATNiZmYAZS05YjBhLWY1N2YtMDACLTAwCgBGAAADx2r-Oh7GnE_8HEEcXv2-oAcA6NMzizhaLUStckvB4e6G7wABKsuClgAAAA==` | SENT — verified |
 
-Sending requires explicit final confirmation of the recipient set. The recommended first wave is Maynard and Ford only.
+All four messages were sent after explicit user confirmation on 2026-10-07. The original drafts remain in Outlook as historical draft records; do not send them again.

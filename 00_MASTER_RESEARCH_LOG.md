@@ -1597,7 +1597,46 @@
 - NOVELTY NOT ESTABLISHED.
 
 **Known uncertainties:**
-- No messages have been sent; final recipient approval is pending.
+- No recipient response has been received or verified yet.
 
 **Next verification required:**
-- Obtain explicit confirmation of the recipients to send, then use the Outlook send action and record the returned message IDs.
+- Monitor for responses only if requested; record message contents and any mathematical feedback against the citation/claim protocol without inventing outcomes.
+
+### 2026-10-07 — four outreach emails sent and verified
+
+- Objective: Send the four user-approved expert outreach messages and verify the resulting sent items.
+- Work performed: Sent the finalized plain-text messages to James Maynard, Kevin Ford, Kaisa Matomäki, and Olivier Ramaré from `shouryasharma5437@gmail.com`, with no attachments. Searched the connected Outlook mailbox by exact subject and confirmed a sent copy for each matching recipient and sender.
+- Result: All four sends succeeded. Sent-message IDs are recorded in `09_LITERATURE/OUTREACH_CANDIDATES_2026-10-07.md`. No response has been received yet. The original drafts remain and should not be sent again.
+- Data generated: Four external sent messages; four sent-item readbacks; repository outreach status updated.
+
+### Verification Checkpoint
+
+**Claims made:**
+- Four emails were sent to the four user-approved recipients.
+- Each sent message was independently read back from Outlook by exact subject, sender, and recipient match.
+
+**Sources used:**
+- Outlook send-action results and exact-subject sent-item searches.
+- `09_LITERATURE/OUTREACH_CANDIDATES_2026-10-07.md`.
+
+**Citations verified:**
+- No new literature citation; CIT-023 through CIT-027 remain the verified sources for recipient selection.
+
+**Claims not independently verified:**
+- Delivery to or response from the recipients beyond the Outlook sent-item readbacks.
+- Any mathematical conclusion from future replies.
+
+**Computations actually run:**
+- No mathematical computation, Lean build, or formalization replay was run in this stage.
+
+**Proof status:**
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED.
+
+**Known uncertainties:**
+- Recipient replies and delivery outcomes remain unknown.
+
+**Next verification required:**
+- If replies arrive, inspect and record them against the source-verification and claim-ledger protocol before adopting any mathematical claim.
