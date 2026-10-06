@@ -1522,3 +1522,44 @@
 
 **Next verification required:**
 - Derive or verify a quantitative interval-distribution bound for the exact CRT-constrained permitted set before attempting any asymptotic conclusion.
+
+### 2026-10-07 — expert outreach shortlist and connector check
+
+- Objective: Identify a small number of prominent, technically relevant researchers and prepare cautious, individualized requests for mathematical feedback.
+- Work performed: Searched and opened official institutional/professional pages for James Maynard, Kevin Ford, Kaisa Matomäki, Olivier Ramaré, and Terence Tao. Verified public professional contact details and research relevance. Checked the Outlook Email connector state.
+- Result: Four high-relevance candidates were documented with individualized drafts. Tao was explicitly excluded because his official policy declines unsolicited self-authored manuscripts and unrelated research troubleshooting. Outlook Email is enabled but not installed/connected, so no mailbox access or sending occurred.
+- Literature status: CIT-023 through CIT-027 added and checked against the actual official pages on 2026-10-07. These citations support only identity, public contact, research-area, and outreach-policy claims.
+- Data generated: `09_LITERATURE/OUTREACH_CANDIDATES_2026-10-07.md`; no mathematical computation or theorem verification was performed in this outreach stage.
+
+### Verification Checkpoint
+
+**Claims made:**
+- The four shortlisted researchers have publicly verified professional contact information and relevant research profiles.
+- Tao’s official policy makes unsolicited manuscript outreach inappropriate.
+- No email was sent because the connector is not connected and recipient approval remains required.
+
+**Sources used:**
+- CIT-023 through CIT-027, official institutional/professional pages.
+- `09_LITERATURE/OUTREACH_CANDIDATES_2026-10-07.md`.
+
+**Citations verified:**
+- CIT-023, CIT-024, CIT-025, CIT-026, and CIT-027 checked on 2026-10-07.
+
+**Claims not independently verified:**
+- Whether any researcher will respond or endorse the audit.
+- Whether the mathematical diagnosis is correct beyond the project’s recorded reasoning.
+
+**Computations actually run:**
+- No mathematical computation, Lean build, or formalization replay was run in this stage.
+
+**Proof status:**
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED.
+
+**Known uncertainties:**
+- The Outlook connector remains unconnected; sending is pending user confirmation and successful connection.
+
+**Next verification required:**
+- After connection, confirm the final recipient set and drafts before any send action; record any sent-message IDs and responses without inventing outcomes.
