@@ -1640,3 +1640,44 @@
 
 **Next verification required:**
 - If replies arrive, inspect and record them against the source-verification and claim-ledger protocol before adopting any mathematical claim.
+
+### 2026-10-09 — targeted k=6 extension of Barca Sieve II finite audit
+
+- Objective: Extend the finite residue-selection audit by one prime without overstating the result as an exhaustive (k=6) search.
+- Source verification: Rechecked Barca's explanatory page. It defines (c_k=(p_1-1)(p_2-2)\cdots(p_k-2)) and the source-normalized density (δ_k=c_k/(m_k/p_k)), so the EXP007 values (135/210) and the new δ_6 (=1485/2310=9/14) use the source's normalization.
+- Computation actually run: `03_CODE/barca_sieve2_k6_extension.py` fixed the EXP007 (k=5) minimizer and enumerated all 78 choices of two forbidden residues modulo 13. The smallest targeted count was 3, with witness survivors `(11, 41, 149)` for selection `((0,), (0,1), (0,2), (1,3), (1,9), (1,5))`.
+- Result: The targeted finite left density is at most (3/13), below the exact full-period source-normalized density (9/14). This is a finite model observation only; it is not an exhaustive (k=6) minimum, not an asymptotic result, and not a disproof of Strong Goldbach.
+- Data generated: `06_EXPERIMENTS/EXP008_BARCA_SIEVE2_K6_EXTENSION/RAW_OUTPUT.txt` and README; no raw output was discarded.
+
+### Verification Checkpoint
+
+**Claims made:**
+- The source-normalized full-period density for (k=6) is (9/14) under the stated model.
+- A targeted search over 78 extensions of the EXP007 (k=5) minimizer found a valid (k=6) choice with 3 survivors in `[1,169]`.
+
+**Sources used:**
+- Barca's explanatory page, CIT-022, especially its definitions of (c_k), δ_k, and the Sieve II residue rules.
+- The executed script and preserved raw output in EXP008.
+
+**Citations verified:**
+- CIT-022 was rechecked against the actual source page on 2026-10-09.
+
+**Claims not independently verified:**
+- The complete (k=6) minimum over all residue choices; this experiment did not enumerate all (5,405,400) choices and therefore makes no complete-minimum claim.
+- Any asymptotic consequence for (k\to\infty) or for Goldbach.
+
+**Computations actually run:**
+- Yes: the targeted Python enumeration ran successfully and matched the preserved raw output.
+- No Lean build or formal proof replay was run.
+
+**Proof status:**
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED.
+
+**Known uncertainties:**
+- The all-choice (k=6) minimum and all asymptotic behavior remain uncomputed and unproved.
+
+**Next verification required:**
+- If pursuing this line, implement an independently checked exhaustive or rigorously bounded (k=6) search; do not infer asymptotics from the targeted witness.

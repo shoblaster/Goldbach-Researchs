@@ -12,7 +12,7 @@ The reported density is `min_count / p_k`, matching the source’s normalization
 
 ## Results
 
-| k | p_k | full-period density | all choices | minimum count | minimum count / p_k | maximum count |
+| k | p_k | full-period source-normalized density \(\delta_k\) | all choices | minimum count | minimum count / p_k | maximum count |
 |---:|---:|---:|---:|---:|---:|---:|
 | 1 | 2 | 1.000000 | 2 | 2 | 1.000000 | 2 |
 | 2 | 3 | 0.500000 | 6 | 1 | 0.333333 | 2 |
@@ -22,6 +22,6 @@ The reported density is `min_count / p_k`, matching the source’s normalization
 
 ## Interpretation limits
 
-These are finite observations only. They show substantial dependence on the selected residues and that the left-block density is not automatically equal to the full-period average at small (k) (for example, (k=5) has minimum left density (3/11) versus full-period density (135/210)). They do **not** disprove an eventual asymptotic statement for the particular sieve, and they do not bear directly on the truth of Strong Goldbach.
+Here “density” uses Barca's source normalization: permitted count divided by the number of subintervals of size \(p_k\), not ordinary permitted-count divided by the full period length. These are finite observations only. They show substantial dependence on the selected residues and that the left-block density is not automatically equal to the full-period source-normalized average at small (k) (for example, (k=5) has minimum left density (3/11) versus \(\delta_5=135/210\)). They do **not** disprove an eventual asymptotic statement for the particular sieve, and they do not bear directly on the truth of Strong Goldbach.
 
 No external theorem, extrapolation, or novelty claim is made. The computation was actually run with Python on 2026-10-06; the exact terminal output is preserved in `RAW_OUTPUT.txt`.
