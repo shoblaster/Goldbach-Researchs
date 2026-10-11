@@ -1681,3 +1681,44 @@
 
 **Next verification required:**
 - If pursuing this line, implement an independently checked exhaustive or rigorously bounded (k=6) search; do not infer asymptotics from the targeted witness.
+
+### 2026-10-11 — exhaustive k=6 Sieve II search completed
+
+- Objective: Replace the EXP008 targeted (k=6) upper bound with a complete finite enumeration.
+- Source basis: The Sieve II rules and the source-normalized density definition were rechecked against CIT-022; no new external citation was introduced.
+- Computation actually run: `03_CODE/barca_sieve2_k6_exhaustive_bitmask.py` enumerated all (5,405,400) allowed residue selections using bit-mask intersections. For each minimizer, the script independently recomputed survivors directly from the modular definition.
+- Result: The exact finite minimum is 2 permitted indices in `[1,169]`; five minimizing selections were found, with survivors recorded in EXP009 raw output.
+- Interpretation: This confirms extreme finite dependence on residue selection and gives a sharper diagnostic of the left-block density-transfer issue. It is not an asymptotic result and does not prove or disprove Strong Goldbach.
+- Data generated: `06_EXPERIMENTS/EXP009_BARCA_SIEVE2_K6_EXHAUSTIVE/RAW_OUTPUT.txt` and README; all raw output preserved.
+
+### Verification Checkpoint
+
+**Claims made:**
+- All (5,405,400) allowed (k=6) residue selections were enumerated.
+- The exact minimum count in `[1,169]` is 2, with five minimizers.
+
+**Sources used:**
+- CIT-022, for the Sieve II selection rules.
+- Independent bit-mask implementation and direct modular survivor recomputation in EXP009.
+
+**Citations verified:**
+- No new citation; CIT-022 remains the source-verified definition used here.
+
+**Claims not independently verified:**
+- Any behavior for (k\ge7), any asymptotic lower bound, and any consequence for the truth of Strong Goldbach.
+
+**Computations actually run:**
+- Yes: complete (k=6) enumeration and direct witness checks ran successfully; raw output is preserved.
+- No Lean build or formal proof replay was run.
+
+**Proof status:**
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED.
+
+**Known uncertainties:**
+- The finite (k\ge7) minima and all asymptotic behavior remain unknown.
+
+**Next verification required:**
+- If continuing this line, extend the independently checked enumeration to (k=7) or derive a rigorous combinatorial bound; do not infer an asymptotic conclusion from the (k=6) result.
