@@ -1763,3 +1763,39 @@
 
 **Next verification required:**
 - If continuing, independently reproduce EXP010 and then investigate (k=8) with the same exact final-prime optimization; do not infer a general sequence from (k=6,7).
+
+### 2026-10-12 — technical-note draft created
+
+- Objective: Prepare a publication-appropriate draft that reports the finite audits without claiming a Goldbach proof, disproof, or unverified novelty.
+- Work performed: Created `11_PAPER/TECHNICAL_NOTE_DRAFT.md`, linking the verified source records CIT-021/CIT-022, the exact EXP007/EXP009/EXP010 results, preserved raw outputs, the proof-gap diagnosis, and explicit limitations.
+- Result: The project now has a draft suitable for expert review as a technical note or reproducibility report. It is not represented as a peer-reviewed paper or a claimed solution.
+
+### Verification Checkpoint
+
+**Claims made:**
+- The draft accurately reports the finite minima (2,1,2,2,3,2,4) for (k=1\ldots7) under the stated model.
+- The draft labels Strong Goldbach as open and the density-transfer step as PROOF GAP — NOT PROVED.
+
+**Sources used:**
+- CIT-021 and CIT-022; EXP007, EXP009, and EXP010 scripts and preserved raw outputs.
+
+**Citations verified:**
+- No new external citation; the existing verified records were reused.
+
+**Claims not independently verified:**
+- The draft's publication suitability, novelty relative to all literature, and peer-review outcome.
+
+**Computations actually run:**
+- No new mathematical computation in the drafting stage; the cited computations were previously run and preserved.
+
+**Proof status:**
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED.
+
+**Known uncertainties:**
+- Whether the finite audit is sufficiently distinct and significant for a particular journal or venue.
+
+**Next verification required:**
+- Obtain independent expert feedback and perform a broader literature search before making any novelty or publication claim.
