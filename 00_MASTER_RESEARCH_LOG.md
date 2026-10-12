@@ -1722,3 +1722,44 @@
 
 **Next verification required:**
 - If continuing this line, extend the independently checked enumeration to (k=7) or derive a rigorous combinatorial bound; do not infer an asymptotic conclusion from the (k=6) result.
+
+### 2026-10-12 — exact k=7 minimum by final-prime optimization
+
+- Objective: Determine the exact (k=7) minimum without redundantly iterating all 735,134,400 full selections.
+- Source basis: CIT-022's Sieve II rule permits exactly two fixed forbidden residues modulo each prime (p>2); no new external citation was introduced.
+- Computation actually run: For each of the 5,405,400 choices through 13, the script counted permitted indices in `[1,289]` by residue class modulo 17. Selecting the two largest classes is exactly equivalent to minimizing over every pair of forbidden residues modulo 17, so the reduction covers all 735,134,400 (k=7) selections.
+- Result: The exact minimum is 4 permitted indices. Ten minimizing examples and their directly reconstructed survivors are preserved in EXP010 raw output.
+- Interpretation: The finite minima are 2 at (k=6) and 4 at (k=7), despite increasing source-normalized full-period densities. This is a finite diagnostic of residue-position variability, not an asymptotic theorem and not a proof or disproof of Strong Goldbach.
+- Data generated: `06_EXPERIMENTS/EXP010_BARCA_SIEVE2_K7_EXACT/RAW_OUTPUT.txt` and README; all raw output preserved.
+
+### Verification Checkpoint
+
+**Claims made:**
+- The search is equivalent to all 735,134,400 allowed (k=7) selections.
+- The exact minimum permitted count in `[1,289]` is 4.
+
+**Sources used:**
+- CIT-022 for the residue-selection rules.
+- `03_CODE/barca_sieve2_k7_extension_search.py` and the preserved EXP010 output.
+
+**Citations verified:**
+- No new citation; CIT-022 remains the source-verified definition used here.
+
+**Claims not independently verified:**
+- Any behavior for (k\ge8), any asymptotic lower bound, and any consequence for the truth of Strong Goldbach.
+
+**Computations actually run:**
+- Yes: all 5,405,400 preceding choices were enumerated; the final modulo-17 minimization was exact by residue-class counts, and witnesses were reconstructed directly.
+- No Lean build or formal proof replay was run.
+
+**Proof status:**
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED.
+
+**Known uncertainties:**
+- The finite minima for (k\ge8) and all asymptotic behavior remain unknown.
+
+**Next verification required:**
+- If continuing, independently reproduce EXP010 and then investigate (k=8) with the same exact final-prime optimization; do not infer a general sequence from (k=6,7).
