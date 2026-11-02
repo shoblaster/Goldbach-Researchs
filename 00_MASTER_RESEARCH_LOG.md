@@ -2040,7 +2040,7 @@
 - Objective: Expand the literature search after EXP015 to test whether the two-class-per-odd-prime model is already represented in established terminology.
 - Sources checked: CIT-029 (`arXiv:1706.03668`) and CIT-030 (`arXiv:1706.00317`), both inspected at their actual arXiv HTML records.
 - Crucial interpretation: Ziller and Morack explicitly define and compute a paired Jacobsthal function for consecutive integer pairs, with two residue exclusions per odd prime tied to the pair difference, and connect a bound on this function to a tightened Goldbach statement. Their reported primorial table reaches (p=73). This is close prior art and materially weakens any novelty claim for the general two-class sieve direction.
-- Model boundary: The inspected paired model is not declared equivalent to EXP015. In the paired setting the two classes are linked by a fixed pair difference; EXP015 permits any two distinct residue classes independently at each odd prime. The exact relation between the two optimization problems remains UNVERIFIED.
+- **SUPERSEDED HISTORICAL INTERPRETATION:** The inspected paired model was initially described as not equivalent to EXP015 because the two classes were thought to be linked by a fixed pair difference. The ancillary inspection below corrected this: CRT gives the two-class-per-prime correspondence. The remaining objective-level distinction is recorded in the correction checkpoint below.
 - Publication consequence: EXP015 can be presented only as a finite audit/reproducibility computation unless a full literature comparison establishes a genuinely distinct question. No “new” or “first” wording is permitted.
 
 ### Verification Checkpoint
@@ -2154,3 +2154,44 @@
 
 **Next verification required:**
 - Inspect the paired-paper ancillary files and citation graph before extending the arbitrary-residue computation beyond k=8.
+
+### 2026-11-02 — correction after ancillary algorithm inspection
+
+- Trigger: The previous paired-model checkpoint asserted that the two forbidden classes were constrained by one global difference and that the paired model was merely a subset of EXP015. This was too strong.
+- Source verification: The actual ancillary PDF for Ziller–Morack, `https://arxiv.org/src/1706.03668v1/anc/full_details.pdf`, was inspected. Proposition 1.5 (pages 6–7; extracted lines 327–353) explicitly characterizes paired progressions by choosing two residue classes for each odd prime and gives the CRT converse.
+- Corrected conclusion: For a fixed finite interval, the distinct two-class residue model used by EXP015 has the same minimum survivor count as the paired residue-assignment model. Distinct assignments are induced by CRT; if a paired assignment has coincident classes at a prime, adding a second class can only reduce survivors, so the minima agree.
+- Remaining distinction: The published paired-Jacobsthal function (h_2) asks for a worst-translation maximum-gap threshold, whereas EXP015 minimizes a survivor count in the single window `[1,p_k^2]`. Equality of these objective functions is not claimed.
+- Integrity action: `CIT-031`, `CORRECTION_001_PAIRED_MODEL_BOUNDARY.md`, and the corrected `PROOF_FRONTIER_016_PAIRED_MODEL_BOUNDARY.md` were added. The earlier overstatement remains described in the correction record and is not silently erased.
+
+### Verification Checkpoint
+
+**Claims made:**
+- The previous subset/non-equivalence statement was incorrect and has been withdrawn.
+- The corrected finite definition-level equivalence follows from the inspected ancillary Proposition 1.5 and the elementary refinement argument for coincident classes.
+- EXP015 remains distinct from the (h_2) worst-translation objective; no novelty claim is made.
+
+**Sources used:**
+- CIT-031 ancillary PDF, plus CIT-029/CIT-030 for the paired-Jacobsthal definitions and Goldbach-linked objective.
+
+**Citations verified:**
+- CIT-031 was checked against the actual ancillary PDF, not a search snippet.
+
+**Claims not independently verified:**
+- Correctness of the Ziller–Morack computational algorithms or their full ancillary data.
+- Any published priority for the exact fixed-window minimum or MILP formulation.
+
+**Computations actually run:**
+- None; this was a source-verification and definition-correction stage.
+
+**Proof status:**
+- Finite model equivalence: PROVED at the definition level in corrected Proof Frontier 016.
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED; the paired model is direct prior art.
+
+**Known uncertainties:**
+- Whether the fixed-window survivor minima, rather than (h_2), are tabulated in the ancillary data or other literature.
+
+**Next verification required:**
+- Inspect the ancillary data files and compare their exact finite objective with EXP015 before extending computations.

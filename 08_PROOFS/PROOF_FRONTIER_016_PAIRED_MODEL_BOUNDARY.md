@@ -1,35 +1,41 @@
-# Proof frontier 016 — boundary between arbitrary-residue and paired models
+# Proof frontier 016 — corrected boundary between arbitrary-residue and paired models
 
-**Status:** elementary definition-level relation; no novelty claim.  
+**Status:** corrected elementary definition-level relation; no novelty claim.
 **Date:** 2026-11-02
 
 Let P_k be the primes through p_k. The Barca finite model chooses one
 forbidden class modulo 2 and two distinct forbidden classes modulo every odd
 prime. Call this family of choices A_k.
 
-Fix an even integer d and a starting integer a. For a paired progression
-(a+i, a+d+i), a prime p excludes an index i when
+Fix integers a,b with even difference. For the paired progression
+(a+i,b+i), a prime p excludes an index i when
 
-    i = -a (mod p) or i = -a-d (mod p).
+    i = -a (mod p) or i = -b (mod p).
 
-If p does not divide d, these are two distinct classes for odd p; modulo 2
-they coincide because d is even. Thus, when no odd p <= p_k divides d, the
-paired progression induces a member of A_k. If an odd prime divides d, the two
-classes coincide; adding any second forbidden class produces a member of A_k
-whose survivor set is a subset of the paired survivor set.
+If p does not divide b-a, these are two distinct classes for odd p; modulo 2
+they coincide because b-a is even. Conversely, given arbitrary residue pairs
+(r_p,s_p) at the primes, the Chinese remainder theorem produces a and b
+satisfying a=-r_p and b=-s_p modulo every p. Thus every arbitrary two-class
+selection with distinct odd-prime classes is induced by a paired progression.
+This is the key point made explicitly in the Ziller–Morack ancillary algorithm
+note (their Proposition 1.5, for the condensed odd-prime formulation).
 
-Consequently, for every fixed paired progression and finite interval I,
+If an odd prime divides b-a, the two paired classes coincide. Choosing any
+second distinct forbidden class at that prime can only decrease the finite
+survivor set. Therefore, when minimizing a survivor count over a fixed finite
+interval, allowing coincident paired classes cannot produce a smaller minimum
+than the distinct-class model: a coincident choice can be refined by adding a
+class.
 
-    min_{F in A_k} |S(F; I)| <= |S_paired(a,d; I)|,
+Consequently, the finite minimum over A_k agrees with the minimum over paired
+residue assignments for the same fixed interval. It is **not**, however,
+identical to the paired-Jacobsthal function h_2: h_2 is a maximum-gap /
+translation quantity (the least length guaranteeing a survivor for every
+paired progression), whereas EXP015 minimizes the number of survivors in one
+fixed interval [1,p_k^2].
 
-where S(F; I) is the set of indices avoiding all selected classes. This is
-only a one-way comparison. The arbitrary model allows each pair of classes to
-be chosen independently at each prime, while the paired model links them by a
-single global difference d. Also, the paired-Jacobsthal function studied by
-Ziller and Morack is a maximum-gap/translation quantity, not the survivor
-count in one fixed interval [1,p_k^2].
-
-Therefore the verified Ziller–Morack sources are close prior art, but the
-EXP015 optimization is not declared equivalent to their h_2 values. Any claim
-that the two problems are identical is **UNVERIFIED**. This boundary does not
-imply a new theorem or a novelty result.
+Therefore the verified Ziller–Morack ancillary algorithms are directly
+relevant prior art for the residue-selection model. EXP015 is not claimed to
+reproduce their h_2 table, and no novelty claim is made. Any stronger claim
+about priority or published equivalence of the exact fixed-window minima is
+**UNVERIFIED**.

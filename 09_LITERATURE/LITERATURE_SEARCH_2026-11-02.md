@@ -25,25 +25,30 @@ k-tuples, primorial-period density, and extremal counts in the initial interval
    [arXiv:1706.03668](https://arxiv.org/abs/1706.03668). The source defines a
    paired Jacobsthal function and reports exact primorial values through
    (p=73), including (h_2(8)=258). Its two forbidden classes per odd prime
-   are constrained by a fixed pair difference, so this is related prior art,
-   not the same arbitrary-residue model.
+   are part of the paired-progression formulation.
 5. Mario Ziller and John F. Morack, *Divisibility in paired progressions,
    Goldbach's conjecture, and the infinitude of prime pairs*,
    [arXiv:1706.00317](https://arxiv.org/abs/1706.00317). The source states a
    conditional bound on the paired Jacobsthal function sufficient for a
    tightened Goldbach statement. This connection is recorded for scope and
    does not verify the source's proof independently.
+6. The ancillary algorithm note,
+   [full_details.pdf](https://arxiv.org/src/1706.03668v1/anc/full_details.pdf),
+   was inspected after the initial search. Proposition 1.5 states that paired
+   progressions can be characterized by choosing two residue classes for each
+   odd prime and gives the CRT converse.
 
 ## Search outcome
 
 - Related Goldbach sieve literature exists.
-- The paired-Jacobsthal literature is directly relevant to the general
-  two-class-per-prime theme, and it substantially weakens any novelty claim.
-  The exact equivalence to the arbitrary-residue EXP015 MILP was not
-  established: the paired papers constrain the two classes to arise from a
-  fixed pair difference, whereas EXP015 allows any two distinct classes.
+- The paired-Jacobsthal literature is directly relevant to the two-class-
+  per-prime model and substantially weakens any novelty claim. The inspected
+  ancillary file gives a CRT characterization of the same residue-selection
+  structure. The remaining difference is the objective: h_2 is a
+  worst-translation maximum-gap quantity, whereas EXP015 counts survivors in
+  one fixed interval [1,p_k^2].
 - No directly matching publication was verified for the exact EXP007–EXP015
-  arbitrary-residue optima or full histograms.
+  fixed-window optima or full histograms.
 - This is **not** evidence that the computations are novel. A broader search
   of books, papers, conference proceedings, and citation graphs is still
   required before any novelty statement.

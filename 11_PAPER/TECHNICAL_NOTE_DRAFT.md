@@ -31,10 +31,11 @@ periodic Sieve II sequence, selects one residue modulo 2 and two residues modulo
 each later prime, and studies permitted indices in ([1,p_k^2]).
 
 This note uses the project's verified records `CIT-021` and `CIT-022` in
-`09_LITERATURE/CITATION_VERIFICATION.md`. Related paired-Jacobsthal work is
-recorded in `CIT-029` and `CIT-030`; its constrained pair-difference model is
-not asserted equivalent to the arbitrary-residue model here. No novelty claim
-is made. All raw
+`09_LITERATURE/CITATION_VERIFICATION.md`. Paired-Jacobsthal work is recorded
+in `CIT-029`–`CIT-031`; its ancillary algorithm note gives a CRT
+characterization using two residue classes per odd prime. The fixed-window
+survivor objective here is not asserted identical to their h_2 objective. No
+novelty claim is made. All raw
 outputs and scripts are preserved under `06_EXPERIMENTS/`.
 
 ## 2. Finite model
@@ -131,8 +132,8 @@ This draft does not claim:
 
 Before journal submission, the author should obtain an independent mathematical
 check of the model and search the literature more broadly for equivalent finite
-wheel/interval-sieve computations, including the paired-Jacobsthal literature.
-A suitable submission category would be a
+wheel/interval-sieve computations, including the paired-Jacobsthal ancillary
+algorithms. A suitable submission category would be a
 technical note, reproducibility report, or preprint focused on the audited
 proof step—not a claimed solution of Goldbach.
 
@@ -164,3 +165,6 @@ status for each result.
 4. Mario Ziller; John F. Morack, *Divisibility in paired progressions,
    Goldbach’s conjecture, and the infinitude of prime pairs*,
    [arXiv:1706.00317](https://arxiv.org/abs/1706.00317).
+5. Mario Ziller; John F. Morack, *On the computation of the generalised
+   Jacobsthal function for paired progressions*, ancillary file,
+   [full_details.pdf](https://arxiv.org/src/1706.03668v1/anc/full_details.pdf).
