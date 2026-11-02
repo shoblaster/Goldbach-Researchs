@@ -38,6 +38,11 @@ k-tuples, primorial-period density, and extremal counts in the initial interval
    progressions can be characterized by choosing two residue classes for each
    odd prime and gives the CRT converse.
 
+The ancillary note also gives an ILP with exactly two selected nonzero
+residues per odd prime and coverage constraints for every position. EXP017
+implemented that formulation independently and reproduced the source table
+through (p=19): (h_2=18,30,66,150,192,258) for (k=3,ldots,8).
+
 ## Search outcome
 
 - Related Goldbach sieve literature exists.
@@ -49,6 +54,10 @@ k-tuples, primorial-period density, and extremal counts in the initial interval
   one fixed interval [1,p_k^2].
 - No directly matching publication was verified for the exact EXP007–EXP015
   fixed-window optima or full histograms.
+- The source-side ILP is structurally close to EXP015. EXP017 confirms the
+  paired-Jacobsthal table, so the finite optimization direction is established
+  prior art; only the fixed-window survivor-count objective remains a possible
+  scope distinction, not a novelty claim.
 - This is **not** evidence that the computations are novel. A broader search
   of books, papers, conference proceedings, and citation graphs is still
   required before any novelty statement.

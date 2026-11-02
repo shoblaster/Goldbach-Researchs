@@ -2195,3 +2195,44 @@
 
 **Next verification required:**
 - Inspect the ancillary data files and compare their exact finite objective with EXP015 before extending computations.
+
+### 2026-11-02 — independent paired-Jacobsthal ILP cross-check
+
+- Objective: Reproduce the source's paired-Jacobsthal finite table with an independent implementation after discovering that its ancillary ILP is structurally close to EXP015.
+- Source basis: CIT-032's ancillary ILP (two nonzero residues per odd prime plus coverage constraints) and relation (h_2(k)=6\omega_2(k)+6).
+- Computation actually run: `03_CODE/paired_jacobsthal_ilp_crosscheck.py` using SciPy 1.17.1/HiGHS. For k=3,...,8 it searched the largest feasible covered length and reconstructed h2.
+- Result: Reproduced `h2 = 18, 30, 66, 150, 192, 258`, matching the source table through (p=19), including (h_2(8)=258).
+- Interpretation: The finite two-class residue-selection/ILP direction is established prior art. EXP015's fixed-window survivor-count objective may still be a different statistic, but no novelty is claimed and the source-side formulation substantially narrows the scope.
+- Data generated: EXP017 code, README, and raw output.
+
+### Verification Checkpoint
+
+**Claims made:**
+- EXP017 independently reproduces the source's paired-Jacobsthal table for k=3,...,8.
+- The source's ILP formulation is structurally close to EXP015 and is now independently cross-checked.
+- This result weakens any novelty claim for the general finite two-class sieve optimization.
+
+**Sources used:**
+- CIT-032 ancillary PDF, plus executed EXP017 code/output.
+
+**Citations verified:**
+- The ILP constraints and (h_2=6\omega_2+6) relation were checked against the actual ancillary PDF.
+
+**Claims not independently verified:**
+- Correctness of the source's full algorithms beyond the reproduced finite table.
+- Whether the exact EXP015 fixed-window minima are already tabulated in ancillary data or other literature.
+
+**Computations actually run:**
+- Yes: independent MILP feasibility searches and reconstructed values for k=3,...,8.
+
+**Proof status:**
+- Finite cross-check only; Strong Goldbach remains OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED; direct prior art verified.
+
+**Known uncertainties:**
+- Whether a fixed-window count statistic beyond (h_2) has independent literature status.
+
+**Next verification required:**
+- Compare the source ancillary output files directly with EXP015's survivor-count objective before proposing any further computation or paper claim.

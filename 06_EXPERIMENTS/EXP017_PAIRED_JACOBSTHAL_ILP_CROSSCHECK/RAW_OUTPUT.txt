@@ -1,0 +1,10 @@
+Command: python 03_CODE/paired_jacobsthal_ilp_crosscheck.py
+Environment: Python 3.14.4; SciPy 1.17.1; scipy.optimize.milp/HiGHS
+Date: 2026-11-02
+
+k 3 p_k 5 omega2 2 reconstructed_h2 18
+k 4 p_k 7 omega2 4 reconstructed_h2 30
+k 5 p_k 11 omega2 10 reconstructed_h2 66
+k 6 p_k 13 omega2 24 reconstructed_h2 150
+k 7 p_k 17 omega2 31 reconstructed_h2 192
+k 8 p_k 19 omega2 42 reconstructed_h2 258

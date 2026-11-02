@@ -89,6 +89,12 @@ modular recomputation matched the solver's survivor variables. This is an
 exact finite computation, not a solver-independent formal certificate and not
 an asymptotic result.
 
+EXP017 independently implemented the paired-Jacobsthal ILP described in the
+Ziller–Morack ancillary file and reproduced its h_2 values through k=8. This
+confirms that the general two-class finite ILP direction is established prior
+art. The note therefore makes no novelty claim; EXP015 is retained only as an
+audit of the fixed-window survivor-count objective.
+
 EXP011 measures the full count distribution for every choice through (k=6).
 It verifies that the uniform-choice mean equals (p_k\delta_k) exactly, while
 the worst-case left count can be much smaller. At (k=6), the mean count is
