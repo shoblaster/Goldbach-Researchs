@@ -21,7 +21,7 @@ from scipy.sparse import lil_matrix
 
 
 def solve(k: int) -> None:
-    primes = (2, 3, 5, 7, 11, 13, 17, 19)[:k]
+    primes = (2, 3, 5, 7, 11, 13, 17, 19, 23)[:k]
     limit = primes[-1] ** 2
 
     x_offset = {}

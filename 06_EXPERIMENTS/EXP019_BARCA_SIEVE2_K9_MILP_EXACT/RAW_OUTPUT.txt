@@ -1,0 +1,10 @@
+Command: python 03_CODE/barca_sieve2_milp_exact.py 9
+Environment: Python 3.14.4; SciPy 1.17.1; scipy.optimize.milp/HiGHS
+Date: 2026-11-02
+
+k 9 status 0 Optimization terminated successfully. (HiGHS Status 7: Optimal)
+objective 5.0000000000000115 mip_gap 0.0 mip_node_count 555
+k 9 limit 529 exact_minimum 5
+selected ((1,), (0, 2), (0, 2), (1, 4), (3, 8), (3, 10), (0, 11), (0, 2), (1, 19))
+survivors (178, 196, 286, 376, 394)
+direct_match True

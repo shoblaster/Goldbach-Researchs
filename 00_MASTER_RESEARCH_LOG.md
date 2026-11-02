@@ -2286,3 +2286,48 @@
 
 **Next verification required:**
 - If pursuing a paper, obtain independent mathematical review and perform a broader citation-graph/database search before describing EXP015/EXP018 as a contribution. Do not claim a proof or novelty from these finite data.
+
+### 2026-11-02 — exact k=9 fixed-window extension
+
+- Objective: Stress-test the finite MILP beyond the previously recorded k=8 boundary without changing the mathematical model.
+- Code change: Added p_9=23 to `03_CODE/barca_sieve2_milp_exact.py`; the earlier EXP015 raw output remains preserved and unchanged.
+- Computation actually run: `python 03_CODE/barca_sieve2_milp_exact.py 9` under Python 3.14.4, SciPy 1.17.1, and HiGHS. The solver returned status 0/optimal, MIP gap 0.0, and 555 branch-and-bound nodes.
+- Result: In `[1,23^2]=[1,529]`, the exact minimum is 5. One optimal witness selects `((1,), (0,2), (0,2), (1,4), (3,8), (3,10), (0,11), (0,2), (1,19))` and leaves survivors `(178,196,286,376,394)`. Direct modular recomputation matched the MILP survivor variables.
+- Interpretation: This adds one verified finite data point; it does not establish a monotone law, asymptotic lower bound, proof of Goldbach, or novelty. The result is compatible with the prior-art/interval-sieve assessment.
+- Data generated: `06_EXPERIMENTS/EXP019_BARCA_SIEVE2_K9_MILP_EXACT/RAW_OUTPUT.txt` and README.
+
+### Verification Checkpoint
+
+**Claims made:**
+- EXP019 solved the stated k=9 finite MILP to the solver's reported optimum with zero MIP gap.
+- The exact witness was independently recomputed by the script's direct modular filter.
+- The result is finite evidence only; no asymptotic or publication claim is made.
+
+**Sources used:**
+- Self-contained MILP formulation in `08_PROOFS/LEMMA_003_SIEVE2_MILP_FORMULATION.md` and previously source-checked Barca model (CIT-021/CIT-022).
+
+**Citations verified:**
+- No new external citation; the model source and formulation were already verified in prior checkpoints.
+
+**Claims not independently verified:**
+- Any pattern beyond k=9.
+- Any published-priority or novelty claim for the k=9 value.
+
+**Computations actually run:**
+- Yes: HiGHS MILP at k=9; direct modular witness check returned `direct_match True`.
+
+**Data generated:**
+- `06_EXPERIMENTS/EXP019_BARCA_SIEVE2_K9_MILP_EXACT/RAW_OUTPUT.txt`.
+
+**Proof status:**
+- Finite optimizer formulation: PROVED in Lemma 003; k=9 result: EXACT COMPUTATIONAL RESULT.
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED; this extension does not change the prior-art assessment.
+
+**Known uncertainties:**
+- No independent solver implementation or formal certificate beyond the recorded HiGHS run and direct witness check.
+
+**Next verification required:**
+- If extending further, use an independent solver/checker or a reproducible certificate and update the raw-data record; do not infer a theorem from the sequence of finite minima.

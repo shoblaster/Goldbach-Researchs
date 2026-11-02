@@ -9,14 +9,16 @@
 This note audits a specific step in Ricardo Barca's proposed Sieve II argument
 for binary Goldbach: transferring a full-period normalized density of permitted
 residue tuples to the initial interval ([1,p_k^2]). We formalize the finite
-residue-selection model stated in the source and exhaustively compute the left-
-interval minimum for (k\le 8). The exact minima are (2,1,2,2,3,2,4,4) for
-(k=1,\ldots,8), respectively. The (k=6) computation enumerates all
+residue-selection model stated in the source and compute the left-interval
+minimum through (k\le 9). The exact minima are
+(2,1,2,2,3,2,4,4,5) for (k=1,\ldots,9), respectively. The (k=6) computation enumerates all
 5,405,400 selections directly. The (k=7) computation is equivalent to all
 735,134,400 selections by optimizing the final pair of forbidden residue
 classes exactly. The (k=8) result is obtained from an exact 0–1 mixed-integer
 formulation, checked against the direct results for k<=7 and by direct
-recomputation of the returned witness. These results demonstrate finite
+recomputation of the returned witness. EXP019 extends the same exact MILP to
+(k=9), where the optimum is 5 with survivors (178,196,286,376,394), again with
+direct modular agreement. These results demonstrate finite
 dependence on residue placement, but they do not establish an asymptotic
 counterexample or settle Strong Goldbach. The source-level audit identifies the remaining logical issue:
 a full-period average does not by itself provide the required uniform lower
@@ -76,6 +78,7 @@ selections without redundant iteration.
 | 6 | 13 | 2 | exhaustive |
 | 7 | 17 | 4 | exhaustive via exact final-prime optimization |
 | 8 | 19 | 4 | exact 0–1 MILP, cross-checked on k<=7 |
+| 9 | 23 | 5 | exact 0–1 MILP, direct witness recomputation |
 
 The exact raw outputs are `EXP007.../RAW_OUTPUT.txt`,
 `EXP009.../RAW_OUTPUT.txt`, and `EXP010.../RAW_OUTPUT.txt`.
