@@ -81,6 +81,13 @@ the worst-case left count can be much smaller. At (k=6), the mean count is
 the source's average-density statement from the uniform worst-case lower bound
 needed by the proof.
 
+EXP013 gives an exact finite second-moment formula by summing local joint
+survival probabilities over ordered pairs of indices. It reproduces the
+exhaustive variances through (k=6) and gives variance (165639/66248) at
+(k=7) without enumerating all (k=7) residue choices. This is a finite
+probabilistic description of the model, not an asymptotic concentration
+theorem.
+
 ## 4. Interpretation
 
 The finite minima are not equal to the source-normalized full-period averages

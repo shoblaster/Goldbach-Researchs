@@ -1876,6 +1876,46 @@
 **Next verification required:**
 - Complete the focused literature search before finalizing a preprint claim.
 
+### 2026-11-02 — exact second-moment formula and k=7 moment computation
+
+- Objective: Derive a finite analytic formula for the variance of the random residue-selection count, rather than relying only on enumeration.
+- Work performed: Added `08_PROOFS/LEMMA_002_SIEVE2_RANDOM_MOMENTS.md` with the local one-index and two-index survival probabilities, and implemented them in `03_CODE/barca_sieve2_moments.py`.
+- Computation actually run: Exact ordered-pair sums for every (k\le7), including (k=7) without enumerating its 735,134,400 residue selections. The (k\le6) variances reproduce EXP011.
+- Result: The exact (k=7) variance is (165639/66248), with mean (2295/182). This quantifies the finite random-model spread but gives no lower bound on the minimum over choices.
+- Integrity correction: The first implementation accidentally summed local one-point probabilities instead of multiplying them. The error was detected before acceptance, the code was fixed, and the raw output was replaced with the verified run.
+- Data generated: EXP013 script, proof record, and raw output.
+
+### Verification Checkpoint
+
+**Claims made:**
+- Lemma 002 gives exact finite first- and second-moment identities for the stated random model.
+- EXP013 reproduces the exhaustive EXP011 variances for (k\le6) and computes (k=7) moments exactly.
+
+**Sources used:**
+- CIT-022 for the residue-selection rules.
+- Self-contained Lemma 002 proof and executed EXP013 code/output.
+
+**Citations verified:**
+- No new external citation.
+
+**Claims not independently verified:**
+- Any asymptotic concentration, minimum, or implication for Strong Goldbach.
+
+**Computations actually run:**
+- Yes: exact ordered-pair computations for (k\le7); initial coding error corrected and rerun.
+
+**Proof status:**
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED.
+
+**Known uncertainties:**
+- Whether equivalent moment identities occur in prior sieve literature.
+
+**Next verification required:**
+- Search specifically for prior probabilistic/second-moment analyses of finite wheel residue selections before claiming novelty.
+
 ### 2026-11-02 — focused novelty-search checkpoint
 
 - Objective: Search for directly matching literature on the exact finite Sieve II residue-selection and initial-interval extremal problem.

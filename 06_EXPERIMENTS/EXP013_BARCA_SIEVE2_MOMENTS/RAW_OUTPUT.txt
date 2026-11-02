@@ -1,0 +1,7 @@
+k=1 p_k=2 limit=4 mean=2 second_moment=4 variance=0
+k=2 p_k=3 limit=9 mean=3/2 second_moment=5/2 variance=1/4
+k=3 p_k=5 limit=25 mean=5/2 second_moment=13/2 variance=1/4
+k=4 p_k=7 limit=49 mean=7/2 second_moment=272/21 variance=59/84
+k=5 p_k=11 limit=121 mean=99/14 second_moment=39423/770 variance=12867/10780
+k=6 p_k=13 limit=169 mean=117/14 second_moment=65101/910 variance=21629/12740
+k=7 p_k=17 limit=289 mean=2295/182 second_moment=16797/104 variance=165639/66248
