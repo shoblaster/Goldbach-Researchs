@@ -1,0 +1,25 @@
+restart 0 best 6
+restart 1 best 5
+restart 2 best 4
+restart 3 best 4
+restart 4 best 4
+restart 5 best 4
+restart 6 best 4
+restart 7 best 4
+restart 8 best 4
+restart 9 best 4
+restart 10 best 4
+restart 11 best 4
+restart 12 best 4
+restart 13 best 4
+restart 14 best 4
+restart 15 best 4
+restart 16 best 4
+restart 17 best 4
+restart 18 best 4
+restart 19 best 4
+BEST 4
+selection ((1,), (1, 2), (1, 4), (5, 6), (7, 8), (3, 6), (6, 15))
+forbidden19 (2, 3)
+survivors (72, 102, 252, 330)
+before 8

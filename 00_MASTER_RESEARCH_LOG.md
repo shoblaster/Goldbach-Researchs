@@ -1916,6 +1916,45 @@
 **Next verification required:**
 - Search specifically for prior probabilistic/second-moment analyses of finite wheel residue selections before claiming novelty.
 
+### 2026-11-02 — exploratory k=8 optimization pivot
+
+- Objective: Explore the next finite level after exact (k=7), where direct enumeration is too large.
+- Computation actually run: Fixed-seed simulated annealing (`SEED=20261102`, 20 restarts, 5,000 iterations each) over the first seven prime choices; the two forbidden residue classes modulo 19 were optimized exactly at every state.
+- Result: A witness with 4 permitted indices in `[1,361]` was found. This is exploratory only: no exact minimum, lower bound, or asymptotic claim is made.
+- Interpretation: The result is a candidate for a future exact branch-and-bound/constraint search, not a prominent theorem.
+- Data generated: EXP014 script, README, and raw output.
+
+### Verification Checkpoint
+
+**Claims made:**
+- The fixed-seed heuristic run found the recorded (k=8) witness.
+
+**Sources used:**
+- CIT-022 for the finite residue-selection rules.
+- Executed EXP014 script and preserved raw output.
+
+**Citations verified:**
+- No new external citation.
+
+**Claims not independently verified:**
+- The exact (k=8) minimum; this heuristic does not establish it.
+- Any asymptotic consequence or novelty.
+
+**Computations actually run:**
+- Yes: 20 fixed-seed restarts with 5,000 iterations each.
+
+**Proof status:**
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED.
+
+**Known uncertainties:**
+- Whether a rigorous exact (k=8) optimization can be made computationally feasible.
+
+**Next verification required:**
+- Develop an independently checked branch-and-bound or SAT/ILP formulation before interpreting the heuristic witness.
+
 ### 2026-11-02 — focused novelty-search checkpoint
 
 - Objective: Search for directly matching literature on the exact finite Sieve II residue-selection and initial-interval extremal problem.
