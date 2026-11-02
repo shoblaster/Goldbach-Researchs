@@ -1,0 +1,11 @@
+Command: python 03_CODE/barca_sieve2_k8_moments.py
+Environment: Python 3.14.4
+Date: 2026-11-02
+
+k=8 p_k=19 limit=361
+mean 2565/182
+second_moment 4183559/20748
+variance 1422011/472017
+variance_decimal 3.012626663870157
+minimum_from_EXP015 4
+minimum_to_mean_ratio 728/2565

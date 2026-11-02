@@ -2075,3 +2075,45 @@
 
 **Next verification required:**
 - Compare the formal definitions line-by-line with the paired-Jacobsthal ancillary algorithms and search citation graphs before deciding whether this direction is worth extending.
+
+### 2026-11-02 — exact k=8 moment extension
+
+- Objective: Quantify the random-residue distribution at k=8 independently of the EXP015 optimization mechanism.
+- Computation actually run: `03_CODE/barca_sieve2_k8_moments.py` summed exact local two-index probabilities over all ordered pairs in `[1,361]^2` using rational arithmetic.
+- Result: mean `2565/182`, second moment `4183559/20748`, variance `1422011/472017` (approximately `3.012626663870157`). The EXP015 minimum 4 has mean ratio `728/2565`.
+- Integrity correction: A manually prepared pre-run placeholder accidentally contained the k=7 moment values. The script execution detected the mismatch; the raw file was corrected to the actual k=8 output and `EXP016.../CORRECTION.md` preserves the correction history. The placeholder was not an executed result.
+- Interpretation: The k=8 optimum is a low-tail finite value under the uniform random-residue model. This is descriptive only and supplies no concentration theorem, asymptotic minimum, or Goldbach implication.
+- Data generated: EXP016 code, README, raw output, and correction record.
+
+### Verification Checkpoint
+
+**Claims made:**
+- EXP016 computes exact finite first and second moments for k=8 in the stated random model.
+- The recorded mean and variance are independent of the EXP015 MILP objective and are rationally recomputed from local probabilities.
+- The correction history is preserved and the accepted raw output is the actual executed output.
+
+**Sources used:**
+- Self-contained Lemma 002 moment identities and executed EXP016 code/output.
+
+**Citations verified:**
+- No new external citation.
+
+**Claims not independently verified:**
+- Any asymptotic concentration or implication of the finite moment values.
+- Literature novelty of the k=8 moment computation.
+
+**Computations actually run:**
+- Yes: exact rational ordered-pair summation over 361^2 pairs.
+
+**Proof status:**
+- Finite moment identity: PROVED in Lemma 002.
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED; paired-Jacobsthal prior art remains relevant.
+
+**Known uncertainties:**
+- Whether equivalent k=8 moment formulas have appeared in prior probabilistic sieve work.
+
+**Next verification required:**
+- Keep the moment result as a finite diagnostic and prioritize definition-level comparison with paired-Jacobsthal algorithms over unbounded extrapolation.
