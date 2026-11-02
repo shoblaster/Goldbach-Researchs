@@ -9,7 +9,9 @@ is the Ziller--Morack paired-Jacobsthal value reproduced by EXP017.
 
 The script does not rerun an optimizer. It reads the preserved raw outputs of
 EXP015 and EXP017, computes the deterministic floor bound, and asserts that the
-bound is satisfied. The mathematical justification and limitations are in
+bound is satisfied. The source h2 values for k=1,2,9 are taken directly from
+the inspected Ziller--Morack table because EXP017 cross-checked k=3,...,8.
+The mathematical justification and limitations are in
 `08_PROOFS/PROOF_FRONTIER_017_OBJECTIVE_COMPARISON.md`.
 
 Command:

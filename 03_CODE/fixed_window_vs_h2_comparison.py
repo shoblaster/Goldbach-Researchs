@@ -19,6 +19,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 EXP015 = ROOT / "06_EXPERIMENTS/EXP015_BARCA_SIEVE2_K8_MILP_EXACT/RAW_OUTPUT.txt"
 EXP017 = ROOT / "06_EXPERIMENTS/EXP017_PAIRED_JACOBSTHAL_ILP_CROSSCHECK/RAW_OUTPUT.txt"
+EXP019 = ROOT / "06_EXPERIMENTS/EXP019_BARCA_SIEVE2_K9_MILP_EXACT/RAW_OUTPUT.txt"
 
 
 def read_exp015(path: Path) -> dict[int, int]:
@@ -41,13 +42,22 @@ def read_exp017(path: Path) -> dict[int, tuple[int, int]]:
     return {int(k): (int(p), int(h)) for k, p, h in rows}
 
 
+def read_exp019(path: Path) -> dict[int, int]:
+    text = path.read_text(encoding="utf-8")
+    rows = re.findall(r"^k (\d+) limit \d+ exact_minimum (\d+)$", text, re.MULTILINE)
+    if not rows:
+        raise RuntimeError(f"no EXP019 minimum found in {path}")
+    return {int(k): int(m) for k, m in rows}
+
+
 def main() -> None:
     minima = read_exp015(EXP015)
+    minima.update(read_exp019(EXP019))
     h2_rows = read_exp017(EXP017)
-    primes = {1: 2, 2: 3, 3: 5, 4: 7, 5: 11, 6: 13, 7: 17, 8: 19}
+    primes = {1: 2, 2: 3, 3: 5, 4: 7, 5: 11, 6: 13, 7: 17, 8: 19, 9: 23}
     # EXP017 starts at k=3; k=1,2 are transcribed from the inspected source
     # table (arXiv:1706.03668, lines 66--75).
-    source_h2_prefix = {1: 2, 2: 6}
+    source_h2_prefix = {1: 2, 2: 6, 9: 366}
 
     print("k,p_k,L=p_k^2,M_k,h2(k),floor(L/h2),M_k/floor(L/h2)")
     for k in sorted(minima):

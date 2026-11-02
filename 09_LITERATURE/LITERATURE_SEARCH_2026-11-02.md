@@ -78,9 +78,11 @@ through (p=19): (h_2=18,30,66,150,192,258) for (k=3,ldots,8).
   peer reviewed. These findings further lower confidence that EXP015's finite
   statistic is publishably novel without a much broader comparison.
 - EXP018 formalizes and executes the elementary comparison
-  M_k >= floor(p_k^2/h_2(k)); for k=3,...,8 the h_2 guarantee is only one
-  survivor in the p_k^2 window while EXP015's exact minima are larger. This
-  separates the finite objectives but is not a new asymptotic result.
+  M_k >= floor(p_k^2/h_2(k)); for k=3,...,9 the h_2 guarantee is only one
+  survivor in the p_k^2 window while the exact MILP minima are larger. The
+  k=9 h_2 value is source-transcribed because EXP017 independently cross-checked
+  only through k=8. This separates the finite objectives but is not a new
+  asymptotic result.
 - The source-side ILP is structurally close to EXP015. EXP017 confirms the
   paired-Jacobsthal table, so the finite optimization direction is established
   prior art; only the fixed-window survivor-count objective remains a possible

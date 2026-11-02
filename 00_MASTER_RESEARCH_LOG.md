@@ -2331,3 +2331,45 @@
 
 **Next verification required:**
 - If extending further, use an independent solver/checker or a reproducible certificate and update the raw-data record; do not infer a theorem from the sequence of finite minima.
+
+### 2026-11-02 — EXP018 comparison extended to k=9
+
+- Objective: Include the newly computed EXP019 minimum in the fixed-window versus h_2 comparison without overwriting the prior k<=8 record.
+- Source input: CIT-029's inspected table gives h_2(9)=366 at p_9=23. EXP017 itself cross-checked h_2 only through k=8, so the k=9 source value is explicitly marked as transcribed rather than independently recomputed.
+- Computation actually run: Updated `03_CODE/fixed_window_vs_h2_comparison.py` to read EXP019 and the source h_2 prefix value, then reran it. All assertions passed.
+- Result: For k=9, p_9^2=529, M_9=5, h_2(9)=366, and floor(529/366)=1. The complete comparison now covers k=1,...,9.
+- Interpretation: The objective separation persists at k=9; this remains a finite diagnostic and not a novelty or asymptotic result.
+
+### Verification Checkpoint
+
+**Claims made:**
+- EXP018's rerun includes the executed EXP019 minimum and the source-verified h_2(9)=366 value.
+- The finite block inequality remains satisfied for every listed k=1,...,9.
+
+**Sources used:**
+- CIT-029 for h_2(9)=366; raw outputs from EXP015, EXP017, and EXP019.
+
+**Citations verified:**
+- CIT-029's table row for p_9=23 and h_2(9)=366 was inspected directly.
+
+**Claims not independently verified:**
+- The h_2(9) value was not independently solved in EXP017; it is source-transcribed.
+- No novelty or priority claim for M_9.
+
+**Computations actually run:**
+- Yes: EXP018 comparison rerun; all assertions passed.
+
+**Data generated:**
+- Updated `06_EXPERIMENTS/EXP018_FIXED_WINDOW_H2_COMPARISON/RAW_OUTPUT.txt`.
+
+**Proof status:**
+- Finite block bound: PROVED for the stated definitions; Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED.
+
+**Known uncertainties:**
+- h_2(9) remains source-reported rather than independently cross-checked in this repository.
+
+**Next verification required:**
+- If extending beyond k=9, independently reproduce the relevant h_2 source values before comparing them to new MILP minima.
