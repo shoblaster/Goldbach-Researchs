@@ -51,9 +51,10 @@ EXP017 and checks the inequality. Its output is preserved in
 | 6 | 13 | 169 | 2 | 150 | 1 |
 | 7 | 17 | 289 | 4 | 192 | 1 |
 | 8 | 19 | 361 | 4 | 258 | 1 |
+| 9 | 23 | 529 | 5 | 366 | 1 |
 
-Thus the h2 guarantee gives only one survivor for k=3,...,8, whereas the exact
-fixed-window minima are 2, 2, 3, 2, 4, and 4. This is a distinction between
+Thus the h2 guarantee gives only one survivor for k=3,...,9, whereas the exact
+fixed-window minima are 2, 2, 3, 2, 4, 4, and 5. This is a distinction between
 the two finite objectives, not evidence of a new theorem: h2 is a
 worst-translation maximum-gap threshold, while M_k is the minimum count in one
 specified window.
