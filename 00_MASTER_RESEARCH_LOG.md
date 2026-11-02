@@ -2117,3 +2117,40 @@
 
 **Next verification required:**
 - Keep the moment result as a finite diagnostic and prioritize definition-level comparison with paired-Jacobsthal algorithms over unbounded extrapolation.
+
+### 2026-11-02 — formal paired-model boundary
+
+- Objective: State exactly how the arbitrary two-class-per-odd-prime model relates to the paired-Jacobsthal model found in CIT-029/CIT-030.
+- Result: `08_PROOFS/PROOF_FRONTIER_016_PAIRED_MODEL_BOUNDARY.md` proves an elementary one-way survivor-set inclusion. A paired progression induces two residue classes per odd prime when the fixed even difference is nonzero modulo that prime; if the classes coincide, adding a second arbitrary forbidden class only decreases survivors. Hence the arbitrary model's finite minimum is no larger than the survivor count of any corresponding paired progression.
+- Boundary: This is not an equivalence. Paired classes are linked by one global difference and the paired-Jacobsthal function is a maximum-gap/translation quantity, whereas EXP015 minimizes survivors in one fixed interval over independently chosen classes. Equivalence remains UNVERIFIED.
+
+### Verification Checkpoint
+
+**Claims made:**
+- The one-way finite relation between the two definitions is proved directly from their residue conditions.
+- Close prior art does not justify calling EXP015 a new paired-Jacobsthal result, and no novelty claim is made.
+
+**Sources used:**
+- CIT-029 and CIT-030 for the paired model definitions; self-contained proof note 016.
+
+**Citations verified:**
+- No new external source; prior citations were re-used within their verified scope.
+
+**Claims not independently verified:**
+- Any full equivalence, asymptotic transfer, or priority claim.
+
+**Computations actually run:**
+- None; this was a definition-level proof stage.
+
+**Proof status:**
+- One-way finite relation: PROVED.
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED.
+
+**Known uncertainties:**
+- Whether ancillary paired-Jacobsthal algorithms encode a broader arbitrary-residue variant not visible in the inspected paper text.
+
+**Next verification required:**
+- Inspect the paired-paper ancillary files and citation graph before extending the arbitrary-residue computation beyond k=8.
