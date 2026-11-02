@@ -1799,3 +1799,116 @@
 
 **Next verification required:**
 - Obtain independent expert feedback and perform a broader literature search before making any novelty or publication claim.
+
+### 2026-11-02 — full distribution and expectation cross-check
+
+- Objective: Test whether the finite minima are representative of the residue-selection distribution and independently verify the source's average-density identity.
+- Computation actually run: `03_CODE/barca_sieve2_distribution_stats.py` built independent bit masks, enumerated every choice for (k\le6), cross-checked every choice for (k\le5) by direct modular filtering, and cross-checked the first 100 (k=6) choices directly.
+- Result: For each (k\le6), the exact mean count equals (p_k\delta_k), as predicted by the elementary uniform-choice probability calculation. At (k=6), the mean is (117/14), median 8, minimum 2, and maximum 14; exactly 5 of 5,405,400 choices attain the minimum.
+- Interpretation: The source's full-period/average-density calculation is consistent with the finite model, but average behavior does not provide the uniform worst-case lower bound required by the proof. This strengthens the audit's distinction between a correct average identity and an unproved interval-distribution claim.
+- Data generated: `06_EXPERIMENTS/EXP011_BARCA_SIEVE2_DISTRIBUTION_STATS/RAW_OUTPUT.txt` and README; all histograms preserved.
+
+### Verification Checkpoint
+
+**Claims made:**
+- The exact expectation identity was verified for every exhaustive (k\le6) distribution.
+- The (k=6) minimum is a rare lower-tail event: 5 of 5,405,400 choices, while the mean is (117/14).
+
+**Sources used:**
+- CIT-022 for the residue-selection model and normalized density.
+- Independent script, direct cross-checks, and preserved EXP011 raw output.
+
+**Citations verified:**
+- No new external citation; CIT-022 remains the source-verified definition.
+
+**Claims not independently verified:**
+- Any concentration behavior for (k\ge7), any asymptotic minimum, and any implication for Strong Goldbach.
+
+**Computations actually run:**
+- Yes: exhaustive (k\le6) distribution statistics and direct cross-checks ran successfully.
+- No Lean build or formal proof replay was run.
+
+**Proof status:**
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED.
+
+**Known uncertainties:**
+- Whether the exact distributional statistics have appeared elsewhere in the sieve literature.
+
+**Next verification required:**
+- Perform a broader literature search specifically for finite-wheel extremal and distributional results before asserting any novelty.
+
+### 2026-11-02 — independent C++ cross-check
+
+- Objective: Reduce implementation-specific risk in the (k=6) distribution statistics.
+- Computation actually run: Compiled and ran `03_CODE/barca_sieve2_k6_distribution_cpp.cpp`, an independent C++17 bit-mask implementation over all 5,405,400 choices.
+- Result: The C++ run reproduced EXP011 exactly: minimum 2, maximum 14, histogram identical, and sum of counts 45,173,700. A manually prepared pre-run raw-output line contained the typo 45,175,140; it was corrected after the independent run, with no computational result changed.
+- Data generated: `06_EXPERIMENTS/EXP012_BARCA_SIEVE2_CPP_CROSSCHECK/RAW_OUTPUT.txt`; output comparison preserved in the working audit process.
+
+### Verification Checkpoint
+
+**Claims made:**
+- The complete (k=6) distribution was independently reproduced in a second programming language.
+
+**Sources used:**
+- EXP011 Python output and the independent EXP012 C++ implementation/output.
+
+**Citations verified:**
+- No new external citation.
+
+**Claims not independently verified:**
+- The C++ result does not establish any asymptotic theorem or literature novelty.
+
+**Computations actually run:**
+- Yes: C++17 compilation and enumeration of all 5,405,400 choices.
+
+**Proof status:**
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED.
+
+**Known uncertainties:**
+- Whether equivalent finite distributions have been published elsewhere.
+
+**Next verification required:**
+- Complete the focused literature search before finalizing a preprint claim.
+
+### 2026-11-02 — focused novelty-search checkpoint
+
+- Objective: Search for directly matching literature on the exact finite Sieve II residue-selection and initial-interval extremal problem.
+- Sources checked: CIT-021/CIT-022 and newly verified CIT-028 (Song, arXiv:0801.0786 abstract/metadata).
+- Result: Related Goldbach sieve work was found, but no directly matching publication was verified for the EXP007–EXP012 exact minima or histograms. This is not evidence of novelty; the search remains limited.
+- Data generated: `09_LITERATURE/LITERATURE_SEARCH_2026-11-02.md` and CIT-028 entry.
+
+### Verification Checkpoint
+
+**Claims made:**
+- A related Goldbach-sieve preprint exists and was verified at its arXiv record.
+- No directly matching source was verified in this focused search.
+
+**Sources used:**
+- CIT-021, CIT-022, CIT-028; search record in `09_LITERATURE/LITERATURE_SEARCH_2026-11-02.md`.
+
+**Citations verified:**
+- CIT-028 verified only for its arXiv metadata and abstract; full-paper equivalence was not checked.
+
+**Claims not independently verified:**
+- Global novelty, completeness of the literature search, or equivalence/non-equivalence to Song's full method.
+
+**Computations actually run:**
+- No new mathematical computation in this literature-search stage.
+
+**Proof status:**
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED.
+
+**Known uncertainties:**
+- Additional related finite-wheel or interval-sieve work may exist outside the searched records.
+
+**Next verification required:**
+- Expand the literature search through citation graphs and full-text searches before using words such as “new,” “first,” or “original.”

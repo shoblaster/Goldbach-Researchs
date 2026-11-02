@@ -1,0 +1,47 @@
+k=1 p_k=2 limit=4
+choices=2 min=2 max=2
+mean_count=2 expected_count=2
+mean_normalized=1 expected_delta=1
+population_variance=0
+quantiles(min, q25, median, q75, max)= (2, 2, 2, 2, 2)
+histogram=2:2
+
+k=2 p_k=3 limit=9
+choices=6 min=1 max=2
+mean_count=3/2 expected_count=3/2
+mean_normalized=1/2 expected_delta=1/2
+population_variance=1/4
+quantiles(min, q25, median, q75, max)= (1, 1, 1, 2, 2)
+histogram=1:3,2:3
+
+k=3 p_k=5 limit=25
+choices=60 min=2 max=3
+mean_count=5/2 expected_count=5/2
+mean_normalized=1/2 expected_delta=1/2
+population_variance=1/4
+quantiles(min, q25, median, q75, max)= (2, 2, 2, 3, 3)
+histogram=2:30,3:30
+
+k=4 p_k=7 limit=49
+choices=1260 min=2 max=6
+mean_count=7/2 expected_count=7/2
+mean_normalized=1/2 expected_delta=1/2
+population_variance=59/84
+quantiles(min, q25, median, q75, max)= (2, 3, 3, 4, 6)
+histogram=2:126,3:528,4:465,5:132,6:9
+
+k=5 p_k=11 limit=121
+choices=69300 min=3 max=10
+mean_count=99/14 expected_count=99/14
+mean_normalized=9/14 expected_delta=9/14
+population_variance=12867/10780
+quantiles(min, q25, median, q75, max)= (3, 6, 7, 8, 10)
+histogram=3:66,4:720,5:4505,6:14417,7:24696,8:19234,9:5419,10:243
+
+k=6 p_k=13 limit=169
+choices=5405400 min=2 max=14
+mean_count=117/14 expected_count=117/14
+mean_normalized=9/14 expected_delta=9/14
+population_variance=21629/12740
+quantiles(min, q25, median, q75, max)= (2, 8, 8, 9, 14)
+histogram=2:5,3:567,4:8685,5:71335,6:329476,7:923726,8:1557193,9:1515452,10:776006,11:196481,12:24552,13:1859,14:63

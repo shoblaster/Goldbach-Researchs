@@ -73,6 +73,14 @@ selections without redundant iteration.
 The exact raw outputs are `EXP007.../RAW_OUTPUT.txt`,
 `EXP009.../RAW_OUTPUT.txt`, and `EXP010.../RAW_OUTPUT.txt`.
 
+EXP011 measures the full count distribution for every choice through (k=6).
+It verifies that the uniform-choice mean equals (p_k\delta_k) exactly, while
+the worst-case left count can be much smaller. At (k=6), the mean count is
+(117/14), the median is 8, and the exact minimum is 2; only 5 of the
+5,405,400 choices attain that minimum. Thus the finite computation separates
+the source's average-density statement from the uniform worst-case lower bound
+needed by the proof.
+
 ## 4. Interpretation
 
 The finite minima are not equal to the source-normalized full-period averages
