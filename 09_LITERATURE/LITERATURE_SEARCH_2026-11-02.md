@@ -38,6 +38,23 @@ k-tuples, primorial-period density, and extremal counts in the initial interval
    progressions can be characterized by choosing two residue classes for each
    odd prime and gives the CRT converse.
 
+7. A. Hildebrand, *Extremal Problems in Sieve Theory*,
+   [Kyoto Kokyuroku PDF](https://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/pdf/0958-1.pdf).
+   The source defines the minimum translated-interval sifting quantity S_*(x,P)
+   and describes the interval-sieve extremal problem as difficult/open in broad
+   special cases. This is background prior art; the source's displayed model
+   uses one forbidden class per prime and is not asserted identical to EXP015.
+
+8. Tien Tuan Khiem Nguyen, *Finite-Window Noncovering on Primorial Wheels:
+   Higher-Order CRT Bounds and Shift Correlations*,
+   [Preprints.org version 1](https://doi.org/10.20944/preprints202608.1299.v1).
+   This preprint was posted 2026-08-19 and is explicitly marked not peer
+   reviewed. Its abstract and discussion directly describe the mismatch between
+   complete-period density and a fixed translated window, and explicitly state
+   that it proves neither unconditional Goldbach nor a new infinite prime-pair
+   family. It is recorded as a close-overlap warning, not as authoritative
+   evidence of priority or correctness.
+
 The ancillary note also gives an ILP with exactly two selected nonzero
 residues per odd prime and coverage constraints for every position. EXP017
 implemented that formulation independently and reproduced the source table
@@ -54,6 +71,16 @@ through (p=19): (h_2=18,30,66,150,192,258) for (k=3,ldots,8).
   one fixed interval [1,p_k^2].
 - No directly matching publication was verified for the exact EXP007–EXP015
   fixed-window optima or full histograms.
+- Hildebrand's S_*(x,P) framework shows that minimum survivor counts in
+  translated intervals are a recognized interval-sieve extremal theme. The
+  2026 Nguyen preprint is even closer in its finite-window primorial framing,
+  although its model and objective are not identical and its version is not
+  peer reviewed. These findings further lower confidence that EXP015's finite
+  statistic is publishably novel without a much broader comparison.
+- EXP018 formalizes and executes the elementary comparison
+  M_k >= floor(p_k^2/h_2(k)); for k=3,...,8 the h_2 guarantee is only one
+  survivor in the p_k^2 window while EXP015's exact minima are larger. This
+  separates the finite objectives but is not a new asymptotic result.
 - The source-side ILP is structurally close to EXP015. EXP017 confirms the
   paired-Jacobsthal table, so the finite optimization direction is established
   prior art; only the fixed-window survivor-count objective remains a possible

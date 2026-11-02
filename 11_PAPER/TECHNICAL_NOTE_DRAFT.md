@@ -95,6 +95,16 @@ confirms that the general two-class finite ILP direction is established prior
 art. The note therefore makes no novelty claim; EXP015 is retained only as an
 audit of the fixed-window survivor-count objective.
 
+EXP018 makes the objective boundary explicit. If M_k denotes the EXP015
+minimum and h_2(k) the paired-Jacobsthal value, then the elementary block
+argument gives M_k >= floor(p_k^2/h_2(k)). For k=3,...,8 this bound is only 1,
+while the exact M_k values are 2,2,3,2,4,4. The quantities are therefore
+different finite statistics, but this separation is not a new asymptotic
+estimate. Hildebrand's interval-sieve survey already treats minimum translated
+interval survivor counts as an extremal problem (CIT-033), and a recent
+non-peer-reviewed preprint studies a closely related finite-window primorial
+obstruction while explicitly making no unconditional Goldbach claim (CIT-034).
+
 EXP011 measures the full count distribution for every choice through (k=6).
 It verifies that the uniform-choice mean equals (p_k\delta_k) exactly, while
 the worst-case left count can be much smaller. At (k=6), the mean count is
@@ -174,3 +184,8 @@ status for each result.
 5. Mario Ziller; John F. Morack, *On the computation of the generalised
    Jacobsthal function for paired progressions*, ancillary file,
    [full_details.pdf](https://arxiv.org/src/1706.03668v1/anc/full_details.pdf).
+6. A. Hildebrand, *Extremal Problems in Sieve Theory*,
+   [Kyoto Kokyuroku PDF](https://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/pdf/0958-1.pdf).
+7. Tien Tuan Khiem Nguyen, *Finite-Window Noncovering on Primorial Wheels:
+   Higher-Order CRT Bounds and Shift Correlations*,
+   [Preprints.org version 1](https://doi.org/10.20944/preprints202608.1299.v1).

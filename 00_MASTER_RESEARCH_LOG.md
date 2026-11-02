@@ -2236,3 +2236,53 @@
 
 **Next verification required:**
 - Compare the source ancillary output files directly with EXP015's survivor-count objective before proposing any further computation or paper claim.
+
+### 2026-11-02 — fixed-window objective comparison and broader prior-art check
+
+- Objective: Determine whether the fixed-window minimum M_k is merely a restatement of the paired-Jacobsthal h_2 quantity, and search for interval-sieve literature covering the same type of statistic.
+- Literature work actually performed: inspected A. Hildebrand's *Extremal Problems in Sieve Theory* (CIT-033), which defines the minimum translated-interval sifting quantity S_*(x,P); inspected Tien Tuan Khiem Nguyen's 2026 preprint (CIT-034), which explicitly discusses complete-period density versus fixed-window primorial obstructions and states that it proves neither unconditional Goldbach nor a new infinite prime-pair family.
+- Mathematical result: `08_PROOFS/PROOF_FRONTIER_017_OBJECTIVE_COMPARISON.md` proves the finite inequality M_k >= floor(p_k^2/h_2(k)) by CRT plus a block partition. This separates the objectives but is an elementary consequence of the h_2 definition.
+- Computation actually run: `03_CODE/fixed_window_vs_h2_comparison.py` read the preserved EXP015 and EXP017 raw files and checked the inequality for k=1,...,8. Output is preserved in EXP018. Values of the floor bound were 2,1,1,1,1,1,1,1; EXP015 minima were 2,1,2,2,3,2,4,4.
+- Interpretation: h_2's universal guarantee is much weaker than the exact fixed-window counts in these small cases, but this is a distinction of finite objective, not a new theorem or Goldbach progress. The classical interval-sieve framing and the close 2026 preprint further reduce confidence in publication-level novelty.
+- Data generated: EXP018 code, README, raw output; Proof Frontier 017; new citation and claim-ledger entries; literature-search update.
+
+### Verification Checkpoint
+
+**Claims made:**
+- Hildebrand's source defines minimum translated-interval sifting as an established interval-sieve extremal problem.
+- Nguyen's preprint is a related, explicitly non-peer-reviewed finite-window primorial study and makes no unconditional Goldbach or new infinite-family claim.
+- For the stated finite models, M_k >= floor(p_k^2/h_2(k)) follows from the h_2 definition, CRT correspondence, and disjoint block partition.
+- EXP018's recorded table is derived from actually executed EXP015/EXP017 outputs.
+
+**Sources used:**
+- CIT-033: https://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/pdf/0958-1.pdf
+- CIT-034: https://doi.org/10.20944/preprints202608.1299.v1
+- Previously verified CIT-029 and CIT-031 for the h_2 definition and CRT correspondence.
+
+**Citations verified:**
+- CIT-033 source PDF inspected directly; definition and interval-sieve scope checked.
+- CIT-034 source page inspected directly; publication date, non-peer-review status, abstract limitations, and related-work discussion checked.
+
+**Claims not independently verified:**
+- Any priority claim for EXP015's exact fixed-window minima.
+- Any equivalence between the two-class EXP015 model and every general interval-sieve framework beyond the finite CRT relation stated in Proof Frontier 017.
+- Correctness of Nguyen's mathematical results; only the source's stated claims and limitations were recorded.
+
+**Computations actually run:**
+- Yes: EXP018 deterministic comparison script; it read raw EXP015/EXP017 outputs and all finite assertions passed.
+
+**Data generated:**
+- `06_EXPERIMENTS/EXP018_FIXED_WINDOW_H2_COMPARISON/RAW_OUTPUT.txt` plus code and README.
+
+**Proof status:**
+- Finite block bound: PROVED for the stated definitions.
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED. The general two-residue/paired structure is direct prior art, interval-sieve extremal framing is established, and a close recent preprint exists.
+
+**Known uncertainties:**
+- Whether the exact M_k values or an equivalent two-class fixed-window objective appear in unpublished ancillary files, books, or other papers not located in this bounded search.
+
+**Next verification required:**
+- If pursuing a paper, obtain independent mathematical review and perform a broader citation-graph/database search before describing EXP015/EXP018 as a contribution. Do not claim a proof or novelty from these finite data.
