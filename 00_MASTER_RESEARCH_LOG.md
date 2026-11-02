@@ -1991,3 +1991,87 @@
 
 **Next verification required:**
 - Expand the literature search through citation graphs and full-text searches before using words such as “new,” “first,” or “original.”
+
+### 2026-11-02 — exact 0–1 optimization at k=8 and research protocol
+
+- Objective: Replace the EXP014 heuristic k=8 search with an exact finite optimization and formalize the prospective research-control protocol.
+- Method: Lemma 003 proves an equivalent 0–1 formulation. Binary variables select the prescribed forbidden residue classes; binary variables for indices are forced to 1 exactly when no selected class covers the index. The objective minimizes the number of survivors. `03_CODE/barca_sieve2_milp_exact.py` solves the model with SciPy/HiGHS and directly recomputes each returned witness.
+- Computation actually run: Python 3.14.4, SciPy 1.17.1, `python 03_CODE/barca_sieve2_milp_exact.py`, for every k=1,...,8. HiGHS reported optimal status for all eight instances. The minima were `2,1,2,2,3,2,4,4`; at k=8 the solver returned 4 survivors `(56, 86, 224, 302)` and `direct_match True`.
+- Cross-check: The k<=7 MILP optima agree with the prior exhaustive/equivalent searches EXP007, EXP009, and EXP010. The k=8 witness is independently verified by direct modular filtering, but the result remains a finite solver-backed computation rather than an asymptotic theorem.
+- Method record: Added `11_PAPER/RESEARCH_METHODS_AND_PROTOCOL.md`, explicitly distinguishing proof, exact computation, cross-check, heuristic, UNVERIFIED, and PROOF GAP — NOT PROVED statuses. Earlier experiments were not preregistered; this is a prospective protocol and does not upgrade their evidentiary status.
+- Data generated: `06_EXPERIMENTS/EXP015_BARCA_SIEVE2_K8_MILP_EXACT/RAW_OUTPUT.txt`, README, Lemma 003, and updated technical note.
+
+### Verification Checkpoint
+
+**Claims made:**
+- Lemma 003 gives an exact finite 0–1 formulation of the residue-selection minimum.
+- The executed HiGHS run returned finite optima 2,1,2,2,3,2,4,4 for k=1,...,8, with direct witness recomputation; k=8 minimum is 4 for the stated model.
+- The repository now has a prospective scientist-style methods/provenance protocol; no earlier result is retroactively preregistered.
+
+**Sources used:**
+- CIT-022 for the source-level finite residue-selection rules.
+- Self-contained Lemma 003, executed script, preserved raw output, and prior exact EXP007/EXP009/EXP010 outputs.
+
+**Citations verified:**
+- No new external citation. CIT-022 remains the source-verified model definition.
+
+**Claims not independently verified:**
+- Any asymptotic behavior of the minima, any implication for Strong Goldbach, and any global novelty claim.
+- Solver internals beyond the reported HiGHS optimal statuses; no formal proof certificate was exported.
+
+**Computations actually run:**
+- Yes: all k=1,...,8 MILP instances, with direct modular witness recomputation.
+
+**Proof status:**
+- Finite formulation equivalence: PROVED in Lemma 003.
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED.
+
+**Known uncertainties:**
+- Whether this finite MILP formulation or the k=8 optimum has appeared in prior sieve literature; the focused search was not exhaustive.
+
+**Next verification required:**
+- Seek an independent exact solver or certificate/checker for k=8, and expand the literature search before describing the finite optimum as new.
+
+### 2026-11-02 — paired-Jacobsthal prior-art discovery
+
+- Objective: Expand the literature search after EXP015 to test whether the two-class-per-odd-prime model is already represented in established terminology.
+- Sources checked: CIT-029 (`arXiv:1706.03668`) and CIT-030 (`arXiv:1706.00317`), both inspected at their actual arXiv HTML records.
+- Crucial interpretation: Ziller and Morack explicitly define and compute a paired Jacobsthal function for consecutive integer pairs, with two residue exclusions per odd prime tied to the pair difference, and connect a bound on this function to a tightened Goldbach statement. Their reported primorial table reaches (p=73). This is close prior art and materially weakens any novelty claim for the general two-class sieve direction.
+- Model boundary: The inspected paired model is not declared equivalent to EXP015. In the paired setting the two classes are linked by a fixed pair difference; EXP015 permits any two distinct residue classes independently at each odd prime. The exact relation between the two optimization problems remains UNVERIFIED.
+- Publication consequence: EXP015 can be presented only as a finite audit/reproducibility computation unless a full literature comparison establishes a genuinely distinct question. No “new” or “first” wording is permitted.
+
+### Verification Checkpoint
+
+**Claims made:**
+- Paired-Jacobsthal functions and Goldbach-linked computations are established in the inspected Ziller–Morack sources.
+- The source definitions show a close but not yet proven-equivalent relation to the arbitrary-residue model used here.
+- The literature discovery weakens, rather than supports, a novelty claim for the current computational direction.
+
+**Sources used:**
+- CIT-029 and CIT-030; search record in `09_LITERATURE/LITERATURE_SEARCH_2026-11-02.md`.
+
+**Citations verified:**
+- Both source records and the quoted definitions/table/conditional implication were checked against actual arXiv HTML.
+
+**Claims not independently verified:**
+- The mathematical correctness of the Ziller–Morack proofs or all ancillary computations.
+- Equivalence or strict non-equivalence of paired Jacobsthal and EXP015 arbitrary-residue optimization beyond the inspected definitions.
+- Global completeness of the literature search.
+
+**Computations actually run:**
+- No new computation in this literature stage; EXP015 remains the latest executed computation.
+
+**Proof status:**
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED; close prior art verified.
+
+**Known uncertainties:**
+- Whether the arbitrary-residue finite optima, MILP formulation, or exact k=8 witness have appeared in ancillary files or other literature.
+
+**Next verification required:**
+- Compare the formal definitions line-by-line with the paired-Jacobsthal ancillary algorithms and search citation graphs before deciding whether this direction is worth extending.
