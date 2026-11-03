@@ -2457,3 +2457,44 @@
 
 **Next verification required:**
 - Continue the primary-literature search before considering any publication claim.
+
+### 2026-11-03 — textbook prior-art and applicability boundary
+
+- Objective: Check whether the arbitrary two-residue-per-prime construction is a standard sieve setup and whether a general uniform theorem directly covers the EXP015/EXP019 boundary.
+- Source verification: Inspected Paul Pollack's *Not Always Buried Deep* PDF, Chapter 6 Exercise 18 and its remark (CIT-036). The source states a Brun-method exercise for choosing bounded numbers of residue classes uniformly and explicitly identifies Goldbach's classes as 0 and N modulo p.
+- Interpretation: The residue-class construction itself is standard background, weakening any algorithmic novelty claim. However, the displayed lower-bound exercise only asserts some B(k)>0 for primes p<=x^B; this repository has not verified B(k)>=1/2 when x=p_k^2 and p<=p_k. Direct applicability to our moving finite boundary is therefore UNVERIFIED.
+- Data generated: CIT-036, Claim Ledger CLM-LIT-016, and `08_PROOFS/PROOF_FRONTIER_019_POLLACK_SIEVE_SCOPE.md`.
+
+### Verification Checkpoint
+
+**Claims made:**
+- Pollack's source treats bounded arbitrary residue classes as standard Brun-method sieve structure and names the fixed Goldbach classes.
+- The source does not, as inspected here, establish applicability of its asymptotic lower-bound exercise at the exact p_k=sqrt(x) boundary used by EXP015/EXP019.
+
+**Sources used:**
+- CIT-036: https://pollack.uga.edu/NABDofficial.pdf
+
+**Citations verified:**
+- The actual book PDF was inspected; lines 7361–7379 were checked.
+
+**Claims not independently verified:**
+- The exercise's proof and the value/range of B(k) were not independently derived.
+- No claim is made that Pollack's exercise proves or disproves any EXP015 minimum.
+
+**Computations actually run:**
+- None; this was a source and applicability audit.
+
+**Data generated:**
+- Proof Frontier 019 and literature/claim-ledger records.
+
+**Proof status:**
+- No new theorem; Strong Goldbach remains OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED; arbitrary residue-class sieving is established background.
+
+**Known uncertainties:**
+- The exact quantitative B(k) supplied by the textbook exercise for two forbidden classes is not determined here.
+
+**Next verification required:**
+- If pursuing an asymptotic theorem, derive or locate a primary source with explicit parameter range reaching the p_k^2 boundary; otherwise retain the work as a finite audit only.

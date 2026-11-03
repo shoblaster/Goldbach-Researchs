@@ -63,6 +63,13 @@ k-tuples, primorial-period density, and extremal counts in the initial interval
    page, it is recorded as a scope lead only; the repository proves the finite
    correspondence independently in Proof Frontier 018.
 
+10. Paul Pollack, *Not Always Buried Deep: A Second Course in Elementary
+    Number Theory*, [book PDF](https://pollack.uga.edu/NABDofficial.pdf),
+    Chapter 6, Exercise 18 and its remark. The source explicitly treats
+    uniformly chosen bounded residue classes in a Brun-method sieve and says
+    that Goldbach uses the classes 0 and N modulo p. This is textbook background
+    and a scope check, not a direct proof for the moving p_k^2 boundary.
+
 The ancillary note also gives an ILP with exactly two selected nonzero
 residues per odd prime and coverage constraints for every position. EXP017
 implemented that formulation independently and reproduced the source table
@@ -98,6 +105,10 @@ through (p=19): (h_2=18,30,66,150,192,258) for (k=3,ldots,8).
 - EXP020 independently checked the fixed-N correspondence for every even N from
   6 through 10,000 with no mismatch. The check supports the scope correction,
   but it is finite and does not prove a stronger Goldbach statement.
+- Pollack's textbook makes the arbitrary-class construction standard background
+  and explicitly names the Goldbach classes. Its asymptotic lower-bound exercise
+  has a parameter B(k); this search did not verify B(k)>=1/2 for the exact
+  EXP015/EXP019 boundary, so direct applicability is marked UNVERIFIED.
 - The source-side ILP is structurally close to EXP015. EXP017 confirms the
   paired-Jacobsthal table, so the finite optimization direction is established
   prior art; only the fixed-window survivor-count objective remains a possible

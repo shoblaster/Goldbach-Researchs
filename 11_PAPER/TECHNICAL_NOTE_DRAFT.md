@@ -98,6 +98,12 @@ confirms that the general two-class finite ILP direction is established prior
 art. The note therefore makes no novelty claim; EXP015 is retained only as an
 audit of the fixed-window survivor-count objective.
 
+The construction itself is standard sieve background: Pollack's Chapter 6
+Brun-method exercise allows bounded arbitrary residue classes and explicitly
+identifies the Goldbach classes as 0 and N modulo p (CIT-036). The source's
+asymptotic parameter B(k) has not been shown here to reach the moving boundary
+p_k=(p_k^2)^{1/2}, so no direct theorem is imported into the finite audit.
+
 EXP018 makes the objective boundary explicit. If M_k denotes the EXP015
 minimum and h_2(k) the paired-Jacobsthal value, then the elementary block
 argument gives M_k >= floor(p_k^2/h_2(k)). For k=3,...,8 this bound is only 1,
@@ -205,3 +211,5 @@ status for each result.
 8. MathOverflow, “Can a sparse set of residue classes cover all integers up to
    E?”,
    [discussion](https://mathoverflow.net/questions/497359/can-a-sparse-set-of-residue-classes-cover-all-integers-up-to-e).
+9. Paul Pollack, *Not Always Buried Deep: A Second Course in Elementary Number
+   Theory*, Chapter 6, [book PDF](https://pollack.uga.edu/NABDofficial.pdf).
