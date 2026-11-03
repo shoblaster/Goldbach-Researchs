@@ -1,0 +1,10 @@
+Command: python 03_CODE/goldbach_fixed_residue_mapping_check.py
+Environment: Python 3.14.4
+Date: 2026-11-03
+
+sample 100 survivor_count 10 first10 [11, 17, 29, 41, 47, 53, 59, 71, 83, 89] last10 [11, 17, 29, 41, 47, 53, 59, 71, 83, 89]
+sample 1000 survivor_count 48 first10 [47, 53, 59, 71, 89, 113, 137, 173, 179, 191] last10 [809, 821, 827, 863, 887, 911, 929, 941, 947, 953]
+sample 10000 survivor_count 250 first10 [113, 149, 167, 197, 233, 251, 257, 281, 311, 449] last10 [9551, 9689, 9719, 9743, 9749, 9767, 9803, 9833, 9851, 9887]
+checked_even_N 4998 range 6..10000 step 2
+independent_trial_division_prime_check True
+all_exact_matches True

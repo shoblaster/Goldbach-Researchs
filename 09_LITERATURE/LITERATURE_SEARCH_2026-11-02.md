@@ -55,6 +55,14 @@ k-tuples, primorial-period density, and extremal counts in the initial interval
    family. It is recorded as a close-overlap warning, not as authoritative
    evidence of priority or correctness.
 
+9. MathOverflow, “Can a sparse set of residue classes cover all integers up to
+   E?”, [discussion page](https://mathoverflow.net/questions/497359/can-a-sparse-set-of-residue-classes-cover-all-integers-up-to-e).
+   The question uses the fixed Goldbach classes 0 and E (mod p), together with
+   the even class, and asks about noncoverage. The displayed answer connects
+   this to requiring prime pairs above sqrt(E). Because this is a discussion
+   page, it is recorded as a scope lead only; the repository proves the finite
+   correspondence independently in Proof Frontier 018.
+
 The ancillary note also gives an ILP with exactly two selected nonzero
 residues per odd prime and coverage constraints for every position. EXP017
 implemented that formulation independently and reproduced the source table
@@ -83,6 +91,13 @@ through (p=19): (h_2=18,30,66,150,192,258) for (k=3,ldots,8).
   k=9 h_2 value is source-transcribed because EXP017 independently cross-checked
   only through k=8. This separates the finite objectives but is not a new
   asymptotic result.
+- The MathOverflow fixed-N formulation clarifies that the actual Goldbach sieve
+  uses residue classes linked by the target N. EXP015/EXP019 instead optimize
+  over arbitrary residue choices. This is a model distinction, not evidence
+  that the arbitrary minima count Goldbach representations.
+- EXP020 independently checked the fixed-N correspondence for every even N from
+  6 through 10,000 with no mismatch. The check supports the scope correction,
+  but it is finite and does not prove a stronger Goldbach statement.
 - The source-side ILP is structurally close to EXP015. EXP017 confirms the
   paired-Jacobsthal table, so the finite optimization direction is established
   prior art; only the fixed-window survivor-count objective remains a possible

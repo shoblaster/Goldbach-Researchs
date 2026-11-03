@@ -132,6 +132,16 @@ distribution theorem beyond the complete-period count. It is not evidence that
 the proposed asymptotic statement is false, and it is not evidence against the
 truth of Strong Goldbach.
 
+An important scope distinction is required. For a fixed even target N, the
+Goldbach-specific sieve forbids the linked classes 0 and N modulo each small
+odd prime. A direct elementary argument shows that its survivors in the
+interior interval are exactly offsets n for which both n and N-n are primes
+above sqrt(N). EXP015/EXP019 instead minimize over arbitrary independent class
+choices, so their minima are not Goldbach representation counts. EXP020 checks
+this fixed-N correspondence for every even N from 6 through 10,000. The
+discussion source and the independent proof are recorded in CIT-035 and Proof
+Frontier 018.
+
 The source's explanatory page itself introduces approximate regular placement
 of permitted tuples when transferring the full-period density to the two
 subintervals. The later source version attempts a convergence argument, but
@@ -192,3 +202,6 @@ status for each result.
 7. Tien Tuan Khiem Nguyen, *Finite-Window Noncovering on Primorial Wheels:
    Higher-Order CRT Bounds and Shift Correlations*,
    [Preprints.org version 1](https://doi.org/10.20944/preprints202608.1299.v1).
+8. MathOverflow, “Can a sparse set of residue classes cover all integers up to
+   E?”,
+   [discussion](https://mathoverflow.net/questions/497359/can-a-sparse-set-of-residue-classes-cover-all-integers-up-to-e).
