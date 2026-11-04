@@ -148,6 +148,15 @@ this fixed-N correspondence for every even N from 6 through 10,000. The
 discussion source and the independent proof are recorded in CIT-035 and Proof
 Frontier 018.
 
+The recent Ross primorial preprint (CIT-037) states a related lower-window
+identity for (N=p_k\#). EXP021 independently checks the corresponding set
+bijection for (k=4,\ldots,8) using trial division and proves the elementary
+statement under the explicit endpoint condition (N-H>p_k). A boundary audit
+also matters: the literal (k=3,N=30,H=49) wording gives 6 direct
+representations but 9 interval primes, with extra (2,3,5). The preprint page
+is non-peer-reviewed and says the displayed version is superseded, so this is
+recorded as prior art and a scope qualification, not as a validated solution.
+
 The source's explanatory page itself introduces approximate regular placement
 of permitted tuples when transferring the full-period density to the two
 subintervals. The later source version attempts a convergence argument, but
@@ -213,3 +222,5 @@ status for each result.
    [discussion](https://mathoverflow.net/questions/497359/can-a-sparse-set-of-residue-classes-cover-all-integers-up-to-e).
 9. Paul Pollack, *Not Always Buried Deep: A Second Course in Elementary Number
    Theory*, Chapter 6, [book PDF](https://pollack.uga.edu/NABDofficial.pdf).
+10. Michael M. Ross, *Sifted Symmetry and Sieve Structures of Primorial
+    Goldbach Complements*, [Zenodo record 21194754](https://zenodo.org/records/21194754).

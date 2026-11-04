@@ -2498,3 +2498,70 @@
 
 **Next verification required:**
 - If pursuing an asymptotic theorem, derive or locate a primary source with explicit parameter range reaching the p_k^2 boundary; otherwise retain the work as a finite audit only.
+
+### 2026-11-04 — Ross primorial-window prior-art audit and EXP021
+
+- Objective: inspect a recent source on primorial Goldbach complements and test
+  its lower-window correspondence independently before treating it as relevant
+  prior art.
+- Source verification: inspected Michael M. Ross, *Sifted Symmetry and Sieve
+  Structures of Primorial Goldbach Complements*, Zenodo record 21194754 (CIT-037).
+  The record's abstract states a correspondence between primorial Goldbach
+  representations with summand below (H\le p_{k+1}^2) and primes in
+  ((N-H,N-2]), and also states sieve-level symmetry/invisibility claims. The
+  record is non-peer-reviewed and says the displayed version is superseded by
+  Version 3; no broader result was adopted as independently verified.
+- Independent mathematics: under the explicit endpoint condition (N-H>p_k),
+  the map (p\mapsto N-p) is an elementary bijection between the two sets. The
+  proof and its limitation are recorded in
+  `08_PROOFS/PROOF_FRONTIER_020_PRIMORIAL_WINDOW_IDENTITY.md`.
+- Computation actually run: `03_CODE/primorial_window_identity_check.py` used
+  independent trial division and checked exact set equality for k=4,...,8.
+  Counts were 22, 19, 23, 26, and 32. A deliberately retained boundary
+  diagnostic found that the literal small case k=3,N=30,H=49 has 6 direct
+  representations but 9 interval primes, with extra 2,3,5; this is a source
+  endpoint qualification, not a disproof of an intended large-k statement.
+- Data generated: `06_EXPERIMENTS/EXP021_PRIMORIAL_WINDOW_IDENTITY/RAW_OUTPUT.txt`
+  and README.
+
+### Verification Checkpoint
+
+**Claims made:**
+- The Ross record states the primorial lower-window correspondence in its
+  abstract, but its displayed version is superseded and non-peer-reviewed.
+- The correspondence is proved here under (N-H>p_k).
+- EXP021's five tested primorials satisfy exact set bijection; the k=3 edge
+  case shows why an endpoint qualification must be explicit.
+
+**Sources used:**
+- CIT-037: https://zenodo.org/records/21194754
+- Self-contained proof in `08_PROOFS/PROOF_FRONTIER_020_PRIMORIAL_WINDOW_IDENTITY.md`.
+
+**Citations verified:**
+- Zenodo record and abstract inspected directly on 2026-11-04; version-status
+  warning recorded.
+
+**Claims not independently verified:**
+- No broader sieve, BDH, asymptotic, or peer-review claim from the Ross preprint.
+- No inference from the finite checks to all primorials or to Strong Goldbach.
+
+**Computations actually run:**
+- Yes: independent trial-division set checks for k=4,...,8 plus the recorded
+  k=3 endpoint diagnostic.
+
+**Proof status:**
+- Window bijection under explicit endpoint condition: PROVED.
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED. The window correspondence is source-reported prior
+  art; EXP021 is an audit and boundary qualification.
+
+**Known uncertainties:**
+- The current Zenodo page says its displayed version is superseded by Version 3;
+  the latest file was not independently retrieved in this stage.
+
+**Next verification required:**
+- Continue only with source-level checks that could sharpen the fixed-N versus
+  arbitrary-residue distinction or quantify the missing moving-boundary sieve
+  estimate. Do not present EXP021 as a Goldbach proof.

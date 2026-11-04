@@ -1,0 +1,9 @@
+primes_used [2, 3, 5, 7, 11, 13, 17, 19, 23]
+k 4 N 210 p_next 11 H 121 direct_count 22 interval_count 22 bijection True first_p [11, 13, 17, 19, 29, 31, 37, 43, 47, 53] first_q [97, 101, 103, 107, 109, 113, 127, 131, 137, 139]
+k 5 N 2310 p_next 13 H 169 direct_count 19 interval_count 19 bijection True first_p [13, 17, 23, 29, 37, 41, 43, 59, 67, 71] first_q [2143, 2153, 2161, 2179, 2203, 2207, 2213, 2221, 2237, 2239]
+k 6 N 30030 p_next 17 H 289 direct_count 23 interval_count 23 bijection True first_p [17, 19, 41, 47, 71, 83, 103, 109, 113, 149] first_q [29753, 29759, 29761, 29789, 29803, 29819, 29833, 29837, 29851, 29863]
+k 7 N 510510 p_next 19 H 361 direct_count 26 interval_count 26 bijection True first_p [29, 47, 53, 59, 61, 107, 109, 127, 131, 149] first_q [510157, 510179, 510199, 510203, 510217, 510227, 510233, 510241, 510247, 510253]
+k 8 N 9699690 p_next 23 H 529 direct_count 32 interval_count 32 bijection True first_p [23, 37, 41, 43, 47, 53, 59, 67, 79, 97] first_q [9699191, 9699199, 9699203, 9699211, 9699233, 9699251, 9699289, 9699323, 9699331, 9699341]
+edge_case_k 3 N 30 H 49 direct_count 6 interval_count 9 extra_interval_primes [2, 3, 5] literal_formula_match False
+all_exact_matches True
+primality_method independent trial division

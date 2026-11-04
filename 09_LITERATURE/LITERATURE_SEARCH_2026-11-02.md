@@ -70,6 +70,15 @@ k-tuples, primorial-period density, and extremal counts in the initial interval
     that Goldbach uses the classes 0 and N modulo p. This is textbook background
     and a scope check, not a direct proof for the moving p_k^2 boundary.
 
+11. Michael M. Ross, *Sifted Symmetry and Sieve Structures of Primorial
+    Goldbach Complements*, [Zenodo record 21194754](https://zenodo.org/records/21194754).
+    The inspected record is a non-peer-reviewed preprint page and says the
+    displayed version is superseded by Version 3. Its abstract states a
+    primorial lower-window correspondence up to p_(k+1)^2, together with
+    sieve-level symmetry/invisibility claims. We record only the stated
+    correspondence as related prior art; no broader theorem in the preprint is
+    treated as independently verified.
+
 The ancillary note also gives an ILP with exactly two selected nonzero
 residues per odd prime and coverage constraints for every position. EXP017
 implemented that formulation independently and reproduced the source table
@@ -113,6 +122,12 @@ through (p=19): (h_2=18,30,66,150,192,258) for (k=3,ldots,8).
   paired-Jacobsthal table, so the finite optimization direction is established
   prior art; only the fixed-window survivor-count objective remains a possible
   scope distinction, not a novelty claim.
+- EXP021 independently checks the primorial lower-window bijection for
+  k=4,...,8 using trial division and proves it under the explicit endpoint
+  condition N-H>p_k. It also exposes a small-k boundary issue: the literal
+  k=3,N=30,H=49 formula has 6 direct representations but 9 primes in the
+  stated interval (extra 2,3,5). This is a source-scope qualification, not a
+  disproof of an intended large-k statement.
 - This is **not** evidence that the computations are novel. A broader search
   of books, papers, conference proceedings, and citation graphs is still
   required before any novelty statement.
