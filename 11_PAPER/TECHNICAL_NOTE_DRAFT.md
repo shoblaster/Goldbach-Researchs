@@ -156,6 +156,10 @@ also matters: the literal (k=3,N=30,H=49) wording gives 6 direct
 representations but 9 interval primes, with extra (2,3,5). The preprint page
 is non-peer-reviewed and says the displayed version is superseded, so this is
 recorded as prior art and a scope qualification, not as a validated solution.
+The peer-reviewed Čejchan–Křížek–Somer paper (CIT-038) supplies the antecedent
+forced-primality mechanism with the preceding-prime threshold (p_{k-1}^2).
+Our (p_{k+1}^2) statement is therefore retained as an endpoint-qualified
+audit, not a novelty claim.
 
 The source's explanatory page itself introduces approximate regular placement
 of permitted tuples when transferring the full-period density to the two
@@ -224,3 +228,6 @@ status for each result.
    Theory*, Chapter 6, [book PDF](https://pollack.uga.edu/NABDofficial.pdf).
 10. Michael M. Ross, *Sifted Symmetry and Sieve Structures of Primorial
     Goldbach Complements*, [Zenodo record 21194754](https://zenodo.org/records/21194754).
+11. Antonín Čejchan, Michal Křížek, and Lawrence Somer, *On Remarkable
+    Properties of Primes Near Factorials and Primorials*, [Journal of Integer
+    Sequences](https://cs.uwaterloo.ca/journals/JIS/VOL25/Krizek/krizek3.html).

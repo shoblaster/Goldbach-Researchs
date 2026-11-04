@@ -2565,3 +2565,55 @@
 - Continue only with source-level checks that could sharpen the fixed-N versus
   arbitrary-residue distinction or quantify the missing moving-boundary sieve
   estimate. Do not present EXP021 as a Goldbach proof.
+
+### 2026-11-04 — primary antecedent check for the primorial window mechanism
+
+- Source verification: inspected the Journal of Integer Sequences article by
+  Čejchan, Křížek, and Somer (CIT-038), including the full PDF. Theorem 18
+  gives the lower-side primorial forced-primality result with the preceding
+  prime threshold (p_{k-1}^2); Theorem 17 gives the corresponding upper-side
+  result.
+- Interpretation: this establishes peer-reviewed prior art for the mechanism
+  behind the window identity. EXP021's endpoint-qualified (p_{k+1}^2)
+  derivation is an elementary checked comparison, but no novelty claim is made
+  because the Ross preprint already states that sharpening.
+- No new computation was required in this stage; EXP021's preserved run remains
+  the only computation supporting the endpoint-qualified extension.
+
+### Verification Checkpoint
+
+**Claims made:**
+- CIT-038's Theorem 18 is a peer-reviewed prior-art result using the
+  preceding-prime-square threshold.
+- The project proof explains the (p_{k+1}^2) extension only under the explicit
+  endpoint condition (N-H>p_k).
+
+**Sources used:**
+- CIT-038: https://cs.uwaterloo.ca/journals/JIS/VOL25/Krizek/krizek3.html
+- PDF: https://cs.uwaterloo.ca/journals/JIS/VOL25/Krizek/krizek3.pdf
+
+**Citations verified:**
+- Journal page and PDF inspected directly; Theorems 17–18 checked.
+
+**Claims not independently verified:**
+- The Ross preprint's broader sieve/invisibility claims and any priority claim
+  for its (p_{k+1}^2) sharpening.
+
+**Computations actually run:**
+- None in this source-only stage; EXP021 remains preserved and reproducible.
+
+**Proof status:**
+- Endpoint-qualified finite correspondence: PROVED.
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED; the mechanism has peer-reviewed antecedent and the
+  sharpening is source-reported by Ross.
+
+**Known uncertainties:**
+- Whether an independently published source already contains exactly the
+  (p_{k+1}^2) threshold remains unverified.
+
+**Next verification required:**
+- Keep the result as a source-audited finite relation; do not promote it to an
+  unconditional Goldbach theorem.

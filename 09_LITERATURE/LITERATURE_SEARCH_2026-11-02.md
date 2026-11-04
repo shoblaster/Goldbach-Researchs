@@ -79,6 +79,15 @@ k-tuples, primorial-period density, and extremal counts in the initial interval
     correspondence as related prior art; no broader theorem in the preprint is
     treated as independently verified.
 
+12. Antonín Čejchan, Michal Křížek, and Lawrence Somer, *On Remarkable
+    Properties of Primes Near Factorials and Primorials*, [Journal of Integer
+    Sequences page](https://cs.uwaterloo.ca/journals/JIS/VOL25/Krizek/krizek3.html)
+    and [PDF](https://cs.uwaterloo.ca/journals/JIS/VOL25/Krizek/krizek3.pdf).
+    Theorem 18 gives a peer-reviewed lower-side primorial forced-primality
+    result with the preceding-prime threshold (p_{k-1}^2). This verifies the
+    mechanism as prior art; it does not by itself verify the Ross preprint's
+    claimed (p_{k+1}^2) sharpening.
+
 The ancillary note also gives an ILP with exactly two selected nonzero
 residues per odd prime and coverage constraints for every position. EXP017
 implemented that formulation independently and reproduced the source table
@@ -128,6 +137,10 @@ through (p=19): (h_2=18,30,66,150,192,258) for (k=3,ldots,8).
   k=3,N=30,H=49 formula has 6 direct representations but 9 primes in the
   stated interval (extra 2,3,5). This is a source-scope qualification, not a
   disproof of an intended large-k statement.
+- The JIS paper provides the primary, peer-reviewed antecedent for this
+  mechanism. Our endpoint-qualified (p_{k+1}^2) derivation is elementary and
+  source-audited, but **NOVELTY NOT ESTABLISHED** because the Ross preprint
+  already states the same sharpening.
 - This is **not** evidence that the computations are novel. A broader search
   of books, papers, conference proceedings, and citation graphs is still
   required before any novelty statement.

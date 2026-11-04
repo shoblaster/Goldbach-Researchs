@@ -41,6 +41,14 @@ two maps are inverse to one another. ∎
 
 ## Source-level boundary finding
 
+The peer-reviewed Journal of Integer Sequences paper by Čejchan, Křížek, and
+Somer (CIT-038) proves the same forced-primality mechanism near primorials with
+the lower-side threshold based on the preceding prime (p_{k-1}^2) (its
+Theorem 18). The present elementary argument explains the proposed
+(p_{k+1}^2) extension when the explicit endpoint condition (N-H>p_k) is
+available. This is recorded as a checked derivation and comparison, not as a
+novelty claim.
+
 The Ross preprint's Zenodo abstract states the same correspondence for
 (H\le p_{k+1}^2), but the page is a non-peer-reviewed record and says its
 version is superseded. The literal small-(k) wording cannot be used without
