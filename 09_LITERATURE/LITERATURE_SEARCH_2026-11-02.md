@@ -159,6 +159,11 @@ through (p=19): (h_2=18,30,66,150,192,258) for (k=3,ldots,8).
   primorial Goldbach program can fail through a parameter-range/empty-sum
   issue. We therefore retain all Ross claims as source-reported only and do
   not use the withdrawn conditional theorem as evidence for Goldbach.
+- EXP022 extends the finite audit to (N=R p_k\#) with all prime factors of
+  (R) at most (p_k): all tested plus/minus implications obey the elementary
+  forced-primality lemma, while the only failures occur at the explicitly
+  recorded (N-m\le p_k) boundary. This is a known/related mechanism, not a
+  novelty claim.
 - This is **not** evidence that the computations are novel. A broader search
   of books, papers, conference proceedings, and citation graphs is still
   required before any novelty statement.

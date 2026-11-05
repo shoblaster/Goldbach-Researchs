@@ -1,0 +1,8 @@
+primes_used [2, 3, 5, 7, 11, 13, 17]
+k 3 p_k 5 p_next 7 primorial 30 H 49 multipliers 46 plus_failures 0 minus_failures_under_endpoint 0 boundary_failures 3 boundary_examples [(1, 25), (1, 27), (1, 28)] minimum_N_minus_(H-1) -18
+k 4 p_k 7 p_next 11 primorial 210 H 121 multipliers 67 plus_failures 0 minus_failures_under_endpoint 0 boundary_failures 0 boundary_examples [] minimum_N_minus_(H-1) 90
+k 5 p_k 11 p_next 13 primorial 2310 H 169 multipliers 83 plus_failures 0 minus_failures_under_endpoint 0 boundary_failures 0 boundary_examples [] minimum_N_minus_(H-1) 2142
+k 6 p_k 13 p_next 17 primorial 30030 H 289 multipliers 98 plus_failures 0 minus_failures_under_endpoint 0 boundary_failures 0 boundary_examples [] minimum_N_minus_(H-1) 29742
+all_endpoint_implications_match True
+primality_method independent trial division
+boundary_note boundary failures are reported, not counted as endpoint failures

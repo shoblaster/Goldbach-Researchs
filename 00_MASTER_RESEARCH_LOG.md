@@ -2680,3 +2680,63 @@
 **Next verification required:**
 - Keep searching only for primary, independently checkable results or run a
   clearly scoped experiment. Do not import the withdrawn conditional argument.
+
+### 2026-11-05 — EXP022 primorial-multiple offset audit
+
+- Objective: test the known/source-reported forced-primality mechanism for
+  (N=R p_k\#), where every prime factor of (R) is at most (p_k), and
+  identify the exact minus-side endpoint needed.
+- Method: `03_CODE/primorial_multiple_offset_audit.py` enumerated every
+  (p_k)-smooth multiplier (R\le200) for (k=3,4,5,6). For every
+  (2\le m<p_{k+1}^2), it used independent trial division to check both
+  (N+m) and (N-m) implications.
+- Computation actually run: yes. There were zero plus-direction failures and
+  zero minus-direction failures when (N-m>p_k). The only three boundary
+  failures were (k=3,R=1,m=25,27,28), where (N-m=5,3,2).
+- Mathematical result: the divisor argument in
+  `08_PROOFS/PROOF_FRONTIER_021_PRIMORIAL_MULTIPLE_OFFSET_LEMMA.md` proves the
+  implication under the stated endpoint. The mechanism is known/related
+  prior art (CIT-039); no novelty claim is made.
+- Data generated: `06_EXPERIMENTS/EXP022_PRIMORIAL_MULTIPLE_OFFSET_AUDIT/RAW_OUTPUT.txt`
+  and README.
+
+### Verification Checkpoint
+
+**Claims made:**
+- The forced-primality lemma holds for the stated primorial multiples under
+  the explicit endpoint condition.
+- EXP022 found no counterexample in the enumerated (R,k,m) range and found
+  three expected boundary exceptions outside that condition.
+
+**Sources used:**
+- CIT-039 for source-reported related structure.
+- Self-contained proof in `08_PROOFS/PROOF_FRONTIER_021_PRIMORIAL_MULTIPLE_OFFSET_LEMMA.md`.
+
+**Citations verified:**
+- CIT-039 was inspected directly on 2026-11-05.
+
+**Claims not independently verified:**
+- No asymptotic or distributional claim from the Ross preprint.
+- No novelty claim for the lemma.
+
+**Computations actually run:**
+- Yes: exhaustive trial-division audit over all generated smooth multipliers
+  (R\le200) for (k=3,4,5,6) and every (m<p_{k+1}^2).
+
+**Data generated:**
+- EXP022 raw output and README.
+
+**Proof status:**
+- Forced-primality lemma: PROVED elementary result.
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED; this is source-reported/known structure.
+
+**Known uncertainties:**
+- No claim is made for arbitrary (R) with a prime factor above (p_k), or
+  for prime-level Goldbach counts.
+
+**Next verification required:**
+- Preserve the lemma as background and focus future work on genuinely
+  unverified prime-level or fixed-window questions.

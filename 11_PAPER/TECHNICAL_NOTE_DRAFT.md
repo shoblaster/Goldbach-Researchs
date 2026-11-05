@@ -161,6 +161,13 @@ forced-primality mechanism with the preceding-prime threshold (p_{k-1}^2).
 Our (p_{k+1}^2) statement is therefore retained as an endpoint-qualified
 audit, not a novelty claim.
 
+EXP022 checks the same divisor mechanism for (N=R p_k\#) with all prime
+factors of (R) at most (p_k), using every smooth (R\le200) for
+(k=3,4,5,6). It found no implication failure under the explicit minus-side
+endpoint (N-m>p_k); the three (k=3) boundary exceptions are preserved in
+the raw output. This is a finite audit of known structure, not a new Goldbach
+result.
+
 The current literature audit also records a critical status warning: a related
 Ross primorial Goldbach preprint is explicitly marked withdrawn, with its own
 record stating that the principal conditional theorem fails because the chosen
