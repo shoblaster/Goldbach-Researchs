@@ -2617,3 +2617,66 @@
 **Next verification required:**
 - Keep the result as a source-audited finite relation; do not promote it to an
   unconditional Goldbach theorem.
+
+### 2026-11-05 — Ross preprint status and empty-range warning
+
+- Objective: verify whether the (p_{k+1}^2) mechanism appears beyond the
+  superseded Ross record and check the status of the related analytic Goldbach
+  preprint.
+- Source verification: inspected CIT-039, a follow-up Zenodo preprint whose
+  abstract repeats the elementary forced-primality fact for offsets
+  (m<p_{k+1}^2), while explicitly making its first-arrival distribution
+  conjectural/conditional.
+- Critical source-status finding: inspected CIT-040, the latest Zenodo record
+  for Ross's related primorial Goldbach program. The record explicitly says the
+  preprint is withdrawn and that its principal conditional result is invalid;
+  it attributes the failure to a Vaughan parameter choice making the Type-II
+  range empty/degenerate. This is a source-reported warning, not an independent
+  reproof of every analytic detail.
+- Interpretation: the elementary primorial offset mechanism is consistent with
+  our endpoint-qualified proof, but the analytic Goldbach extension in the
+  withdrawn preprint must not be cited as established evidence. This reinforces
+  the project's distinction between local/sieve structure and prime-level
+  Goldbach.
+
+### Verification Checkpoint
+
+**Claims made:**
+- CIT-039 repeats the (m<p_{k+1}^2) forced-primality mechanism and labels its
+  distributional law conjectural/conditional.
+- CIT-040's Zenodo record explicitly withdraws a related conditional Goldbach
+  preprint and states that its principal theorem is invalid due to an
+  empty/degenerate Type-II range.
+
+**Sources used:**
+- CIT-039: https://zenodo.org/records/22018781
+- CIT-040: https://zenodo.org/records/22020981
+
+**Citations verified:**
+- Both Zenodo records were inspected directly on 2026-11-05.
+
+**Claims not independently verified:**
+- The full analytic derivation of the withdrawal note was not reconstructed.
+- No distributional or asymptotic claim from CIT-039 was adopted.
+
+**Computations actually run:**
+- None; this was a source-status audit.
+
+**Data generated:**
+- No new raw experiment; citation and claim-ledger updates only.
+
+**Proof status:**
+- Endpoint-qualified finite correspondence: PROVED.
+- Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:**
+- NOVELTY NOT ESTABLISHED. The mechanism has peer-reviewed antecedent and
+  multiple preprint statements; the withdrawn analytic program is not evidence.
+
+**Known uncertainties:**
+- Whether the latest superseding Ross record contains a fully correct proof of
+  any prime-level theorem remains unverified; none is assumed here.
+
+**Next verification required:**
+- Keep searching only for primary, independently checkable results or run a
+  clearly scoped experiment. Do not import the withdrawn conditional argument.

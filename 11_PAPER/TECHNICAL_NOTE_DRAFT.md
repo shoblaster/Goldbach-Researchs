@@ -161,6 +161,12 @@ forced-primality mechanism with the preceding-prime threshold (p_{k-1}^2).
 Our (p_{k+1}^2) statement is therefore retained as an endpoint-qualified
 audit, not a novelty claim.
 
+The current literature audit also records a critical status warning: a related
+Ross primorial Goldbach preprint is explicitly marked withdrawn, with its own
+record stating that the principal conditional theorem fails because the chosen
+Vaughan Type-II range is empty/degenerate (CIT-040). This note does not use that
+withdrawn argument as evidence for any Goldbach conclusion.
+
 The source's explanatory page itself introduces approximate regular placement
 of permitted tuples when transferring the full-period density to the two
 subintervals. The later source version attempts a convergence argument, but
@@ -231,3 +237,7 @@ status for each result.
 11. Antonín Čejchan, Michal Křížek, and Lawrence Somer, *On Remarkable
     Properties of Primes Near Factorials and Primorials*, [Journal of Integer
     Sequences](https://cs.uwaterloo.ca/journals/JIS/VOL25/Krizek/krizek3.html).
+12. Michael M. Ross, *Two-Sided Fortunate Numbers and Goldbach Amplification
+    for Primorial Multiples*, [Zenodo record 22018781](https://zenodo.org/records/22018781).
+13. Michael M. Ross, *The Goldbach Problem for Primorials: Singular Series,
+    Type II Sums, and LPF Structure*, [withdrawn Zenodo record 22020981](https://zenodo.org/records/22020981).

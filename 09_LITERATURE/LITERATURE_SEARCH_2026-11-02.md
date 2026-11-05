@@ -88,6 +88,20 @@ k-tuples, primorial-period density, and extremal counts in the initial interval
     mechanism as prior art; it does not by itself verify the Ross preprint's
     claimed (p_{k+1}^2) sharpening.
 
+13. Michael M. Ross, *Two-Sided Fortunate Numbers and Goldbach Amplification
+    for Primorial Multiples*, [Zenodo record 22018781](https://zenodo.org/records/22018781).
+    This follow-up preprint repeats the elementary statement that an offset
+    (m<p_{k+1}^2) producing a prime (N\pm m) must itself be prime. Its
+    first-arrival distribution is explicitly conjectural/conditional and is
+    not treated as established literature.
+
+14. The latest Zenodo record for Ross's related *Goldbach Problem for
+    Primorials* preprint, [record 22020981](https://zenodo.org/records/22020981),
+    explicitly marks the work withdrawn and says its principal conditional
+    theorem is invalid because the Vaughan Type-II range is empty/degenerate.
+    This is recorded as a source-status warning, not as an independent audit of
+    every analytic detail.
+
 The ancillary note also gives an ILP with exactly two selected nonzero
 residues per odd prime and coverage constraints for every position. EXP017
 implemented that formulation independently and reproduced the source table
@@ -141,6 +155,10 @@ through (p=19): (h_2=18,30,66,150,192,258) for (k=3,ldots,8).
   mechanism. Our endpoint-qualified (p_{k+1}^2) derivation is elementary and
   source-audited, but **NOVELTY NOT ESTABLISHED** because the Ross preprint
   already states the same sharpening.
+- The withdrawn Ross record is a concrete warning that an apparently complete
+  primorial Goldbach program can fail through a parameter-range/empty-sum
+  issue. We therefore retain all Ross claims as source-reported only and do
+  not use the withdrawn conditional theorem as evidence for Goldbach.
 - This is **not** evidence that the computations are novel. A broader search
   of books, papers, conference proceedings, and citation graphs is still
   required before any novelty statement.
