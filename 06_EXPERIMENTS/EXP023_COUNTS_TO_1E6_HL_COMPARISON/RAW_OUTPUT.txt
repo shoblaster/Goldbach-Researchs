@@ -1,0 +1,8 @@
+EXP005 rows=49999 mismatches_vs_recompute=0
+even n in 4..1000000: 499999; zero counts: 0; min G=1; max G=15594
+smallest G for n>=204: 6 at n = 212
+samples=20813 mean G/H=1.1946 min=0.9963 max=1.5740
+  n in [1e+03,1e+04): mean G/H=1.3338 sd=0.0784
+  n in [1e+04,1e+05): mean G/H=1.2425 sd=0.0432
+  n in [1e+05,5e+05): mean G/H=1.1986 sd=0.0251
+  n in [5e+05,1e+06): mean G/H=1.1803 sd=0.0186
