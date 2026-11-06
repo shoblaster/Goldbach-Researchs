@@ -1,0 +1,113 @@
+EXP023 raw output (assembled from the three runs below; each section is verbatim script output)
+Date: 2026-11-06 UTC; Python 3.13.18; ortools 9.15.6755; SciPy 1.18.1
+
+=== A. python 03_CODE/h2_ratio_analysis.py
+k  p_k  h2    p^2-p  margin  h2/(p^2-p)  h2/p^2   h2/(p*k)  h2/(p*ln p)
+3  5    18    20     2       0.9000     0.7200   1.200     2.237
+4  7    30    42     12      0.7143     0.6122   1.071     2.202
+5  11   66    110    44      0.6000     0.5455   1.200     2.502
+6  13   150   156    6       0.9615     0.8876   1.923     4.499
+7  17   192   272    80      0.7059     0.6644   1.613     3.986
+8  19   258   342    84      0.7544     0.7147   1.697     4.612
+9  23   366   506    140     0.7233     0.6919   1.768     5.075
+10 29   450   812    362     0.5542     0.5351   1.552     4.608
+11 31   570   930    360     0.6129     0.5931   1.672     5.354
+12 37   708   1332   624     0.5315     0.5172   1.595     5.299
+13 41   894   1640   746     0.5451     0.5318   1.677     5.872
+14 43   1044  1806   762     0.5781     0.5646   1.734     6.455
+15 47   1284  2162   878     0.5939     0.5813   1.821     7.096
+16 53   1422  2756   1334    0.5160     0.5062   1.677     6.758
+17 59   1656  3422   1766    0.4839     0.4757   1.651     6.884
+18 61   1902  3660   1758    0.5197     0.5112   1.732     7.585
+19 67   2190  4422   2232    0.4953     0.4879   1.720     7.774
+20 71   2460  4970   2510    0.4950     0.4880   1.732     8.128
+21 73   2622  5256   2634    0.4989     0.4920   1.710     8.372
+
+max ratio h2/(p^2-p) over k=3..21: k=6, 25/26 = 0.961538
+max ratio over k>=7: k=8, 0.754386
+ratio strictly decreasing over all k=3..21: False
+ratio strictly decreasing over k=7..21: False
+non-decreasing steps for k>=7: [(7, 0.7058823529411765, 0.7543859649122807), (10, 0.5541871921182266, 0.6129032258064516), (12, 0.5315315315315315, 0.5451219512195122), (13, 0.5451219512195122, 0.5780730897009967), (14, 0.5780730897009967, 0.5938945420906568), (17, 0.48392752776154296, 0.519672131147541), (20, 0.4949698189134809, 0.4988584474885845)]
+last five ratios: [0.4839, 0.5197, 0.4953, 0.495, 0.4989]
+
+headroom c_k = (p_k^2 - h2(k)) / p_k  (the bound p^2-p needs c_k > 1):
+  k=3  c_k=1.4000
+  k=4  c_k=2.7143
+  k=5  c_k=5.0000
+  k=6  c_k=1.4615
+  k=7  c_k=5.7059
+  k=8  c_k=5.4211
+  k=9  c_k=7.0870
+  k=10 c_k=13.4828
+  k=11 c_k=12.6129
+  k=12 c_k=17.8649
+  k=13 c_k=19.1951
+  k=14 c_k=18.7209
+  k=15 c_k=19.6809
+  k=16 c_k=26.1698
+  k=17 c_k=30.9322
+  k=18 c_k=29.8197
+  k=19 c_k=34.3134
+  k=20 c_k=36.3521
+  k=21 c_k=37.0822
+three smallest c_k: [(3, '7/5', 1.4), (6, '19/13', 1.4615), (4, '19/7', 2.7143)]
+min over table: k=3, c=7/5
+
+=== B. python 03_CODE/conjecture4_finite_check.py 20000000
+N range for each k (N even, N>=12):
+  k=2 p_k=3: 12 <= N <= 29  (n = N/2 in [6, 14])
+  k=3 p_k=5: 30 <= N <= 55  (n = N/2 in [15, 27])
+  k=4 p_k=7: 56 <= N <= 131  (n = N/2 in [28, 65])
+  k=5 p_k=11: 132 <= N <= 181  (n = N/2 in [66, 90])
+  => k_n=2 holds exactly for 6<=n<=14; for 15<=n<=29 (30<=N<=58) k_n>=3
+
+(a) sieve check: even N in [12,20000000] checked=9999995 failures=0
+(b) independent trial-division check N<=100000: checked=49995 failures=0
+
+(d) per-k summary (k, p_k, #N, max over N of least q1, that/p_k^2, fails):
+  k=2    p_k=3     N_count=9         max_least_q1=7      max_least_q1/p^2=0.7778 fails=0
+  k=3    p_k=5     N_count=13        max_least_q1=17     max_least_q1/p^2=0.6800 fails=0
+  k=4    p_k=7     N_count=38        max_least_q1=31     max_least_q1/p^2=0.6327 fails=0
+  k=5    p_k=11    N_count=25        max_least_q1=31     max_least_q1/p^2=0.2562 fails=0
+  k=6    p_k=13    N_count=62        max_least_q1=43     max_least_q1/p^2=0.2544 fails=0
+  k=7    p_k=17    N_count=37        max_least_q1=47     max_least_q1/p^2=0.1626 fails=0
+  k=8    p_k=19    N_count=86        max_least_q1=73     max_least_q1/p^2=0.2022 fails=0
+  k=9    p_k=23    N_count=159       max_least_q1=79     max_least_q1/p^2=0.1493 fails=0
+  k=10   p_k=29    N_count=61        max_least_q1=73     max_least_q1/p^2=0.0868 fails=0
+  k=11   p_k=31    N_count=207       max_least_q1=107    max_least_q1/p^2=0.1113 fails=0
+  k=12   p_k=37    N_count=158       max_least_q1=109    max_least_q1/p^2=0.0796 fails=0
+  k=13   p_k=41    N_count=85        max_least_q1=131    max_least_q1/p^2=0.0779 fails=0
+  k=14   p_k=43    N_count=182       max_least_q1=127    max_least_q1/p^2=0.0687 fails=0
+  k=15   p_k=47    N_count=303       max_least_q1=181    max_least_q1/p^2=0.0819 fails=0
+  k=16   p_k=53    N_count=339       max_least_q1=167    max_least_q1/p^2=0.0595 fails=0
+  k=17   p_k=59    N_count=121       max_least_q1=137    max_least_q1/p^2=0.0394 fails=0
+  k=18   p_k=61    N_count=387       max_least_q1=199    max_least_q1/p^2=0.0535 fails=0
+  k=19   p_k=67    N_count=278       max_least_q1=181    max_least_q1/p^2=0.0403 fails=0
+  k=20   p_k=71    N_count=145       max_least_q1=151    max_least_q1/p^2=0.0300 fails=0
+  k=100  p_k=541   N_count=3267      max_least_q1=881    max_least_q1/p^2=0.0030 fails=0
+  k=200  p_k=1223  N_count=7359      max_least_q1=1619   max_least_q1/p^2=0.0011 fails=0
+  k=300  p_k=1987  N_count=11943     max_least_q1=2647   max_least_q1/p^2=0.0007 fails=0
+  k=400  p_k=2741  N_count=21964     max_least_q1=3499   max_least_q1/p^2=0.0005 fails=0
+  k=500  p_k=3571  N_count=35765     max_least_q1=4673   max_least_q1/p^2=0.0004 fails=0
+  k=600  p_k=4409  N_count=52986     max_least_q1=5861   max_least_q1/p^2=0.0003 fails=0
+
+largest max_least_q1/p^2 over all k<= 607: k=2, p=3, value=0.7778
+
+=== C1. python 03_CODE/h2_frontier_verify.py highs 3 4 5 6 7 8  (TIME_LIMIT=600)
+solver highs time_limit_s 600.0
+k 3 p_k 5 source_h2 18 omega2 2 L_status FEASIBLE witness_direct_check True L+1_status INFEASIBLE certified True seconds 0.7
+k 4 p_k 7 source_h2 30 omega2 4 L_status FEASIBLE witness_direct_check True L+1_status INFEASIBLE certified True seconds 0.0
+k 5 p_k 11 source_h2 66 omega2 10 L_status FEASIBLE witness_direct_check True L+1_status INFEASIBLE certified True seconds 0.0
+k 6 p_k 13 source_h2 150 omega2 24 L_status FEASIBLE witness_direct_check True L+1_status INFEASIBLE certified True seconds 0.0
+k 7 p_k 17 source_h2 192 omega2 31 L_status FEASIBLE witness_direct_check True L+1_status INFEASIBLE certified True seconds 0.2
+k 8 p_k 19 source_h2 258 omega2 42 L_status FEASIBLE witness_direct_check True L+1_status INFEASIBLE certified True seconds 1.6
+
+=== C2. python 03_CODE/h2_frontier_verify.py cpsat 3 4 5 6 7 8 9  (TIME_LIMIT=900)
+solver cpsat time_limit_s 900.0
+k 3 p_k 5 source_h2 18 omega2 2 L_status FEASIBLE witness_direct_check True L+1_status INFEASIBLE certified True seconds 0.3
+k 4 p_k 7 source_h2 30 omega2 4 L_status FEASIBLE witness_direct_check True L+1_status INFEASIBLE certified True seconds 0.0
+k 5 p_k 11 source_h2 66 omega2 10 L_status FEASIBLE witness_direct_check True L+1_status INFEASIBLE certified True seconds 0.0
+k 6 p_k 13 source_h2 150 omega2 24 L_status FEASIBLE witness_direct_check True L+1_status INFEASIBLE certified True seconds 0.1
+k 7 p_k 17 source_h2 192 omega2 31 L_status FEASIBLE witness_direct_check True L+1_status INFEASIBLE certified True seconds 0.1
+k 8 p_k 19 source_h2 258 omega2 42 L_status FEASIBLE witness_direct_check True L+1_status INFEASIBLE certified True seconds 3.3
+k 9 p_k 23 source_h2 366 omega2 60 L_status FEASIBLE witness_direct_check True L+1_status INFEASIBLE certified True seconds 137.5
