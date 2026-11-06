@@ -11,4 +11,4 @@ Observed results (finite computation only):
 - All 499,999 even n in 4..10^6 have G(n) >= 1. Maximum G(n) = 15,594. Smallest G(n) for n >= 204 is 6 at n = 212.
 - Ratio G(n) / (C2 * S(n) * n / ln^2 n) on 20,813 sampled n >= 1000: mean 1.33 on [10^3,10^4), 1.24 on [10^4,10^5), 1.20 on [10^5,5*10^5), 1.18 on [5*10^5,10^6]. The simple form is a heuristic with known lower-order terms, so a ratio above 1 that falls with n is expected.
 
-Not claimed: no theorem, no novelty, nothing beyond 10^6. Counts and the H-L comparison have prior art (see CIT-001 to CIT-005). The FFT result was not cross-checked against a second implementation above 10^5.
+Not claimed: no theorem, no novelty, nothing beyond 10^6. Counts and the H-L comparison have prior art (see CIT-001 to CIT-005). The FFT counts above 10^5 were later cross-checked by an independent C++ program in EXP024 (0 mismatches).

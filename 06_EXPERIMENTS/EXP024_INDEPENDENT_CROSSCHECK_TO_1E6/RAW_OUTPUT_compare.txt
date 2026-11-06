@@ -1,0 +1,4 @@
+cpp rows=499999
+mismatches C++ vs FFT over 4..1000000: 0
+EXP005 rows=49999 mismatches C++ vs EXP005: 0
+sha256 of C++ counts file: 4073b54273ee5f18cd5218579e768e9eb1bacb29846a2ca52c916b5112cb644c

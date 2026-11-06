@@ -2757,3 +2757,20 @@
 **Proof status:** none advanced; Strong Goldbach OPEN.
 **Novelty status:** NOVELTY NOT ESTABLISHED.
 **Next verification required:** cross-check the 10^5..10^6 counts with an independently written sieve program.
+
+### 2026-11-07 — EXP024 independent cross-check of counts to 10^6
+
+- Objective: Remove the open item from EXP023 by recomputing the counts above 10^5 with a method that shares nothing with the FFT path.
+- Work performed: Added `03_CODE/goldbach_pair_accumulate_1e6.cpp`, which accumulates counts over all prime pairs p <= q with p + q <= 10^6, and `03_CODE/compare_counts_exp024.py`. Built with `g++ -std=c++17 -O2 -Wall -Wextra` and ran both; outputs are preserved in `06_EXPERIMENTS/EXP024_INDEPENDENT_CROSSCHECK_TO_1E6/`.
+- Results: 499,999 values, 0 zero counts, min 1, max 15,594. 0 mismatches against the EXP023 FFT counts and 0 against all 49,999 EXP005 rows. Counts file SHA-256 is recorded in the experiment README.
+- Interpretation: Finite computation only. Two independently written methods agree on every count in 4..10^6. No claim beyond 10^6.
+- Literature status: No external source used; no novelty claim.
+
+### Verification Checkpoint
+
+**Claims made:** Counts for all even n in 4..10^6 agree between a pair-accumulation program and an FFT convolution, and match EXP005 on 4..100000. No even n in this range lacks a prime pair.
+**Claims not independently verified:** neither program has formal proof of correctness; nothing above 10^6.
+**Computations actually run:** one C++ run (about 3.5 s) and one comparison run.
+**Proof status:** none advanced; Strong Goldbach OPEN.
+**Novelty status:** NOVELTY NOT ESTABLISHED.
+**Next verification required:** before scaling above 10^6, choose a method that stores counts only and validate it against EXP024.
