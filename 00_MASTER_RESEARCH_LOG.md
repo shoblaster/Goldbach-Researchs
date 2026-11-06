@@ -2740,3 +2740,20 @@
 **Next verification required:**
 - Preserve the lemma as background and focus future work on genuinely
   unverified prime-level or fixed-window questions.
+
+### 2026-11-07 — EXP023 counts to 10^6 and Hardy-Littlewood comparison
+
+- Objective: Independently recompute G(n) beyond the validated 100000 range and compare it with the simple Hardy-Littlewood form.
+- Work performed: Added `03_CODE/goldbach_counts_1e6_hl_comparison.py`, which computes ordered counts by FFT convolution of the prime indicator and converts them to unordered counts. Ran it from the repository root; output is preserved in `06_EXPERIMENTS/EXP023_COUNTS_TO_1E6_HL_COMPARISON/RAW_OUTPUT.txt`.
+- Results: 0 mismatches against all 49,999 EXP005 count rows. All 499,999 even n in 4..10^6 have G(n) >= 1; maximum G(n) = 15,594. Mean G / (C2 S(n) n / ln^2 n) on a 20,813-value sample is 1.33, 1.24, 1.20, 1.18 over the four ranges recorded in the experiment README.
+- Interpretation: Finite computation only. The ratio comparison is heuristic. No claim beyond 10^6.
+- Literature status: Counts and singular-series comparison have prior art (CIT-001 to CIT-005); no novelty claim.
+
+### Verification Checkpoint
+
+**Claims made:** EXP023 recomputation agrees with EXP005 on 4..100000 and finds no even n in 4..10^6 without a prime pair.
+**Claims not independently verified:** values above 100000 were not cross-checked by a second implementation.
+**Computations actually run:** one run of the EXP023 script (numpy/scipy, Linux).
+**Proof status:** none advanced; Strong Goldbach OPEN.
+**Novelty status:** NOVELTY NOT ESTABLISHED.
+**Next verification required:** cross-check the 10^5..10^6 counts with an independently written sieve program.
