@@ -1567,14 +1567,14 @@
 ### 2026-10-07 — Outlook drafts created
 
 - Objective: Connect the user’s email account and stage the verified outreach drafts without sending them prematurely.
-- Work performed: Confirmed the connected Outlook profile as `shouryasharma5437@gmail.com`. Created four plain-text drafts addressed to James Maynard, Kevin Ford, Kaisa Matomäki, and Olivier Ramaré. No attachments were added.
+- Work performed: Confirmed the connected Outlook profile as `[researcher mailbox — redacted]`. Created four plain-text drafts addressed to James Maynard, Kevin Ford, Kaisa Matomäki, and Olivier Ramaré. No attachments were added.
 - Result: All four draft creation calls succeeded. No email was sent. Draft IDs and subjects are preserved in `09_LITERATURE/OUTREACH_CANDIDATES_2026-10-07.md`.
 - Data generated: Four external Outlook drafts; repository status record updated. No mathematical computation or theorem verification was performed.
 
 ### Verification Checkpoint
 
 **Claims made:**
-- The connected mailbox profile is `shouryasharma5437@gmail.com`.
+- The connected mailbox profile is `[researcher mailbox — redacted]`.
 - Four named emails exist as Outlook drafts and have not been sent.
 
 **Sources used:**
@@ -1605,7 +1605,7 @@
 ### 2026-10-07 — four outreach emails sent and verified
 
 - Objective: Send the four user-approved expert outreach messages and verify the resulting sent items.
-- Work performed: Sent the finalized plain-text messages to James Maynard, Kevin Ford, Kaisa Matomäki, and Olivier Ramaré from `shouryasharma5437@gmail.com`, with no attachments. Searched the connected Outlook mailbox by exact subject and confirmed a sent copy for each matching recipient and sender.
+- Work performed: Sent the finalized plain-text messages to James Maynard, Kevin Ford, Kaisa Matomäki, and Olivier Ramaré from `[researcher mailbox — redacted]`, with no attachments. Searched the connected Outlook mailbox by exact subject and confirmed a sent copy for each matching recipient and sender.
 - Result: All four sends succeeded. Sent-message IDs are recorded in `09_LITERATURE/OUTREACH_CANDIDATES_2026-10-07.md`. No response has been received yet. The original drafts remain and should not be sent again.
 - Data generated: Four external sent messages; four sent-item readbacks; repository outreach status updated.
 
@@ -2741,32 +2741,48 @@
 - Preserve the lemma as background and focus future work on genuinely
   unverified prime-level or fixed-window questions.
 
-### 2026-11-07 — EXP024 second-method cross-check of M_k (branch `verify/m-k-second-solver`)
+### 2026-11-07 — EXP023 paired-Jacobsthal bound frontier (branch `research/h2-ratio-frontier`)
 
-- Objective: remove the single-solver dependence of the fixed-window minima M_k
-  (EXP015, EXP019).
-- Work performed: wrote a CP-SAT version of the EXP015 model and, separately, an exact
-  solver-free enumeration in C++ (all residue selections through p_{k-1}, exact choice of the last prime's
-  two classes).
-- Computation actually run: CP-SAT k=1..8 (300 s limit each); C++ enumeration k=3..8. Raw output in
-  `06_EXPERIMENTS/EXP024_MK_SECOND_METHOD_CROSSCHECK/RAW_OUTPUT.txt`.
-- Result: C++ enumeration gives M_k = 2, 2, 3, 2, 4, 4 for k = 3..8, matching all recorded values; M_8 = 4
-  is now independently confirmed (77 s). CP-SAT is OPTIMAL and agrees for k<=6 but proves no lower bound at
-  k=7,8 (best bound 0), so it is not a certifier for this model. k=9 was not re-verified.
+- Objective: study the one finite quantity in the repository that sits on the
+  literature frontier, the paired-Jacobsthal bound `h2(k) < p_k^2 - p_k`
+  (CIT-029/030/041), which the source states would imply a tightened Goldbach
+  statement (Conjecture 4).
+- Source verification: read Table 1 (k=1..21), Conjecture 6 and Proposition 3.2
+  of the Ziller–Morack papers through WebFetch extraction of the arXiv PDFs
+  (CIT-041); cited Iwaniec's `(k log k)^2` bound via Costello–Watts (CIT-042).
+- Mathematics: `08_PROOFS/PROOF_FRONTIER_022_H2_BOUND_AND_CONJECTURE4.md`
+  re-derives H ⇒ Conjecture 4 for `k_n >= 3` by a divisor argument (PROVED,
+  known), records an immaterial n-versus-2n threshold slip in the source's
+  case split, and states what a proof of the bound would have to do.
+- Computation actually run: `h2_ratio_analysis.py`, `conjecture4_finite_check.py`
+  (0 failures for all even N in [12, 2e7]; independent trial division to 1e5),
+  and `h2_frontier_verify.py` (CP-SAT k=3..9; HiGHS k=3..8) — all in
+  `06_EXPERIMENTS/EXP023_H2_RATIO_FRONTIER/RAW_OUTPUT.txt`.
+- Result: tightest table row is k=6 (ratio 25/26, margin 6); minimum headroom
+  `(p^2-h2)/p` is 7/5 at k=3; ratio for k>=7 is <=0.7544 and non-monotone.
+  Finite evidence only.
 
 ### Verification Checkpoint
 
-**Claims made:** M_k for k=3..8 confirmed by an independent exhaustive method; CP-SAT agrees for k<=6.
+**Claims made:**
+- `h2(k)` for k=3..9 reproduces the source value under two solvers.
+- The source bound holds on table rows k=3..21; Conjecture 4 has no failure up to 2e7.
+- H ⇒ Conjecture 4 follows by the divisor argument in PROOF_FRONTIER_022 §2.
 
-**Sources used:** none new.
+**Sources used:** CIT-029, CIT-030, CIT-041, CIT-042.
 
-**Claims not independently verified:** M_9 = 5 (single HiGHS run); any k>=10; any asymptotic behaviour.
+**Claims not independently verified:**
+- Table rows k>=10 (transcribed; see EXP023 README for any k=10 certification).
+- The source's proof beyond the re-derived implication; wording of the case
+  split was read via extraction, not a local PDF.
+- Any proof of the bound for all k; any dimension-2 analogue of Iwaniec's bound.
 
-**Computations actually run:** as above; all witnesses recomputed directly from the definition.
+**Computations actually run:** as listed above; raw output preserved.
 
-**Proof status:** Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+**Proof status:**
+- H ⇒ Conjecture 4: PROVED (known). H itself: unproved. Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
 
 **Novelty status:** NOVELTY NOT ESTABLISHED.
 
-**Next verification required:** an exhaustive or certified check of k=9 (estimated >1e11 prefix
-selections), or a solver run that exports an optimality certificate.
+**Next verification required:** search for paired analogues of Iwaniec's bound;
+certify h2(k) for k>=10; obtain the source PDF text locally.
