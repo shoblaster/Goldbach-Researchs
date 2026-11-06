@@ -2774,3 +2774,21 @@
 **Proof status:** none advanced; Strong Goldbach OPEN.
 **Novelty status:** NOVELTY NOT ESTABLISHED.
 **Next verification required:** before scaling above 10^6, choose a method that stores counts only and validate it against EXP024.
+
+### 2026-11-07 — candidate screen and EXP025: position of the smaller prime in Goldbach pairs
+
+- Objective: Screen the candidate statistic left open on 2026-09-09 (differences q - p inside Goldbach pairs) and check it against the Hardy-Littlewood heuristic.
+- Literature screen: Searched phrases on distribution of the difference between the two primes in a Goldbach partition. Inspected the abstracts of arXiv nlin/0601024 (Goldbach-partition-count series, mentions a sum/difference symmetry; its abstract does not describe a per-pair difference distribution) and arXiv 1508.04457 (random choice of a partition; studies the size of the partitioned even number, not within-pair differences). The search was not exhaustive; novelty is not established.
+- Work performed: Added `03_CODE/pair_position_distribution.cpp` and ran it from the repository root; output is in `06_EXPERIMENTS/EXP025_PAIR_POSITION_DISTRIBUTION/`. A first run with a fixed step in n was biased (every sampled n divisible by 5, ratio inflated about 25%); it was replaced by random sampling and the faulty output was not kept.
+- Results: 120,500,304 pairs over 25,000 sampled even n in [500000, 1000000]. The ratio of observed pairs to the weight 1/(ln p ln q) is flat across 50 position bins, mean 3.998, standard deviation 0.011, expected 4 C2 mean(S) = 3.9995.
+- Interpretation: Finite computation. The position of the smaller prime follows the standard heuristic, so a gap-distribution statistic would reproduce known two-point prime heuristics. Not a novelty direction on this evidence.
+- Next step: Do not pursue gap statistics as a novelty project. See ROADMAP.md.
+
+### Verification Checkpoint
+
+**Claims made:** Observed pair positions in the sampled range match the 1/(ln p ln q) weight within 0.3% in the bulk bins, and the overall constant matches 4 C2 mean(S).
+**Sources used:** abstracts of arXiv nlin/0601024 and arXiv 1508.04457.
+**Claims not independently verified:** the literature screen is not exhaustive; no second implementation of EXP025; nothing above 10^6.
+**Computations actually run:** one corrected run of the EXP025 program (about 18 s).
+**Proof status:** none advanced; Strong Goldbach OPEN.
+**Novelty status:** NOVELTY NOT ESTABLISHED.

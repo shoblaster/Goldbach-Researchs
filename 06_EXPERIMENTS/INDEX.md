@@ -1,6 +1,6 @@
 # Experiment index
 
-Next free ID: **EXP025**. Raw data for EXP001–EXP005 lives in `04_RAW_DATA/`; EXP005 and EXP006 have no README in this folder (see `VALIDATION.md` and `05_PROCESSED_DATA/EXP006/`).
+Next free ID: **EXP026**. Raw data for EXP001–EXP005 lives in `04_RAW_DATA/`; EXP005 and EXP006 have no README in this folder (see `VALIDATION.md` and `05_PROCESSED_DATA/EXP006/`).
 
 | ID | Subject | Status | Code (`03_CODE/`) |
 |---|---|---|---|
@@ -28,3 +28,4 @@ Next free ID: **EXP025**. Raw data for EXP001–EXP005 lives in `04_RAW_DATA/`; 
 | EXP022 | primorial-multiple offset audit | exact finite check | primorial_multiple_offset_audit.py |
 | EXP023 | counts to 10^6 by FFT convolution, H-L ratio comparison | derived; matches EXP005 | goldbach_counts_1e6_hl_comparison.py |
 | EXP024 | independent C++ pair-accumulation check of counts to 10^6 | validated (0 mismatches vs EXP023 and EXP005) | goldbach_pair_accumulate_1e6.cpp, compare_counts_exp024.py |
+| EXP025 | position of smaller prime in Goldbach pairs vs 1/(ln p ln q) weight | derived heuristic check (flat ratio 3.998 vs 3.9995) | pair_position_distribution.cpp |
