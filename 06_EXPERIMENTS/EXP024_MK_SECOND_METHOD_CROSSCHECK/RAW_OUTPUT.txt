@@ -1,0 +1,45 @@
+EXP024 raw output (verbatim script output; two sections)
+Date: 2026-11-06 UTC; g++ 13.3.0; ortools 9.15.6755
+
+=== A. python 03_CODE/mk_cpsat_second_solver.py 1 2 3 4 5 6 7 8   (TIME_LIMIT=300)
+solver cpsat (ortools 9.15.6755) time_limit_s 300.0
+{'k': 1, 'window': 4, 'status': 'OPTIMAL', 'seconds': 0.0, 'objective': 2, 'best_bound': 2.0, 'direct_survivors': 2, 'direct_match': True, 'survivors': (2, 4), 'selected': ((1,),)} recorded_minimum 2 agrees_with_recorded True
+{'k': 2, 'window': 9, 'status': 'OPTIMAL', 'seconds': 0.0, 'objective': 1, 'best_bound': 1.0, 'direct_survivors': 1, 'direct_match': True, 'survivors': (4,), 'selected': ((1,), (0, 2))} recorded_minimum 1 agrees_with_recorded True
+{'k': 3, 'window': 25, 'status': 'OPTIMAL', 'seconds': 0.0, 'objective': 2, 'best_bound': 2.0, 'direct_survivors': 2, 'direct_match': True, 'survivors': (4, 10), 'selected': ((1,), (0, 2), (1, 2))} recorded_minimum 2 agrees_with_recorded True
+{'k': 4, 'window': 49, 'status': 'OPTIMAL', 'seconds': 0.0, 'objective': 2, 'best_bound': 2.0, 'direct_survivors': 2, 'direct_match': True, 'survivors': (16, 28), 'selected': ((1,), (0, 2), (0, 4), (1, 4))} recorded_minimum 2 agrees_with_recorded True
+{'k': 5, 'window': 121, 'status': 'OPTIMAL', 'seconds': 0.1, 'objective': 3, 'best_bound': 3.0, 'direct_survivors': 3, 'direct_match': True, 'survivors': (20, 62, 110), 'selected': ((1,), (0, 1), (1, 4), (1, 3), (2, 10))} recorded_minimum 3 agrees_with_recorded True
+{'k': 6, 'window': 169, 'status': 'OPTIMAL', 'seconds': 0.7, 'objective': 2, 'best_bound': 2.0, 'direct_survivors': 2, 'direct_match': True, 'survivors': (11, 161), 'selected': ((0,), (0, 1), (0, 2), (1, 3), (1, 6), (1, 2))} recorded_minimum 2 agrees_with_recorded True
+{'k': 7, 'window': 289, 'status': 'FEASIBLE', 'seconds': 300.0, 'objective': 4, 'best_bound': 0.0, 'direct_survivors': 4, 'direct_match': True, 'survivors': (70, 130, 154, 172), 'selected': ((1,), (0, 2), (1, 3), (1, 3), (1, 8), (4, 7), (6, 10))} recorded_minimum 4 agrees_with_recorded None
+{'k': 8, 'window': 361, 'status': 'FEASIBLE', 'seconds': 300.0, 'objective': 4, 'best_bound': 0.0, 'direct_survivors': 4, 'direct_match': True, 'survivors': (66, 96, 234, 312), 'selected': ((1,), (1, 2), (0, 3), (0, 6), (1, 2), (10, 12), (0, 9), (15, 16))} recorded_minimum 4 agrees_with_recorded None
+
+=== B. ./mk_enum K for K=3..8  (g++ -std=c++17 -O3 -march=native -fopenmp 03_CODE/mk_enum_cpp.cpp; 2 threads)
+k=3 window=25 prefix_selections=6 tasks=6 threads=2
+k 3 window 25 exact_minimum 2 witness_direct_survivors 2 direct_match True
+prefix_witnesses_attaining_minimum_with_a_best_last_pair 5
+selected (0) (0,1) (0,1) 
+survivors 17 23 
+k=4 window=49 prefix_selections=60 tasks=60 threads=2
+k 4 window 49 exact_minimum 2 witness_direct_survivors 2 direct_match True
+prefix_witnesses_attaining_minimum_with_a_best_last_pair 27
+selected (0) (0,1) (0,1) (1,2) 
+survivors 17 47 
+k=5 window=121 prefix_selections=1260 tasks=1260 threads=2
+k 5 window 121 exact_minimum 3 witness_direct_survivors 3 direct_match True
+prefix_witnesses_attaining_minimum_with_a_best_last_pair 51
+selected (0) (0,1) (0,2) (1,3) (1,9) 
+survivors 11 41 83 
+k=6 window=169 prefix_selections=69300 tasks=1260 threads=2
+k 6 window 169 exact_minimum 2 witness_direct_survivors 2 direct_match True
+prefix_witnesses_attaining_minimum_with_a_best_last_pair 5
+selected (0) (0,1) (0,2) (1,3) (1,6) (1,2) 
+survivors 11 161 
+k=7 window=289 prefix_selections=5405400 tasks=1260 threads=2
+k 7 window 289 exact_minimum 4 witness_direct_survivors 4 direct_match True
+prefix_witnesses_attaining_minimum_with_a_best_last_pair 11
+selected (0) (0,1) (0,3) (1,3) (4,8) (1,11) (13,0) 
+survivors 77 137 161 179 
+k=8 window=361 prefix_selections=735134400 tasks=1260 threads=2
+k 8 window 361 exact_minimum 4 witness_direct_survivors 4 direct_match True
+prefix_witnesses_attaining_minimum_with_a_best_last_pair 156
+selected (0) (0,1) (0,1) (0,3) (2,3) (3,5) (2,4) (0,4) 
+survivors 149 173 197 347 

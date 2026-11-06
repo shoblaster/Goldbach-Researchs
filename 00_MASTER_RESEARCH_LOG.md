@@ -2740,3 +2740,33 @@
 **Next verification required:**
 - Preserve the lemma as background and focus future work on genuinely
   unverified prime-level or fixed-window questions.
+
+### 2026-11-07 — EXP024 second-method cross-check of M_k (branch `verify/m-k-second-solver`)
+
+- Objective: remove the single-solver dependence of the fixed-window minima M_k
+  (EXP015, EXP019).
+- Work performed: wrote a CP-SAT version of the EXP015 model and, separately, an exact
+  solver-free enumeration in C++ (all residue selections through p_{k-1}, exact choice of the last prime's
+  two classes).
+- Computation actually run: CP-SAT k=1..8 (300 s limit each); C++ enumeration k=3..8. Raw output in
+  `06_EXPERIMENTS/EXP024_MK_SECOND_METHOD_CROSSCHECK/RAW_OUTPUT.txt`.
+- Result: C++ enumeration gives M_k = 2, 2, 3, 2, 4, 4 for k = 3..8, matching all recorded values; M_8 = 4
+  is now independently confirmed (77 s). CP-SAT is OPTIMAL and agrees for k<=6 but proves no lower bound at
+  k=7,8 (best bound 0), so it is not a certifier for this model. k=9 was not re-verified.
+
+### Verification Checkpoint
+
+**Claims made:** M_k for k=3..8 confirmed by an independent exhaustive method; CP-SAT agrees for k<=6.
+
+**Sources used:** none new.
+
+**Claims not independently verified:** M_9 = 5 (single HiGHS run); any k>=10; any asymptotic behaviour.
+
+**Computations actually run:** as above; all witnesses recomputed directly from the definition.
+
+**Proof status:** Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:** NOVELTY NOT ESTABLISHED.
+
+**Next verification required:** an exhaustive or certified check of k=9 (estimated >1e11 prefix
+selections), or a solver run that exports an optimality certificate.
