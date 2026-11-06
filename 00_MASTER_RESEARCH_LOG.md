@@ -2740,3 +2740,49 @@
 **Next verification required:**
 - Preserve the lemma as background and focus future work on genuinely
   unverified prime-level or fixed-window questions.
+
+### 2026-11-07 — EXP023 paired-Jacobsthal bound frontier (branch `research/h2-ratio-frontier`)
+
+- Objective: study the one finite quantity in the repository that sits on the
+  literature frontier, the paired-Jacobsthal bound `h2(k) < p_k^2 - p_k`
+  (CIT-029/030/041), which the source states would imply a tightened Goldbach
+  statement (Conjecture 4).
+- Source verification: read Table 1 (k=1..21), Conjecture 6 and Proposition 3.2
+  of the Ziller–Morack papers through WebFetch extraction of the arXiv PDFs
+  (CIT-041); cited Iwaniec's `(k log k)^2` bound via Costello–Watts (CIT-042).
+- Mathematics: `08_PROOFS/PROOF_FRONTIER_022_H2_BOUND_AND_CONJECTURE4.md`
+  re-derives H ⇒ Conjecture 4 for `k_n >= 3` by a divisor argument (PROVED,
+  known), records an immaterial n-versus-2n threshold slip in the source's
+  case split, and states what a proof of the bound would have to do.
+- Computation actually run: `h2_ratio_analysis.py`, `conjecture4_finite_check.py`
+  (0 failures for all even N in [12, 2e7]; independent trial division to 1e5),
+  and `h2_frontier_verify.py` (CP-SAT k=3..9; HiGHS k=3..8) — all in
+  `06_EXPERIMENTS/EXP023_H2_RATIO_FRONTIER/RAW_OUTPUT.txt`.
+- Result: tightest table row is k=6 (ratio 25/26, margin 6); minimum headroom
+  `(p^2-h2)/p` is 7/5 at k=3; ratio for k>=7 is <=0.7544 and non-monotone.
+  Finite evidence only.
+
+### Verification Checkpoint
+
+**Claims made:**
+- `h2(k)` for k=3..9 reproduces the source value under two solvers.
+- The source bound holds on table rows k=3..21; Conjecture 4 has no failure up to 2e7.
+- H ⇒ Conjecture 4 follows by the divisor argument in PROOF_FRONTIER_022 §2.
+
+**Sources used:** CIT-029, CIT-030, CIT-041, CIT-042.
+
+**Claims not independently verified:**
+- Table rows k>=10 (transcribed; see EXP023 README for any k=10 certification).
+- The source's proof beyond the re-derived implication; wording of the case
+  split was read via extraction, not a local PDF.
+- Any proof of the bound for all k; any dimension-2 analogue of Iwaniec's bound.
+
+**Computations actually run:** as listed above; raw output preserved.
+
+**Proof status:**
+- H ⇒ Conjecture 4: PROVED (known). H itself: unproved. Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:** NOVELTY NOT ESTABLISHED.
+
+**Next verification required:** search for paired analogues of Iwaniec's bound;
+certify h2(k) for k>=10; obtain the source PDF text locally.
