@@ -1567,14 +1567,14 @@
 ### 2026-10-07 — Outlook drafts created
 
 - Objective: Connect the user’s email account and stage the verified outreach drafts without sending them prematurely.
-- Work performed: Confirmed the connected Outlook profile as `shouryasharma5437@gmail.com`. Created four plain-text drafts addressed to James Maynard, Kevin Ford, Kaisa Matomäki, and Olivier Ramaré. No attachments were added.
+- Work performed: Confirmed the connected Outlook profile as `[researcher mailbox — redacted]`. Created four plain-text drafts addressed to James Maynard, Kevin Ford, Kaisa Matomäki, and Olivier Ramaré. No attachments were added.
 - Result: All four draft creation calls succeeded. No email was sent. Draft IDs and subjects are preserved in `09_LITERATURE/OUTREACH_CANDIDATES_2026-10-07.md`.
 - Data generated: Four external Outlook drafts; repository status record updated. No mathematical computation or theorem verification was performed.
 
 ### Verification Checkpoint
 
 **Claims made:**
-- The connected mailbox profile is `shouryasharma5437@gmail.com`.
+- The connected mailbox profile is `[researcher mailbox — redacted]`.
 - Four named emails exist as Outlook drafts and have not been sent.
 
 **Sources used:**
@@ -1605,7 +1605,7 @@
 ### 2026-10-07 — four outreach emails sent and verified
 
 - Objective: Send the four user-approved expert outreach messages and verify the resulting sent items.
-- Work performed: Sent the finalized plain-text messages to James Maynard, Kevin Ford, Kaisa Matomäki, and Olivier Ramaré from `shouryasharma5437@gmail.com`, with no attachments. Searched the connected Outlook mailbox by exact subject and confirmed a sent copy for each matching recipient and sender.
+- Work performed: Sent the finalized plain-text messages to James Maynard, Kevin Ford, Kaisa Matomäki, and Olivier Ramaré from `[researcher mailbox — redacted]`, with no attachments. Searched the connected Outlook mailbox by exact subject and confirmed a sent copy for each matching recipient and sender.
 - Result: All four sends succeeded. Sent-message IDs are recorded in `09_LITERATURE/OUTREACH_CANDIDATES_2026-10-07.md`. No response has been received yet. The original drafts remain and should not be sent again.
 - Data generated: Four external sent messages; four sent-item readbacks; repository outreach status updated.
 

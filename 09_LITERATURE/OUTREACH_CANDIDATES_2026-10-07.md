@@ -106,13 +106,17 @@ Terence Tao is highly relevant scientifically, but his official contact policy e
 
 ## Outlook draft status — 2026-10-07
 
-The Outlook connector is connected to `shouryasharma5437@gmail.com`. Four plain-text drafts were created for review; **none has been sent**.
+The Outlook connector is connected to `[researcher mailbox — redacted]`. Four plain-text drafts were created for review; **none has been sent**.
 
 | Recipient | Subject | Outlook draft ID | Status |
 |---|---|---|---|
-| James Maynard | Question about an interval-density step in a Goldbach sieve argument | Draft `AQMkADAwATNiZmYAZS05YjBhLWY1N2YtMDACLTAwCgBGAAADx2r-Oh7GnE_8HEEcXv2-oAcA6NMzizhaLUStckvB4e6G7wABKstu2AAAAA==`; sent `AQMkADAwATNiZmYAZS05YjBhLWY1N2YtMDACLTAwCgBGAAADx2r-Oh7GnE_8HEEcXv2-oAcA6NMzizhaLUStckvB4e6G7wABKsuCkwAAAA==` | SENT — verified |
-| Kevin Ford | Request for a sieve-theory check of a Goldbach density transfer | Draft `AQMkADAwATNiZmYAZS05YjBhLWY1N2YtMDACLTAwCgBGAAADx2r-Oh7GnE_8HEEcXv2-oAcA6NMzizhaLUStckvB4e6G7wABKstu2QAAAA==`; sent `AQMkADAwATNiZmYAZS05YjBhLWY1N2YtMDACLTAwCgBGAAADx2r-Oh7GnE_8HEEcXv2-oAcA6NMzizhaLUStckvB4e6G7wABKsuClAAAAA==` | SENT — verified |
-| Kaisa Matomäki | Question about short-interval distribution in a Goldbach sieve model | Draft `AQMkADAwATNiZmYAZS05YjBhLWY1N2YtMDACLTAwCgBGAAADx2r-Oh7GnE_8HEEcXv2-oAcA6NMzizhaLUStckvB4e6G7wABKstu2gAAAA==`; sent `AQMkADAwATNiZmYAZS05YjBhLWY1N2YtMDACLTAwCgBGAAADx2r-Oh7GnE_8HEEcXv2-oAcA6NMzizhaLUStckvB4e6G7wABKsuClQAAAA==` | SENT — verified |
-| Olivier Ramaré | Request for feedback on a narrowly defined Goldbach proof gap | Draft `AQMkADAwATNiZmYAZS05YjBhLWY1N2YtMDACLTAwCgBGAAADx2r-Oh7GnE_8HEEcXv2-oAcA6NMzizhaLUStckvB4e6G7wABKstu2wAAAA==`; sent `AQMkADAwATNiZmYAZS05YjBhLWY1N2YtMDACLTAwCgBGAAADx2r-Oh7GnE_8HEEcXv2-oAcA6NMzizhaLUStckvB4e6G7wABKsuClgAAAA==` | SENT — verified |
+| James Maynard | Question about an interval-density step in a Goldbach sieve argument | Draft and sent-message IDs redacted | SENT — verified |
+| Kevin Ford | Request for a sieve-theory check of a Goldbach density transfer | Draft and sent-message IDs redacted | SENT — verified |
+| Kaisa Matomäki | Question about short-interval distribution in a Goldbach sieve model | Draft and sent-message IDs redacted | SENT — verified |
+| Olivier Ramaré | Request for feedback on a narrowly defined Goldbach proof gap | Draft and sent-message IDs redacted | SENT — verified |
 
 All four messages were sent after explicit user confirmation on 2026-10-07. The original drafts remain in Outlook as historical draft records; do not send them again.
+
+> Redaction note (2026-11-07): the researcher's mailbox address and Outlook
+> message IDs were removed from the working tree of this public repository.
+> They remain in git history; rewriting history is a separate decision.
