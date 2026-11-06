@@ -2740,3 +2740,32 @@
 **Next verification required:**
 - Preserve the lemma as background and focus future work on genuinely
   unverified prime-level or fixed-window questions.
+
+### 2026-11-07 — Linux Lean-reproduction workflow authored (branch `ci/lean-reproduction`)
+
+- Objective: replace the failed Windows reproduction attempts with a run in the upstream project's intended
+  Linux environment.
+- Work performed: read upstream `docs/VERIFICATION.md` at the frozen commit and wrote
+  `.github/workflows/lean-reproduction.yml` plus `12_ARCHIVE/LEAN_CI_PROTOCOL.md`. The upstream repository was
+  fetched read-only to read its verification guide; the upstream checker was **not** executed in the authoring
+  session (execution of third-party code was declined by the session's policy).
+- Result: workflow YAML parses. **No reproduction has been run.** Upstream HEAD has moved since the frozen commit
+  (`9d4c3a4…` at the time of writing); the workflow defaults to the frozen commit and accepts any SHA.
+
+### Verification Checkpoint
+
+**Claims made:** a workflow exists that follows the upstream gates. Nothing about build or proof success.
+
+**Sources used:** upstream `docs/VERIFICATION.md` at the frozen commit (CIT-012).
+
+**Claims not independently verified:** that the workflow runs; that the checker passes on Linux; anything about
+the formalized theorem's correctness.
+
+**Computations actually run:** none beyond YAML syntax parsing.
+
+**Proof status:** Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:** NOVELTY NOT ESTABLISHED.
+
+**Next verification required:** run the workflow (`workflow_dispatch`), then record results per
+`12_ARCHIVE/LEAN_CI_PROTOCOL.md`.
