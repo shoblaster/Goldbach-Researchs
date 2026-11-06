@@ -30,8 +30,8 @@ Every reported witness was recomputed directly from the definition (`direct_matc
   bound stays at 0 within 300 s, so it certifies nothing for k>=7. This is a limit of the formulation under
   CP-SAT, not evidence about M_k.
 * **k = 9 (M_9 = 5, EXP019) is NOT re-verified.** Full enumeration needs about 1.3e11 prefix selections
-  (171 times the k=8 run, so roughly an hour or more per core-set, estimated from the 77 s k=8 timing);
-  not attempted. M_9 still rests on one HiGHS run plus direct witness recomputation.
+  (171 times the k=8 run: at least 171 x 77 s, about 3.7 hours on this 2-thread machine, and more because
+  the last prime has 23 classes and the masks are wider); not attempted. M_9 still rests on one HiGHS run plus direct witness recomputation.
 * No value for k >= 10 is claimed.
 
 ## Interpretation and limits
