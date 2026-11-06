@@ -15,6 +15,20 @@ Strong Goldbach is **not proved here**. The repository distinguishes:
 
 The external Lean formalization examined in October 2026 is a `(1+1.9)` almost-prime statement, not binary Goldbach: its public interface allows `N = p + r*q` with `r = 1` or prime. Its complete Lean verification was not independently reproduced in this Windows environment.
 
+## Repository map
+
+| Folder / file | Contents |
+|---|---|
+| `01_RESEARCH_QUESTIONS.md` | Active and closed research questions, each tied to a branch |
+| `BRANCHING.md` | Branch prefixes, merge rules, experiment-ID allocation |
+| `03_CODE/` | All scripts and programs |
+| `04_RAW_DATA/`, `05_PROCESSED_DATA/` | Frozen datasets and derived summaries |
+| `06_EXPERIMENTS/INDEX.md` | Index of EXP001–EXP022 with status |
+| `08_PROOFS/` | Lemmas, proof attempts, proof-frontier audits |
+| `09_LITERATURE/` | Citation verification and claim ledger |
+| `11_PAPER/` | Methods protocol and technical-note draft |
+| `12_ARCHIVE/` | Handoffs and external source snapshots |
+
 ## Start here
 
 - `00_MASTER_RESEARCH_LOG.md` — chronological research record and verification checkpoints.
