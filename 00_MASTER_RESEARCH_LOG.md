@@ -2822,6 +2822,7 @@ certify h2(k) for k>=10; obtain the source PDF text locally.
 - Computation actually run: `h2_cover_search K L` at `L = omega2` and `omega2 + 1` for k = 3..10; raw output in
   `06_EXPERIMENTS/EXP030_H2_EXACT_COVER_SEARCH/RAW_OUTPUT.txt`.
 - Result: all eight source values reproduced; `h2(10) = 450` certified (`L = 75` infeasible after 214,353,300 nodes, 51 s).
+- k = 11 attempt: `L = 94` feasible (so `h2(11) >= 570`); the infeasibility run at `L = 95` hit its 2700 s limit with no result.
 
 ### Verification Checkpoint
 

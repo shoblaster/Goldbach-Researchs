@@ -49,3 +49,9 @@ k 10 L 74 FEASIBLE nodes 363132 witness_direct_check True
    wall_seconds 0
 k 10 L 75 INFEASIBLE nodes 214353300 witness_direct_check n/a
    wall_seconds 53
+
+# D. k=11 attempt (source_h2=570, omega2=94); same program, run separately
+k 11 L 94 FEASIBLE nodes 2521728 witness_direct_check True
+   wall_seconds 1
+# L=95: NO RESULT. The run was stopped by `timeout 2700` (2700 s wall, single thread) before finishing, so neither
+# FEASIBLE nor INFEASIBLE was determined. No claim is made about h2(11) beyond the lower bound h2(11) >= 570.

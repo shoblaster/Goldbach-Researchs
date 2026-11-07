@@ -30,7 +30,9 @@ INFEASIBLE, where `H` is the transcribed Ziller–Morack Table 1 value:
   The hypothesis `h2(k) < p_k^2 - p_k` therefore rests on recomputed values for `k <= 10` (at `k = 10`: `450 < 812`).
 * The method reproduces every `k <= 9` value already certified by CP-SAT/HiGHS, which is the validation of the code.
   The k = 9 infeasibility proof takes 1 s here versus about 60 s for CP-SAT.
-* Rows `k >= 11` of the source table remain **transcribed**, not recomputed, unless EXP030 section D below is present.
+* **k = 11 (section D of `RAW_OUTPUT.txt`):** `L = 94` is FEASIBLE with a directly verified witness, so
+  `h2(11) >= 570`. The infeasibility run at `L = 95` was stopped by a 2700 s limit and has **no result**; `h2(11) = 570`
+  is therefore not certified. Rows `k >= 11` of the source table remain **transcribed**, not recomputed.
 
 ## Limits
 Finite computation only. The infeasibility proofs are exhaustive-search outputs, not independently checkable
