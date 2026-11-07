@@ -80,3 +80,8 @@ WebFetch extractions of the arXiv PDF (the shell cannot reach arXiv), not from a
 2. Independently certify `h2(k)` for `k >= 10` (CP-SAT/HiGHS limits are noted in EXP023); do not
    treat transcribed `k >= 10` rows as verified.
 3. Obtain the source PDF text locally and confirm §3 against it.
+
+## 7. Update 2026-11-08
+EXP030 (`06_EXPERIMENTS/EXP030_H2_EXACT_COVER_SEARCH/`) certifies `h2(k)` for `k = 3..10` with an exhaustive
+solver-free search, including `h2(10) = 450`, which CP-SAT could not resolve in EXP023. So §4's "k = 10 status"
+is now: certified. Rows `k >= 11` of the source table remain transcribed.
