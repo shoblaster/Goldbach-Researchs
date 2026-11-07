@@ -2786,3 +2786,29 @@
 
 **Next verification required:** search for paired analogues of Iwaniec's bound;
 certify h2(k) for k>=10; obtain the source PDF text locally.
+
+### 2026-11-08 — Sieve-dimension barrier note (branch `research/sieve-dimension-barrier`)
+
+- Objective: close open item RQ2 (CIT-036): can a standard sieve certify a positive count in the window `[1, p_k^2]`?
+- Sources read through WebFetch extraction of arXiv PDFs: Franze (sifting limits, CIT-043) and Ford (parity problem, CIT-044).
+- Mathematics: `08_PROOFS/PROOF_FRONTIER_023_SIEVE_DIMENSION_BARRIER.md`. With the stated convention, the reported
+  `beta_2 >= 4.266` limits a dimension-2 sieve to `z = x^0.234`, far below `x^(1/2)`; reaching it needs level `x^2.13`.
+- Computation actually run: only the exact-fraction table in §3 (a three-line Python calculation); no experiment ID used.
+- Result: a literature-level explanation of why sieve-only arguments stall, consistent with EXP007–EXP024 data.
+
+### Verification Checkpoint
+
+**Claims made:** sifting limits as printed in CIT-043; the derived reachable range under the stated convention; the parity quote.
+
+**Sources used:** CIT-043, CIT-044 (CIT-036 as the origin of the item).
+
+**Claims not independently verified:** the sifting-range convention (extraction garbled); Blight's thesis; Diamond–Halberstam 2008;
+`beta_1 = 2`; that no dimension-2 result reaches `sqrt(x)`.
+
+**Computations actually run:** the exact-fraction table only.
+
+**Proof status:** Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:** NOVELTY NOT ESTABLISHED (standard theory).
+
+**Next verification required:** confirm convention and values in the primary books, as listed in PROOF_FRONTIER_023 §6.

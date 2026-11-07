@@ -23,7 +23,8 @@ Branch: `research/h2-ratio-frontier`. Status: in progress.
 ### RQ2 — Why can standard sieves not reach the window boundary `p = sqrt(x)`?
 Open item from CIT-036 (Pollack). Needs a primary-source statement of the
 sifting limit for a dimension-2 sieve and the parity barrier.
-Branch: `research/sieve-dimension-barrier`. Status: queued.
+Branch: `research/sieve-dimension-barrier`. Status: answered at literature level in
+`08_PROOFS/PROOF_FRONTIER_023_SIEVE_DIMENSION_BARRIER.md`; primary-text confirmations still listed there.
 
 ### RQ3 — Are the `M_k` values solver-independent, and what are `M_10…M_12`?
 Current k = 8, 9 results rest on one HiGHS run.
