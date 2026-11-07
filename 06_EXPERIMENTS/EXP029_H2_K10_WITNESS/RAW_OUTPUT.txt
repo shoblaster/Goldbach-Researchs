@@ -1,0 +1,4 @@
+# command: TIME_LIMIT=1500 python 03_CODE/h2_frontier_verify.py cpsat 10
+# environment: ortools 9.15.6755, 2 CP-SAT workers, 2-core Linux machine, run on 2026-11-08
+solver cpsat time_limit_s 1500.0
+k 10 p_k 29 source_h2 450 omega2 74 L_status FEASIBLE witness_direct_check True L+1_status UNKNOWN certified False seconds 1500.4
