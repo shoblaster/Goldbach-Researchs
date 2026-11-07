@@ -1,0 +1,126 @@
+# Reproduction of the external Li–Liu (1+1.9) Lean formalization (subfish-zhou/goldbach-lean)
+# on Linux, following its docs/VERIFICATION.md gates. Manual trigger only.
+#
+# STATUS: authored but NOT YET RUN. It executes third-party code from the pinned upstream
+# commit (no secrets are exposed: permissions are read-only and no repository secrets are used).
+# See 12_ARCHIVE/LEAN_CI_PROTOCOL.md for how to record the results.
+name: lean-reproduction
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: "Upstream goldbach-lean commit SHA to test (default: the frozen commit recorded in PROOF_FRONTIER_004)"
+        default: "09b97db5764ade1246bfb77206baa1b124760958"
+      target:
+        description: "Lake build target for the build gate"
+        default: "Goldbach.OnePlusOneNine"
+
+permissions:
+  contents: read
+
+env:
+  UPSTREAM: https://github.com/subfish-zhou/goldbach-lean
+  FROZEN_SHA: 09b97db5764ade1246bfb77206baa1b124760958
+  FROZEN_CHECK_PY_SHA256: BF381C6676357D490C00E972C0D6FD125ED83E247B35FD1E1F78DECF09B65015
+
+jobs:
+  static-gate:
+    # Gate 2 only: the source-surface scan. Fast. Tests whether the Windows failure was path handling.
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Fetch pinned upstream commit
+        run: |
+          mkdir upstream && cd upstream
+          git init -q && git remote add origin "$UPSTREAM"
+          git fetch -q --depth 1 origin "${{ inputs.commit }}"
+          git checkout -q FETCH_HEAD
+          echo "commit=$(git rev-parse HEAD)" | tee -a ../static-gate.log
+      - name: Record checker hash
+        working-directory: upstream
+        run: |
+          h=$(sha256sum scripts/check.py | cut -d' ' -f1 | tr a-f A-F)
+          echo "check.py sha256=$h" | tee -a ../static-gate.log
+          if [ "${{ inputs.commit }}" = "$FROZEN_SHA" ]; then
+            [ "$h" = "$FROZEN_CHECK_PY_SHA256" ] && echo "hash matches frozen record" | tee -a ../static-gate.log \
+              || echo "HASH MISMATCH vs frozen record" | tee -a ../static-gate.log
+          fi
+      - name: python3 scripts/check.py --static-only (unchanged)
+        working-directory: upstream
+        run: |
+          set +e
+          python3 -u scripts/check.py --static-only 2>&1 | tee ../static-gate-output.log
+          code=${PIPESTATUS[0]}
+          echo "static_gate_exit_code=$code" | tee -a ../static-gate.log
+          exit 0   # the exit code is recorded, not enforced, so the log is always uploaded
+      - uses: actions/upload-artifact@v4
+        with:
+          name: static-gate-logs
+          path: |
+            static-gate.log
+            static-gate-output.log
+
+  build-and-replay:
+    # Gates 1, 3, 4: build, axiom/type probes, independent module replay. Long; cache-dependent.
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - name: Fetch pinned upstream commit
+        run: |
+          mkdir upstream && cd upstream
+          git init -q && git remote add origin "$UPSTREAM"
+          git fetch -q --depth 1 origin "${{ inputs.commit }}"
+          git checkout -q FETCH_HEAD
+          echo "commit=$(git rev-parse HEAD)" | tee ../build.log
+          echo "toolchain=$(cat lean-toolchain)" | tee -a ../build.log
+      - name: Install elan (toolchain is selected from lean-toolchain)
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Cache download (Mathlib .olean cache)
+        working-directory: upstream
+        run: |
+          unset LEAN_PATH LEAN_SRC_PATH
+          set +e
+          lake exe cache get 2>&1 | tee ../cache.log
+          echo "cache_get_exit_code=${PIPESTATUS[0]}" | tee -a ../build.log
+          exit 0
+      - name: Build gate  (lake --wfail build ${{ inputs.target }})
+        working-directory: upstream
+        run: |
+          unset LEAN_PATH LEAN_SRC_PATH
+          set +e
+          lake --wfail build "${{ inputs.target }}" 2>&1 | tee ../build-output.log
+          echo "build_exit_code=${PIPESTATUS[0]}" | tee -a ../build.log
+          exit 0
+      - name: Probe gate  (python3 scripts/check.py)
+        working-directory: upstream
+        run: |
+          unset LEAN_PATH LEAN_SRC_PATH
+          set +e
+          python3 -u scripts/check.py 2>&1 | tee ../probe-output.log
+          echo "probe_exit_code=${PIPESTATUS[0]}" | tee -a ../build.log
+          exit 0
+      - name: Module replay gate  (leanchecker)
+        working-directory: upstream
+        run: |
+          unset LEAN_PATH LEAN_SRC_PATH
+          set +e
+          for m in Goldbach.OnePlusOneNine Goldbach.OnePlusOneNineChecks; do
+            lake env leanchecker --verbose "$m" 2>&1 | tee -a ../replay-output.log
+            echo "replay_${m}_exit_code=${PIPESTATUS[0]}" | tee -a ../build.log
+          done
+          exit 0
+      - name: Summary
+        run: |
+          { echo "### Lean reproduction (upstream ${{ inputs.commit }})"; echo '```'; cat build.log; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: build-and-replay-logs
+          path: |
+            build.log
+            cache.log
+            build-output.log
+            probe-output.log
+            replay-output.log
