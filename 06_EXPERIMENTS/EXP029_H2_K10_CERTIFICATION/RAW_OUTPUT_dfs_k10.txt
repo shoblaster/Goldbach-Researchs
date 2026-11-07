@@ -1,0 +1,4 @@
+# command: ./h2_exact_dfs 10 74 10 75
+# environment: single thread, Linux, run on 2026-11-08, about 62 s
+k=10 L=74 FEASIBLE witness_check=True nodes=363132 witness: 5:{1,4,} 7:{2,1,} 11:{3,5,} 13:{7,3,} 17:{1,11,} 19:{10,13,} 23:{12,17,} 29:{24,15,}
+k=10 L=75 INFEASIBLE nodes=214353300
