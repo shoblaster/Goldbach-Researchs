@@ -1,0 +1,13 @@
+max |fft - rint| = 1.4551915228366852e-10
+EXP026 rows=499999 mismatches=0
+direct per-n check: samples=3000 mismatches=0
+even n in 4..10000000: 4999999; zero counts: 0; min G=1; max G=124180 at n=9699690
+smallest G for n>=204: 6 at n=212
+  n in [1e+04,1e+05): min G/(n/ln^2 n) = 0.7239, mean = 1.2259
+  n in [1e+05,1e+06): min G/(n/ln^2 n) = 0.7352, mean = 1.1832
+  n in [1e+06,1e+07): min G/(n/ln^2 n) = 0.7440, mean = 1.1524
+sha256 of int32 count array: d5163bee37f64e0c7ccf48abe50db08e195f93ad702a9853e055aa863fd9d5ac
+
+real	0m5.303s
+user	0m4.243s
+sys	0m0.928s
