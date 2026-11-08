@@ -34,6 +34,16 @@ INFEASIBLE, where `H` is the transcribed Ziller–Morack Table 1 value:
   `h2(11) >= 570`. The infeasibility run at `L = 95` was stopped by a 2700 s limit and has **no result**; `h2(11) = 570`
   is therefore not certified. Rows `k >= 11` of the source table remain **transcribed**, not recomputed.
 
+## Relation to EXP029 (branch `verify/h2-k10-witness`, not merged when this was written)
+A separately written program, `03_CODE/h2_exact_dfs.cpp` on that branch, certifies the same `h2(10) = 450`. Comparing its
+raw outputs with this experiment's, **all 16 shared runs (k = 3..10, both sides) agree in verdict and in node count**,
+from 3 nodes at k = 3 to 214,353,300 nodes at k = 10 (checked by script on 2026-11-08).
+What this shows: two independent implementations contain no coding discrepancy on these inputs.
+What it does not show: independence of the method. Both use the same algorithm (branch on the lowest uncovered
+position, prune with the best-remaining-coverage bound), so identical node counts are expected, and a flaw in the
+algorithm's reasoning would affect both. The two experiments are therefore one certification of h2(10) = 450 with
+two implementations. When merging, keep one `INDEX.md` row for the certification and cross-reference the other.
+
 ## Limits
 Finite computation only. The infeasibility proofs are exhaustive-search outputs, not independently checkable
 certificates. Node counts grow roughly 30–50x per k, so k >= 12 is likely out of reach of this single-thread search
