@@ -1,0 +1,57 @@
+EXP030 raw output (verbatim program output; each line is one run of: h2_cover_search K L)
+Date: 2026-11-07 UTC; g++ 13.3.0; single thread; build: g++ -std=c++17 -O3 -march=native 03_CODE/h2_cover_search.cpp
+Source value H = h2(k) from Ziller-Morack Table 1 (transcribed); omega2 = (H-6)/6; certification = L=omega2 FEASIBLE and L=omega2+1 INFEASIBLE.
+
+# k=3 source_h2=18 omega2=2
+k 3 L 2 FEASIBLE nodes 3 witness_direct_check True
+   wall_seconds 0
+k 3 L 3 INFEASIBLE nodes 1 witness_direct_check n/a
+   wall_seconds 0
+
+# k=4 source_h2=30 omega2=4
+k 4 L 4 FEASIBLE nodes 5 witness_direct_check True
+   wall_seconds 0
+k 4 L 5 INFEASIBLE nodes 1 witness_direct_check n/a
+   wall_seconds 0
+
+# k=5 source_h2=66 omega2=10
+k 5 L 10 FEASIBLE nodes 15 witness_direct_check True
+   wall_seconds 0
+k 5 L 11 INFEASIBLE nodes 10 witness_direct_check n/a
+   wall_seconds 0
+
+# k=6 source_h2=150 omega2=24
+k 6 L 24 FEASIBLE nodes 19 witness_direct_check True
+   wall_seconds 0
+k 6 L 25 INFEASIBLE nodes 88 witness_direct_check n/a
+   wall_seconds 0
+
+# k=7 source_h2=192 omega2=31
+k 7 L 31 FEASIBLE nodes 401 witness_direct_check True
+   wall_seconds 0
+k 7 L 32 INFEASIBLE nodes 4175 witness_direct_check n/a
+   wall_seconds 0
+
+# k=8 source_h2=258 omega2=42
+k 8 L 42 FEASIBLE nodes 215 witness_direct_check True
+   wall_seconds 0
+k 8 L 43 INFEASIBLE nodes 120324 witness_direct_check n/a
+   wall_seconds 0
+
+# k=9 source_h2=366 omega2=60
+k 9 L 60 FEASIBLE nodes 435160 witness_direct_check True
+   wall_seconds 0
+k 9 L 61 INFEASIBLE nodes 4194640 witness_direct_check n/a
+   wall_seconds 1
+
+# k=10 source_h2=450 omega2=74
+k 10 L 74 FEASIBLE nodes 363132 witness_direct_check True
+   wall_seconds 0
+k 10 L 75 INFEASIBLE nodes 214353300 witness_direct_check n/a
+   wall_seconds 53
+
+# D. k=11 attempt (source_h2=570, omega2=94); same program, run separately
+k 11 L 94 FEASIBLE nodes 2521728 witness_direct_check True
+   wall_seconds 1
+# L=95: NO RESULT. The run was stopped by `timeout 2700` (2700 s wall, single thread) before finishing, so neither
+# FEASIBLE nor INFEASIBLE was determined. No claim is made about h2(11) beyond the lower bound h2(11) >= 570.
