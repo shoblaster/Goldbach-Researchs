@@ -26,5 +26,6 @@ Next free ID: **EXP023**. Raw data for EXP001–EXP005 lives in `04_RAW_DATA/`; 
 | EXP020 | fixed-N residue sieve ↔ prime pairs | exact finite check | goldbach_fixed_residue_mapping_check.py |
 | EXP021 | primorial lower-window identity | exact finite check | primorial_window_identity_check.py |
 | EXP022 | primorial-multiple offset audit | exact finite check | primorial_multiple_offset_audit.py |
-| EXP029 | certification of h2(10) = 450 (exact DFS, CP-SAT partial) | exact finite check (validated on k=3..9) | h2_exact_dfs.cpp, h2_frontier_verify.py |
+| EXP029 | certification of h2(11) = 570 by split exhaustive search; second implementation agrees with EXP030 for k<=10 | exact finite check (validated k=3..10 and split mode) | h2_exact_dfs.cpp |
+| EXP030 | exact solver-free certification of h2(k), k=3..10 (extends EXP023) | exact finite check | h2_cover_search.cpp |
 

@@ -1,23 +1,31 @@
-# EXP029: certification of h2(10) = 450
+# EXP029: h2(11) = 570 certified; second implementation for k <= 10
 
 Branch: `verify/h2-k10-witness`. Question: RQ1 in `01_RESEARCH_QUESTIONS.md`.
-Code: `03_CODE/h2_exact_dfs.cpp` (new, no solver library), `03_CODE/h2_frontier_verify.py` (CP-SAT, from EXP023).
-Raw outputs: `RAW_OUTPUT_cpsat.txt`, `RAW_OUTPUT_dfs_validation.txt`, `RAW_OUTPUT_dfs_k10.txt`.
+Code: `03_CODE/h2_exact_dfs.cpp` (new, no solver library, optional work splitting).
+Raw outputs: `RAW_OUTPUT_dfs_validation.txt` (k = 3..9), `RAW_OUTPUT_dfs_k10.txt`, `RAW_OUTPUT_dfs_k11.txt`,
+`RAW_OUTPUT_split_check.txt`, `RAW_OUTPUT_cpsat.txt` (CP-SAT at k = 10: lower bound only, UNKNOWN at 75 after 1500 s).
 
-EXP023 certified the paired-Jacobsthal values h2(k) for k = 3..9. The source table (arXiv:1706.03668, Table 1) rows for k >= 10 were only transcribed. This experiment certifies the k = 10 row: h2(10) = 450, that is omega2(10) = (450 - 6) / 6 = 74. The statement to certify is that positions 1..74 can be covered by choosing two nonzero residues per prime in {5, 7, 11, 13, 17, 19, 23, 29} and positions 1..75 cannot.
+## Relation to EXP030
+EXP030 (`03_CODE/h2_cover_search.cpp`, merged) certifies h2(k) for k = 3..10 with the same covering model and the same
+algorithm (branch on the lowest uncovered position, prune by best remaining coverage). This experiment began as a separate
+attempt at k = 10 and agrees with EXP030 on all 16 shared runs (verdict and node count; see EXP030 README). Read the two as
+one certification of k <= 10 with two implementations. The new result here is k = 11.
 
-## Methods
-1. CP-SAT (EXP023 script): found and directly re-checked a covering of 1..74. It returned UNKNOWN for 1..75 after 1500 s, so on its own it did not certify the upper bound.
-2. Exact depth-first search (`h2_exact_dfs.cpp`, new): take the smallest uncovered position q, branch over every prime p with q % p != 0 and a free slot (that prime must choose residue q % p), and prune when the free slots cannot cover the uncovered positions even in the best case. This is complete: every covering is found because the smallest uncovered position must be covered by some prime.
+## k = 11 result
+Primes {5, 7, ..., 31}, source value h2(11) = 570, so omega2(11) = (570 - 6) / 6 = 94.
+- L = 94: FEASIBLE, witness re-checked directly (2,521,728 nodes). `RAW_OUTPUT_dfs_k11.txt`.
+- L = 95: INFEASIBLE. The search was split into two shares (`H2_SPLIT_M=2`, `H2_SPLIT_R=0` and `1`), each about 50 minutes on one
+  core: 6,905,350,180 and 6,962,027,300 nodes, 13,867,377,480 in total, both INFEASIBLE. EXP030 stopped its k = 11 run at 2700 s with no result.
+- So omega2(11) = 94 and h2(11) = 6 * 94 + 6 = 570, matching the source table.
 
-## Results
-- Validation first: the DFS reproduces every EXP023-certified value for k = 3..9 (feasible at omega2, infeasible at omega2 + 1; 14 checks, about 1.4 s). `RAW_OUTPUT_dfs_validation.txt`.
-- k = 10, L = 74: FEASIBLE, witness re-checked directly, 363,132 nodes.
-- k = 10, L = 75: INFEASIBLE, 214,353,300 nodes, about 62 s on one thread.
-- Together: omega2(10) = 74, so h2(10) = 6 * 74 + 6 = 450, matching the source table.
-- Witness for L = 74: 5:{1,4} 7:{1,2} 11:{3,5} 13:{3,7} 17:{1,11} 19:{10,13} 23:{12,17} 29:{15,24}.
+Split mode: each process explores only the depth-4 subtrees whose index modulo m equals its share number. A claim of INFEASIBLE
+needs every share to say INFEASIBLE. Validation (`RAW_OUTPUT_split_check.txt`): 10 split runs on cases with known verdicts
+(k = 8, 9, 10; m = 2 and 3) all combine to the known verdict. Node totals of the two k = 10 shares (107,201,275 + 107,156,466) exceed
+the unsplit 214,353,300 by 4,441, the shared nodes above the cut, as expected.
 
 ## Interpretation and limits
-- The infeasibility at 75 rests on the exhaustive search being correct. It is validated on 14 cases with known answers from an independent CP-SAT/HiGHS certification; it has not been cross-checked at k = 10 by a second solver (CP-SAT timed out).
-- The search covers the model as stated in EXP023 (two nonzero residues per prime from 5 to p_k; q covered when q % p is chosen and nonzero). It does not check the translation from that model to h2(k) beyond the cited identity h2(k) = 6 * omega2(k) + 6.
+- The L = 95 infeasibility is an exhaustive-search output, not an independently checkable certificate. It uses the same algorithm as EXP030, and the k = 11 run has only one implementation (the k = 11 run of EXP030 timed out), so a flaw in the algorithm's reasoning would not be caught.
+- The k = 11 shares ran on a build with the splitting code; the L = 94 witness came from an earlier build with identical search logic. Both are recorded in the raw output.
+- The covering model is the one in EXP023. The identity h2(k) = 6 * omega2(k) + 6 is used as cited, not re-derived.
+- Rows k >= 12 remain transcribed. Node counts grow about 30 to 65 times per k (214 million at k = 10, about 13.9 billion at k = 11), so k = 12 needs stronger pruning.
 - Finite computation only. It says nothing about the universal bound H, Conjecture 4, or Strong Goldbach. NOVELTY NOT ESTABLISHED.
