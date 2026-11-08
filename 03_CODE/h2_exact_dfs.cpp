@@ -8,6 +8,9 @@
 // h2(k) = 6 * omega2(k) + 6, omega2(k) = largest feasible L.
 // Build: g++ -std=c++17 -O2 -Wall -Wextra h2_exact_dfs.cpp -o h2_exact_dfs
 // Usage: ./h2_exact_dfs K L [K L ...]    prints FEASIBLE with a witness (re-checked) or INFEASIBLE with node count.
+// Work splitting: set environment H2_SPLIT_M=m and H2_SPLIT_R=r (0 <= r < m). The process then searches only the
+// depth-4 subtrees whose index mod m equals r. A claim of INFEASIBLE for (k, L) needs all m processes to say INFEASIBLE;
+// a FEASIBLE witness from any one process is a valid witness.
 #include <cstdio>
 #include <cstdlib>
 #include <vector>
@@ -31,23 +34,31 @@ static bool bound_ok(u128 unc) {
     }
     return cap >= need;
 }
+static int SPLIT_M = 1, SPLIT_R = 0, DEPTH = 0;
+static unsigned long long cut_id = 0;
 static bool dfs(u128 cov) {
     ++nodes;
     u128 unc = FULL & ~cov;
     if (!unc) return true;
     if (!bound_ok(unc)) return false;
+    if (DEPTH == 4) { if ((cut_id++ % SPLIT_M) != (unsigned long long)SPLIT_R) return false; }   // work split: subtree ownership at depth 4
     int q = 0; while (!((unc >> q) & 1)) ++q;        // smallest uncovered position (bit q = position q)
     for (int i = 0; i < np; ++i) {
         if (!slots[i] || q % P[i] == 0) continue;
         int r = q % P[i];
         --slots[i]; chosen[i].push_back(r);
-        if (dfs(cov | cls[i][r])) return true;
+        ++DEPTH;
+        bool found = dfs(cov | cls[i][r]);
+        --DEPTH;
+        if (found) return true;
         chosen[i].pop_back(); ++slots[i];
     }
     return false;
 }
 int main(int argc, char** argv) {
     if (argc < 3 || (argc - 1) % 2) { std::fprintf(stderr, "usage: %s K L [K L ...]\n", argv[0]); return 2; }
+    if (const char* e = std::getenv("H2_SPLIT_M")) SPLIT_M = std::atoi(e);
+    if (const char* e = std::getenv("H2_SPLIT_R")) SPLIT_R = std::atoi(e);
     for (int a = 1; a + 1 < argc; a += 2) {
         int k = std::atoi(argv[a]); L = std::atoi(argv[a + 1]);
         P.assign(PR + 2, PR + k); np = (int)P.size();
@@ -58,7 +69,7 @@ int main(int argc, char** argv) {
             for (int q = 1; q <= L; ++q) cls[i][q % P[i]] |= (u128)1 << q;
             slots[i] = 2; chosen[i].clear();
         }
-        nodes = 0;
+        nodes = 0; cut_id = 0; DEPTH = 0;
         bool ok = dfs(0);
         if (ok) {   // re-check the witness directly
             bool good = true;

@@ -1,0 +1,7 @@
+# L=94 (feasible): ./h2_exact_dfs 11 94 (earlier build, same search logic, before the optional splitting code was added), single thread
+k=11 L=94 FEASIBLE witness_check=True nodes=2521728 witness: 5:{1,2,} 7:{5,6,} 11:{3,8,} 13:{10,5,} 17:{9,11,} 19:{10,2,} 23:{4,15,} 29:{24,6,} 31:{8,3,}
+# L=95 (infeasible): two processes, H2_SPLIT_M=2 with H2_SPLIT_R=0 and H2_SPLIT_R=1, each ran about 50 minutes on one core; both shares must be INFEASIBLE
+# share r=0:
+k=11 L=95 INFEASIBLE nodes=6905350180
+# share r=1:
+k=11 L=95 INFEASIBLE nodes=6962027300
