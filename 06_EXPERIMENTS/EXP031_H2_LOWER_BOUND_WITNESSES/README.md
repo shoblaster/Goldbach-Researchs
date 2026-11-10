@@ -9,12 +9,12 @@ equivalence holds; it says nothing about the infeasible side (`L+1`), which is t
 | 11 | 94 | **FEASIBLE**, 2,521,728 nodes, direct witness check True | agrees with EXP030 lower bound |
 | 12 | 117 | no result (timeout) | not a negative finding |
 | 13 | 148 | no result (timeout) | not a negative finding |
-| 14 | 173 | crashed: `std::bad_alloc` | cause not diagnosed; code limit, not a mathematical result |
+| 14 | 173 | crashed: `std::bad_alloc` | **cause found 2026-11-10: the code's prime table stopped at p_13=41, so K>=14 read out of bounds** (fixed on branch `verify/h2-search-prime-table-fix`); k=14 was never actually searched |
 
 Witness for k=11 is in `RAW_OUTPUT.txt`.
 
 ## Limits
 * Only k=11 is newly (re)confirmed on the lower side; k=12..14 remain transcribed.
 * The infeasible side for k >= 11 is still open (k=11, L=95: no result in two runs).
-* The bad_alloc at k=14 suggests the search needs a memory-bounded rewrite before going higher.
+* The k=14 crash was a code bug (prime table), not a memory limit; after the fix k=14 L=173 runs but gave no result in 60 s. k<=13 runs were unaffected.
 * ID check: only the shallow clone's `main` could be inspected, so EXP031 may collide with another branch; renumber on merge if so.
