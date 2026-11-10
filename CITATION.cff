@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below. It is a working note; no proof of Goldbach's conjecture is claimed."
+title: "Exact certification of a paired Jacobsthal bound and the dimension-2 sieve barrier"
+type: report
+version: "0.2.0"
+date-released: "2026-11-10"
+authors:
+  - given-names: "Shourya"
+repository-code: "https://github.com/shoblaster/Goldbach-Researchs"
+abstract: "Reproducible computational note: elementary re-derivation of a reduction of a tightened Goldbach statement to a paired Jacobsthal bound; exhaustive verification of h2(k) for k=3..11; sieve-dimension barrier discussion. No proof claimed."
+keywords: [Goldbach, Jacobsthal function, sieve methods, reproducibility]
