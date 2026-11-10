@@ -1,4 +1,4 @@
-# Paper draft (v0.1) — reproducible note
+# Paper draft (v0.2) — reproducible note
 
 `paper.tex` / `paper.pdf`: "Exact certification of a paired Jacobsthal bound and the dimension-2 sieve barrier".
 **No proof of Goldbach's conjecture is claimed. Novelty NOT established.**
@@ -12,4 +12,4 @@ cd 11_PAPER && latexmk -pdf paper.tex
 ```
 Data provenance: `data/h2_table.csv` (source Table 1, k<=10 re-certified by EXP030), `data/infeasibility_nodes.csv`
 (EXP030 RAW_OUTPUT), `data/mk_minima.csv` (EXP024/019), `data/sieve_limits.csv` (source-reported beta_2, CIT-043; not re-derived).
-Author name in the .tex is a placeholder.
+Author in the .tex is given by first name only (Shourya); add the surname/affiliation before submission.
