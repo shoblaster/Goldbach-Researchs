@@ -16,7 +16,7 @@ static vector<vector<M>> cls;
 static const int SPLIT = 2;
 
 struct St {
-    int cnt[16]; vector<int> chosen[16]; long long nodes = 0;
+    int cnt[24]; vector<int> chosen[24]; long long nodes = 0;
     bool found = false; vector<pair<int,int>> witness;
 };
 static inline int pcm(const M& a) { int c = 0; for (int i = 0; i < NWU; i++) c += __builtin_popcountll(a.w[i]); return c; }
@@ -56,7 +56,8 @@ static bool dfs(St& s, const M& unc, int depth, vector<M>* frontier, vector<St>*
 }
 int main(int argc, char** argv) {
     K = atoi(argv[1]); L = atoi(argv[2]);
-    int all[] = {2,3,5,7,11,13,17,19,23,29,31,37,41};
+    int all[] = {2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73};  // p_1..p_21
+    if (K < 3 || K > 21) { fprintf(stderr, "K must be in 3..21\n"); return 2; }
     for (int i = 2; i < K; i++) P.push_back(all[i]);
     NP = P.size(); NWU = (L + 63) / 64;
     cls.resize(NP);
