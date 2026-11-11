@@ -1,5 +1,7 @@
 # Goldbach Research
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24142563.svg)](https://doi.org/10.5281/zenodo.24142563)
+
 Auditable computational and proof research on the Goldbach conjecture.
 
 ## Current status

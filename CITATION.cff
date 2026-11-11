@@ -2,7 +2,8 @@ cff-version: 1.2.0
 message: "If you use this work, please cite it as below. It is a working note; no proof of Goldbach's conjecture is claimed."
 title: "Exact certification of a paired Jacobsthal bound and the dimension-2 sieve barrier"
 type: report
-version: "0.2.0"
+version: "0.2.1"
+doi: "10.5281/zenodo.24142563"
 date-released: "2026-11-10"
 authors:
   - given-names: "Shourya"
