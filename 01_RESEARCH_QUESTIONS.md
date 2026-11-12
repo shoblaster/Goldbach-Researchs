@@ -39,3 +39,8 @@ Branch: `ci/lean-reproduction`. Status: queued.
 - Finite computation is never presented as a proof of Strong Goldbach.
 - Every new claim needs a source check (`09_LITERATURE/`) before it enters the log.
 - Raw data is never overwritten; reruns get a new experiment ID.
+
+## RQ1 follow-up (2026-11-12): search-algorithm lead
+The unpaired Jacobsthal literature (CIT-045) reaches n=54 using greedy-ordered, bound-pruned permutation search. A paired analogue
+(choose the class *pair* covering most uncovered positions first; re-derive the bounds for two classes) is untested and is the most
+concrete route beyond k=11 (EXP032: ~1.4e10 nodes; extrapolated ~1e12 for k=12). Status: idea only, no experiment yet.
