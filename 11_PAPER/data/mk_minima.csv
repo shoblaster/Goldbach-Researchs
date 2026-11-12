@@ -1,0 +1,10 @@
+k,window_pk2,M_k,status
+1,4,2,CPSAT_only
+2,9,1,CPSAT_only
+3,25,2,two_methods
+4,49,2,two_methods
+5,121,3,two_methods
+6,169,2,two_methods
+7,289,4,two_methods
+8,361,4,two_methods
+9,529,5,single_method_HiGHS_EXP019

@@ -1,0 +1,15 @@
+EXP031 raw output (verbatim; each block: h2_cover_search K L with L=omega2=(H-6)/6, 240 s timeout, single thread)
+Date: 2026-11-10 UTC; g++ -std=c++17 -O3 -march=native 03_CODE/h2_cover_search.cpp
+
+# k=11 source_h2=570 omega2=94
+k 11 L 94 FEASIBLE nodes 2521728 witness_direct_check True
+witness (5:1) (5:2) (7:5) (7:6) (11:3) (11:8) (13:10) (13:5) (17:9) (17:11) (19:10) (19:2) (23:4) (23:15) (29:24) (29:6) (31:8) (31:3)
+exit_code 0
+# k=12 source_h2=708 omega2=117
+exit_code 124
+# k=13 source_h2=894 omega2=148
+exit_code 124
+# k=14 source_h2=1044 omega2=173
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+exit_code 134

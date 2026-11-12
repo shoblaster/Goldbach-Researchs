@@ -19,8 +19,8 @@ static int K, L, NP, NWU;
 static vector<int> P;
 static vector<vector<M>> cls;                  // cls[i][r] (r=1..p-1): positions n in 1..L, n%p==r
 static long long nodes = 0;
-static int cnt[16];
-static vector<int> chosen[16];
+static int cnt[24];
+static vector<int> chosen[24];
 static vector<pair<int,int>> witness;
 
 static inline int pcm(const M& a) { int c = 0; for (int i = 0; i < NWU; i++) c += __builtin_popcountll(a.w[i]); return c; }
@@ -61,7 +61,8 @@ static bool dfs(const M& unc) {
 }
 int main(int argc, char** argv) {
     K = atoi(argv[1]); L = atoi(argv[2]);
-    int all[] = {2,3,5,7,11,13,17,19,23,29,31,37,41};
+    int all[] = {2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73};  // p_1..p_21
+    if (K < 3 || K > 21) { fprintf(stderr, "K must be in 3..21\n"); return 2; }
     for (int i = 2; i < K; i++) P.push_back(all[i]);
     NP = P.size(); NWU = (L + 63) / 64;
     cls.resize(NP);

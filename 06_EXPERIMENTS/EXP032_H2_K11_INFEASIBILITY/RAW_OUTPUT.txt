@@ -1,0 +1,9 @@
+2026-11-10T13:04:50Z
+k=11 L=95 prefix_nodes=91 tasks=81 threads=2
+k 11 L 95 INFEASIBLE nodes 13867370405 witness_direct_check n/a
+
+real	29m47.464s
+user	58m45.708s
+sys	0m0.244s
+exit 0
+2026-11-10T13:34:38Z
