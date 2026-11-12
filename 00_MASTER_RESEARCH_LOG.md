@@ -2812,3 +2812,31 @@ certify h2(k) for k>=10; obtain the source PDF text locally.
 **Novelty status:** NOVELTY NOT ESTABLISHED (standard theory).
 
 **Next verification required:** confirm convention and values in the primary books, as listed in PROOF_FRONTIER_023 §6.
+
+### 2026-11-08 — EXP030 exact solver-free certification of h2(k), k = 3..10 (branch `verify/h2-exact-cover-search`)
+
+- Objective: resolve the infeasibility side of `h2(10) = 450`, left UNKNOWN by CP-SAT (EXP023) and by the HiGHS run, and
+  unresolved in EXP029.
+- Method: exhaustive depth-first covering search branching on the lowest uncovered position, pruned by an exact
+  remaining-coverage bound (`03_CODE/h2_cover_search.cpp`).
+- Computation actually run: `h2_cover_search K L` at `L = omega2` and `omega2 + 1` for k = 3..10; raw output in
+  `06_EXPERIMENTS/EXP030_H2_EXACT_COVER_SEARCH/RAW_OUTPUT.txt`.
+- Result: all eight source values reproduced; `h2(10) = 450` certified (`L = 75` infeasible after 214,353,300 nodes, 51 s).
+- k = 11 attempt: `L = 94` feasible (so `h2(11) >= 570`); the infeasibility run at `L = 95` hit its 2700 s limit with no result.
+
+### Verification Checkpoint
+
+**Claims made:** `h2(k)` for k = 3..10 equals the transcribed source value, by exhaustive search.
+
+**Sources used:** CIT-029, CIT-041 (the values being tested).
+
+**Claims not independently verified:** `h2(k)` for k >= 11; correctness of the search code beyond agreement with
+CP-SAT/HiGHS for k <= 9 and direct witness checks (no independently checkable infeasibility certificate); the bound for all k.
+
+**Computations actually run:** as above.
+
+**Proof status:** Strong Goldbach: OPEN; PROOF GAP — NOT PROVED.
+
+**Novelty status:** NOVELTY NOT ESTABLISHED.
+
+**Next verification required:** k = 11 and beyond (see EXP030 README), or an exported infeasibility certificate.
