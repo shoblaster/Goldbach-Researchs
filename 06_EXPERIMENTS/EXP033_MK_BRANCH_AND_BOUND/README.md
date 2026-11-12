@@ -1,4 +1,4 @@
-# EXP031: exact fixed-window minima M_k by branch and bound, k = 3..12
+# EXP033: exact fixed-window minima M_k by branch and bound, k = 3..12
 
 Branch: `verify/mk-branch-and-bound`. Question: RQ3 in `01_RESEARCH_QUESTIONS.md`.
 Code: `03_CODE/mk_enum_bb.cpp` (new, no MILP or CP solver). Raw output: `RAW_OUTPUT.txt` (one build, run for k = 3..12).
