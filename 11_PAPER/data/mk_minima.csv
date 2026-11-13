@@ -7,4 +7,7 @@ k,window_pk2,M_k,status
 6,169,2,two_methods
 7,289,4,two_methods
 8,361,4,two_methods
-9,529,5,single_method_HiGHS_EXP019
+9,529,5,two_methods
+10,841,10,single_method_BB_EXP033
+11,961,8,single_method_BB_EXP033
+12,1369,13,single_method_BB_EXP033
