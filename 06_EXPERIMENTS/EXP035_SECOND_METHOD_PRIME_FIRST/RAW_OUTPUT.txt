@@ -1,0 +1,19 @@
+EXP035 raw output; method B = 03_CODE/h2_cover_search_primefirst.cpp; 2026-11-15; single thread; L=omega2 (feasible) and omega2+1 (infeasible)
+method B k 3 L 2 FEASIBLE nodes 2 witness_direct_check True
+method B k 3 L 3 INFEASIBLE nodes 1 witness_direct_check n/a
+method B k 4 L 4 FEASIBLE nodes 3 witness_direct_check True
+method B k 4 L 5 INFEASIBLE nodes 1 witness_direct_check n/a
+method B k 5 L 10 FEASIBLE nodes 62 witness_direct_check True
+method B k 5 L 11 INFEASIBLE nodes 107 witness_direct_check n/a
+method B k 6 L 24 FEASIBLE nodes 1328 witness_direct_check True
+method B k 6 L 25 INFEASIBLE nodes 1941 witness_direct_check n/a
+method B k 7 L 31 FEASIBLE nodes 134943 witness_direct_check True
+method B k 7 L 32 INFEASIBLE nodes 298327 witness_direct_check n/a
+/bin/bash: line 1: /usr/bin/time: No such file or directory
+method B k 8 L 42 FEASIBLE nodes 9213408 witness_direct_check True
+method B k 8 L 43 INFEASIBLE nodes 36968104 witness_direct_check n/a
+k8 (L=42 and L=43) wall 7 s
+
+## k=9 (two concurrent single-thread runs, 2026-11-14 19:44-20:00 UTC)
+method B k 9 L 60 FEASIBLE nodes 2813820734 witness_direct_check True
+method B k 9 L 61 INFEASIBLE nodes 5943763545 witness_direct_check n/a
