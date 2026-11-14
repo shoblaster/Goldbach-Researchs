@@ -17,7 +17,7 @@ residues at each prime, with a sum-of-best-gains bound for the primes still to c
 All feasible runs pass the direct witness check. Every (feasible, infeasible) pair reproduces omega2(k) and therefore
 h2(k) = 6*omega2+6 for k = 3..9 (source values 18, 30, 66, 150, 192, 258, 366), now by two methods with different search trees.
 
-**Cost.** Method B is 3 orders of magnitude worse than A at k=9 (about 1,400x more nodes at k=9), roughly 15 min on one core each for the two k=9 runs. Extrapolating the observed growth (x~124-480 per step), k=10 would take days, so method B cannot independently re-run k=10 or k=11.
+**Cost.** Method B is 3 orders of magnitude worse than A at k=9 (about 1,400x more nodes at k=9), roughly 15 min on one core each for the two k=9 runs. Observed growth of method B is about x120-160 per step (k=7..9), so k=10 would need roughly 9e11 nodes (about 1.5 days on one core at the measured ~6.6M nodes/s) and k=11 far more; method B cannot independently re-run k=10 or k=11.
 
 ## What this does and does not show
 * Shows: for k <= 9 the published values are reproduced by two algorithms with different trees (plus earlier solver checks), so a logic bug specific to A's lowest-uncovered branching is unlikely to affect those rows.
