@@ -1,4 +1,4 @@
-# EXP033 — greedy child ordering in the h2 cover search: negligible effect (negative result)
+# EXP034 — greedy child ordering in the h2 cover search: negligible effect (negative result)
 
 RQ1. Idea (from the unpaired literature, CIT-045): try the prime whose class q%p covers most uncovered positions first.
 Variant: `03_CODE/h2_cover_search_greedy_order.cpp` (insertion-sorts the children by gain). Single thread, 2026-11-12.
@@ -17,4 +17,4 @@ not help the real bottleneck (k=11 refutation: 1.39e10 nodes; k=12 extrapolated 
 pruning — untested.
 
 Limits: three instances, one machine; not run on k=12/13 feasible side (timed out in EXP031 with the baseline, which this does not address).
-ID check: only `main` was visible; renumber on merge if EXP033 collides.
+ID note: renumbered from EXP033 on 2026-11-15 because main-side work (verify/mk-branch-and-bound) already uses EXP033 for the M_k branch and bound.
