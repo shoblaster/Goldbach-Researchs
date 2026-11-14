@@ -1,6 +1,6 @@
 # Experiment index
 
-Next free ID: **EXP023**. Raw data for EXP001–EXP005 lives in `04_RAW_DATA/`; EXP005 and EXP006 have no README in this folder (see `VALIDATION.md` and `05_PROCESSED_DATA/EXP006/`).
+Next free ID: **EXP029**. Raw data for EXP001–EXP005 lives in `04_RAW_DATA/`; EXP005 and EXP006 have no README in this folder (see `VALIDATION.md` and `05_PROCESSED_DATA/EXP006/`).
 
 | ID | Subject | Status | Code (`03_CODE/`) |
 |---|---|---|---|
@@ -26,3 +26,9 @@ Next free ID: **EXP023**. Raw data for EXP001–EXP005 lives in `04_RAW_DATA/`; 
 | EXP020 | fixed-N residue sieve ↔ prime pairs | exact finite check | goldbach_fixed_residue_mapping_check.py |
 | EXP021 | primorial lower-window identity | exact finite check | primorial_window_identity_check.py |
 | EXP022 | primorial-multiple offset audit | exact finite check | primorial_multiple_offset_audit.py |
+| EXP023 | paired-Jacobsthal bound ratios, second-solver certification of h2(k), Conjecture 4 check to 2e7 | finite computation (CP-SAT and HiGHS) | h2_ratio_analysis.py, h2_frontier_verify.py, conjecture4_finite_check.py |
+| EXP024 | second-method cross-check of fixed-window minima M_k (k<=8) | exact enumeration plus CP-SAT | mk_cpsat_second_solver.py, mk_enum_cpp.cpp |
+| EXP025 | counts to 10^6 by FFT convolution, Hardy-Littlewood ratio comparison | derived; matches EXP005 | goldbach_counts_1e6_hl_comparison.py |
+| EXP026 | independent C++ pair-accumulation check of counts to 10^6 | validated (0 mismatches vs EXP025 and EXP005) | goldbach_pair_accumulate_1e6.cpp, compare_counts_exp026.py |
+| EXP027 | position of smaller prime in Goldbach pairs vs 1/(ln p ln q) weight | derived heuristic check (flat ratio 3.998 vs 3.9995) | pair_position_distribution.cpp |
+| EXP028 | counts-only G(n) to 10^7 (FFT), validated vs EXP026 and sampled direct counts | validated (0 mismatches) | goldbach_counts_1e7.py |
