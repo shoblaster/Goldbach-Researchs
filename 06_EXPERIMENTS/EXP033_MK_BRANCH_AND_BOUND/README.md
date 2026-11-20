@@ -44,3 +44,12 @@ also reproduces them when run again. For k = 8 the plain enumeration needed 77 s
 - The lower bound for each k rests on the bound argument being correct. It is validated by exact agreement with the plain enumeration (value and leaf count) for k = 3..8 and by agreement with the single HiGHS value at k = 9; k = 10..12 have no second method (the plain enumeration needs about 3 x 10^13 prefix selections at k = 10).
 - A first run of k = 11 was invalid: the prime table stopped at 29 (window printed as 0). The table was extended and all reported runs use the corrected build. The invalid output was not kept.
 - Finite computation only. It says nothing about the universal bound H, Conjecture 4, or Strong Goldbach, and no pattern in M_k is claimed. Whether these minima are tabulated elsewhere is open: a further bounded search on 2026-11-10 (CIT-045, CIT-046) found no table of M_k, only an unreviewed existence note in a different setting and the OEIS entry for h2 (see also the log entries of 2026-11-02). **NOVELTY NOT ESTABLISHED.**
+
+## Addendum: independent solver check of M_10 (partial)
+
+`03_CODE/mk_cpsat_second_solver.py` (OR-tools CP-SAT 9.15, 2 workers, 560 s limit) was run for k = 10 (raw output: `RAW_OUTPUT_cpsat_k10_upper_bound.txt`).
+
+- It returned status FEASIBLE with objective 10. The witness (selected residues listed in the raw output) was recomputed directly from the definition and leaves exactly 10 survivors: 154, 196, 274, 298, 316, 358, 556, 574, 688, 724. So M_10 <= 10 is confirmed by an independent method and an independent recomputation.
+- The solver's proven lower bound stayed at 0. It did **not** prove optimality, so the lower bound M_10 >= 10 still rests on the branch-and-bound search alone.
+
+Net status of M_10 = 10: upper bound independently confirmed, lower bound from one implementation. Claim wording is unchanged ("one method" for the exact value). A longer or differently tuned solver run, or a MILP formulation as for k = 9 in EXP019, could close this.
