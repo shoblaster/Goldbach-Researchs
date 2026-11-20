@@ -1,0 +1,11 @@
+EXP036 raw output (verbatim). 03_CODE/h2_bruteforce_omega2.cpp, 2 threads, 2026-11-20
+k 3 omega2 2 h2 18 leaves 6 expected 6 OK
+k 4 omega2 4 h2 30 leaves 90 expected 90 OK
+k 5 omega2 10 h2 66 leaves 4050 expected 4050 OK
+k 6 omega2 24 h2 150 leaves 267300 expected 267300 OK
+k 7 omega2 31 h2 192 leaves 32076000 expected 32076000 OK
+k 8 omega2 42 h2 258 leaves 4907628000 expected 4907628000 OK
+
+## k=9 (background run, 2026-11-20 19:04:47-19:25:58 UTC, 2 threads, 21 min 11 s)
+k 9 omega2 60 h2 366 leaves 1133662068000 expected 1133662068000 OK
+(an earlier background run, started 2026-11-20 13:33 UTC, was killed with no result when the session paused)
