@@ -1,0 +1,35 @@
+EXP037 raw output (verbatim), 03_CODE/h2_cover_search_profile.cpp, single thread, 2026-11-22
+## k L = 8 43
+depth nodes pruned
+0 1 0
+1 6 0
+2 36 0
+3 210 0
+4 1170 24
+5 4986 470
+6 21453 9089
+7 47789 37828
+8 39734 38203
+9 4704 4616
+10 226 221
+11 9 9
+slack(bound-total) of surviving nodes, 0..39+: 15966 7302 3370 1583 796 407 198 99 55 38 20 10 6 9 3 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+k 8 L 43 INFEASIBLE nodes 120324 witness_direct_check n/a
+## k L = 9 61
+depth nodes pruned
+0 1 0
+1 7 0
+2 49 0
+3 336 0
+4 2226 4
+5 12039 333
+6 68553 6837
+7 307051 79978
+8 1162065 716436
+9 1898720 1700015
+10 681719 662884
+11 60054 59366
+12 1767 1740
+13 53 53
+slack(bound-total) of surviving nodes, 0..39+: 453337 232634 124136 68703 38528 21502 12159 6695 3792 2146 1274 819 490 289 182 102 62 58 32 16 13 10 7 2 2 3 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+k 9 L 61 INFEASIBLE nodes 4194640 witness_direct_check n/a
