@@ -7,7 +7,7 @@ nodes that survive the bound). Its total node counts equal the uninstrumented se
 ## k = 9, L = 61 (4,194,640 nodes)
 * Pruned by the bound: 3,227,646 (77%); surviving (expanded) nodes: 966,994.
 * Depth: 3,804,378 nodes (90.7%) are at depth >= 8, and 82.6% of those (3,140,494) are pruned at once. At depth <= 6 only about 0-10% of nodes are pruned (e.g. depth 6: 6,837 of 68,553).
-* Slack of surviving nodes: 453,337 (46.9%) have slack 0; 878,810 (90.9%) have slack <= 3. k = 8 shows the same shape (15,966 of 32,000-ish survivors at slack 0).
+* Slack of surviving nodes: 453,337 (46.9%) have slack 0; 878,810 (90.9%) have slack <= 3. k = 8 shows the same shape (15,966 of 29,864 survivors at slack 0).
 
 ## What the data show, and what they do not
 * Most work is in a thick band of depths 7-10 where nodes are generated and die immediately. A pruning rule that fires at depths 5-7 would remove whole subtrees; a rule that only trims children at depth >= 8 would not change the count much.
