@@ -41,7 +41,7 @@ also reproduces them when run again. For k = 8 the plain enumeration needed 77 s
 - The sequence M_3..M_12 = 2, 2, 3, 2, 4, 4, 5, 10, 8, 13 is not monotone.
 
 ## Limits
-- The lower bound for each k rests on the bound argument being correct. It is validated by exact agreement with the plain enumeration (value and leaf count) for k = 3..8 and by agreement with the single HiGHS value at k = 9; k = 10..12 have no second method (the plain enumeration needs about 3 x 10^13 prefix selections at k = 10).
+- The lower bound for each k rests on the bound argument being correct. It is validated by exact agreement with the plain enumeration (value and leaf count) for k = 3..8, by agreement with the HiGHS value at k = 9, and, for k = 10..12, by the independent HiGHS MILP runs in Addendum 2.
 - A first run of k = 11 was invalid: the prime table stopped at 29 (window printed as 0). The table was extended and all reported runs use the corrected build. The invalid output was not kept.
 - Finite computation only. It says nothing about the universal bound H, Conjecture 4, or Strong Goldbach, and no pattern in M_k is claimed. Whether these minima are tabulated elsewhere is open: a further bounded search on 2026-11-10 (CIT-045, CIT-046) found no table of M_k, only an unreviewed existence note in a different setting and the OEIS entry for h2 (see also the log entries of 2026-11-02). **NOVELTY NOT ESTABLISHED.**
 
@@ -53,3 +53,17 @@ also reproduces them when run again. For k = 8 the plain enumeration needed 77 s
 - The solver's proven lower bound stayed at 0. It did **not** prove optimality, so the lower bound M_10 >= 10 still rests on the branch-and-bound search alone.
 
 Net status of M_10 = 10: upper bound independently confirmed, lower bound from one implementation. Claim wording is unchanged ("one method" for the exact value). A longer or differently tuned solver run, or a MILP formulation as for k = 9 in EXP019, could close this.
+
+## Addendum 2: exact MILP confirmation of M_10, M_11, M_12
+
+`03_CODE/mk_milp_highs_k10_12.py` (scipy.optimize.milp / HiGHS, the same formulation as EXP019 with the prime table extended to 37) was run for k = 10, 11, 12. Raw logs: `RAW_OUTPUT_milp_k10.txt`, `RAW_OUTPUT_milp_k11.txt`, `RAW_OUTPUT_milp_k12.txt`.
+
+| k | window | HiGHS status | primal = dual bound | time | nodes | witness recomputed directly |
+|---|--------|--------------|---------------------|------|-------|-----------------------------|
+| 10 | 841 | Optimal | 10 | 128 s | 15,215 | 10 survivors, match |
+| 11 | 961 | Optimal | 8 | 83 s | 13,329 | 8 survivors, match |
+| 12 | 1369 | Optimal | 13 | 443 s | 40,824 | 13 survivors, match |
+
+The MILP proves optimality with gap 0, independently of the branch-and-bound pruning argument. So M_10 = 10, M_11 = 8 and M_12 = 13 are now each supported by two different exact methods (branch and bound, and MILP), and the earlier CP-SAT witness (addendum above) agrees at k = 10. The MILP and the branch and bound share the model (the covering definition), so a mistake in the model itself would affect both; the model is checked against EXP024 for k <= 8. HiGHS reports optimality within its default relative gap tolerance, which is exact here because the objective is an integer below 14.
+
+Status update: the earlier phrase "single method at k >= 10" no longer applies. Novelty is still not established.

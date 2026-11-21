@@ -1,0 +1,107 @@
+Running HiGHS 1.12.0 (git hash: 4f96ee8): Copyright (c) 2025 HiGHS under MIT licence terms
+MIP has 972 rows; 1121 cols; 11692 nonzeros; 1121 integer variables (1121 binary)
+Coefficient ranges:
+  Matrix  [1e+00, 1e+00]
+  Cost    [1e+00, 1e+00]
+  Bound   [1e+00, 1e+00]
+  RHS     [1e+00, 2e+00]
+Presolving model
+971 rows, 1120 cols, 11690 nonzeros  0s
+971 rows, 1120 cols, 11690 nonzeros  0s
+Presolve reductions: rows 971(-1); columns 1120(-1); nonzeros 11690(-2) 
+Objective function is integral with scale 1
+
+Solving MIP model with:
+   971 rows
+   1120 cols (1120 binary, 0 integer, 0 implied int., 0 continuous, 0 domain fixed)
+   11690 nonzeros
+
+Src: B => Branching; C => Central rounding; F => Feasibility pump; H => Heuristic;
+     I => Shifting; J => Feasibility jump; L => Sub-MIP; P => Empty MIP; R => Randomized rounding;
+     S => Solve LP; T => Evaluate node; U => Unbounded; X => User solution; Y => HiGHS solution;
+     Z => ZI Round; l => Trivial lower; p => Trivial point; u => Trivial upper; z => Trivial zero
+
+        Nodes      |    B&B Tree     |            Objective Bounds              |  Dynamic Constraints |       Work      
+Src  Proc. InQueue |  Leaves   Expl. | BestBound       BestSol              Gap |   Cuts   InLp Confl. | LpIters     Time
+
+ J       0       0         0   0.00%   -inf            23                 Large        0      0      0         0     0.0s
+         0       0         0   0.00%   0               23               100.00%        0      0     10        70     0.0s
+
+Symmetry detection completed in 0.0s
+Found 1 full orbitope(s) acting on 1108 columns
+
+ L       0       0         0   0.00%   0               22               100.00%     5604     11    160      7248     3.6s
+ B      19       0         1   0.00%   0               20               100.00%     5608     11    189     17068     4.0s
+ B      27      16         3   0.00%   0               19               100.00%     6170     12    262     22925     4.3s
+ T      50      17         4   0.00%   0               17               100.00%     6715     13    316     29228     4.9s
+ B      54      16         6   0.00%   0               16               100.00%     6726     13    379     30276     5.0s
+ L      55      33         6   0.00%   0               15               100.00%     7247     14    383     31262     5.2s
+       169      44        57   0.13%   0               15               100.00%     8577      3   1474     98709    10.4s
+ T     205      40        71   0.15%   0               14               100.00%     9087      4   1592    111846    12.7s
+ B     211      36        74   0.16%   0               13               100.00%     9093      4   1680    114285    12.9s
+ B     233      41        79   0.18%   0               12               100.00%     9299      5   1724    123881    14.1s
+       563     113       210   0.39%   0               12               100.00%     9532      9   3205    164432    19.5s
+       981     147       399   0.88%   0               12               100.00%     9417      5   4958    214007    24.7s
+      1871     277       772  13.38%   0               12               100.00%     9901     14   9085    251506    29.7s
+
+Restarting search from the root node
+Model after restart has 971 rows, 1120 cols (1120 bin., 0 int., 0 impl., 0 cont., 0 dom.fix.), and 11690 nonzeros
+
+      2292       0         0   0.00%   0               12               100.00%       15      0      0    278354    32.4s
+      2292       0         0   0.00%   0               12               100.00%       15      0      7    278354    32.4s
+
+Symmetry detection completed in 0.0s
+Found 1 full orbitope(s) acting on 1108 columns
+
+      3320     175       415   0.01%   0               12               100.00%     9390     13   5824    314906    37.4s
+      4342     276       867  50.04%   0               12               100.00%     9781     12   9146    350841    42.4s
+
+Restarting search from the root node
+Model after restart has 330 rows, 477 cols (477 bin., 0 int., 0 impl., 0 cont., 0 dom.fix.), and 3686 nonzeros
+
+      5117       0         0   0.00%   0               12               100.00%       13      0      0    370280    44.9s
+
+        Nodes      |    B&B Tree     |            Objective Bounds              |  Dynamic Constraints |       Work      
+Src  Proc. InQueue |  Leaves   Expl. | BestBound       BestSol              Gap |   Cuts   InLp Confl. | LpIters     Time
+
+      5117       0         0   0.00%   0               12               100.00%       13      0     11    370323    44.9s
+
+Symmetry detection completed in 0.0s
+Found 1 full orbitope(s) acting on 466 columns
+
+      6336     145       530   0.10%   0               12               100.00%     8742     13   6775    417289    50.1s
+ T    6344      93       534   0.11%   0               10               100.00%     8643     14   6839    418775    50.2s
+ T    6471      81       594   0.29%   0               9                100.00%     9047     21   7754    441314    52.6s
+      7616     136      1137  35.95%   0               9                100.00%     7690     16   9308    512862    57.6s
+      8512     159      1574  43.34%   0               9                100.00%     9675     12   9812    561471    62.6s
+ T    9425     122      2019  50.76%   0               8                100.00%     5613      9   9778    603061    65.5s
+     10849     130      2723  78.84%   0               8                100.00%     6292      8   9521    680423    70.6s
+     11983     126      3293  94.00%   2.665133112     8                 66.69%     3350     15   9933    749527    75.6s
+     13124      70      3891  97.95%   5.329352691     8                 33.38%     4003     10   9722    812866    80.7s
+     13329       0      4029 100.00%   8               8                  0.00%     5097      6   9771    845613    83.1s
+
+Solving report
+  Status            Optimal
+  Primal bound      8
+  Dual bound        8
+  Gap               0% (tolerance: 0.01%)
+  P-D integral      78.2155887124
+  Solution status   feasible
+                    8 (objective)
+                    0 (bound viol.)
+                    4.4408920985e-16 (int. viol.)
+                    0 (row viol.)
+  Timing            83.07
+  Max sub-MIP depth 6
+  Nodes             13329
+  Repair LPs        0
+  LP iterations     845613
+                    191188 (strong br.)
+                    53415 (separation)
+                    83724 (heuristics)
+k 11 status 0 Optimization terminated successfully. (HiGHS Status 7: Optimal)
+objective 8.0 mip_gap 0.0 mip_node_count 13329
+k 11 limit 961 exact_minimum 8
+selected ((1,), (0, 2), (0, 1), (1, 4), (5, 6), (6, 8), (1, 16), (0, 10), (1, 12), (1, 16), (16, 18))
+survivors (178, 184, 244, 394, 454, 598, 724, 772)
+direct_match True
