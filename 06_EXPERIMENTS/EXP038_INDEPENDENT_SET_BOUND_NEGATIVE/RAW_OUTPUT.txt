@@ -1,0 +1,7 @@
+EXP038 raw output (verbatim lines), 2026-11-22, single thread. base = 03_CODE/h2_cover_search.cpp, ind = 03_CODE/h2_cover_search_indep.cpp
+base 6 25: INFEASIBLE nodes 88 | ind: INFEASIBLE nodes 88
+base 7 32: INFEASIBLE nodes 4175 | ind: INFEASIBLE nodes 3729
+base 8 43: INFEASIBLE nodes 120324 (0.02 s) | ind: INFEASIBLE nodes 110936 (0.03 s)
+base 9 61: INFEASIBLE nodes 4194640 (0.67 s) | ind: INFEASIBLE nodes 3929264 (1.3 s)
+base 10 75: INFEASIBLE nodes 214353300 (41 s) | ind: INFEASIBLE nodes 201557737 (78 s)
+Feasible side (witness direct check True in all): k=7 L=31 401 -> 325; k=8 L=42 215 -> 170; k=9 L=60 435160 -> 415410
