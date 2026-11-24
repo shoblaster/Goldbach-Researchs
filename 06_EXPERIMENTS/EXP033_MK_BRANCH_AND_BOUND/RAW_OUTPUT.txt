@@ -1,0 +1,80 @@
+k=3 window=25 prefix_selections=6 tasks=6 threads=2
+k 3 window 25 exact_minimum 2 witness_direct_survivors 2 direct_match True
+prefix_witnesses_attaining_minimum_with_a_best_last_pair 5
+selected (0) (0,1) (0,1) 
+survivors 17 23 
+nodes_visited 6 nodes_pruned 1
+elapsed_seconds 0
+
+k=4 window=49 prefix_selections=60 tasks=60 threads=2
+k 4 window 49 exact_minimum 2 witness_direct_survivors 2 direct_match True
+prefix_witnesses_attaining_minimum_with_a_best_last_pair 27
+selected (0) (0,1) (0,1) (1,2) 
+survivors 17 47 
+nodes_visited 60 nodes_pruned 33
+elapsed_seconds 0
+
+k=5 window=121 prefix_selections=1260 tasks=1260 threads=2
+k 5 window 121 exact_minimum 3 witness_direct_survivors 3 direct_match True
+prefix_witnesses_attaining_minimum_with_a_best_last_pair 51
+selected (0) (0,1) (0,2) (1,3) (1,9) 
+survivors 11 41 83 
+nodes_visited 1260 nodes_pruned 1202
+elapsed_seconds 0
+
+k=6 window=169 prefix_selections=69300 tasks=1260 threads=2
+k 6 window 169 exact_minimum 2 witness_direct_survivors 2 direct_match True
+prefix_witnesses_attaining_minimum_with_a_best_last_pair 5
+selected (0) (0,1) (0,2) (1,3) (1,6) (1,2) 
+survivors 11 161 
+nodes_visited 2690 nodes_pruned 2638
+elapsed_seconds 0
+
+k=7 window=289 prefix_selections=5405400 tasks=1260 threads=2
+k 7 window 289 exact_minimum 4 witness_direct_survivors 4 direct_match True
+prefix_witnesses_attaining_minimum_with_a_best_last_pair 11
+selected (0) (0,2) (1,4) (4,6) (0,4) (7,10) (9,5) 
+survivors 115 133 157 217 
+nodes_visited 33708 nodes_pruned 32941
+elapsed_seconds 0
+
+k=8 window=361 prefix_selections=735134400 tasks=1260 threads=2
+k 8 window 361 exact_minimum 4 witness_direct_survivors 4 direct_match True
+prefix_witnesses_attaining_minimum_with_a_best_last_pair 156
+selected (0) (0,1) (0,1) (2,5) (0,10) (7,9) (0,15) (11,15) 
+survivors 29 179 203 227 
+nodes_visited 298646 nodes_pruned 294475
+elapsed_seconds 0
+
+k=9 window=529 prefix_selections=125707982400 tasks=1260 threads=2
+k 9 window 529 exact_minimum 5 witness_direct_survivors 5 direct_match True
+prefix_witnesses_attaining_minimum_with_a_best_last_pair 57
+selected (0) (0,1) (0,1) (3,5) (0,8) (7,10) (11,15) (5,16) (6,7) 
+survivors 197 203 323 359 497 
+nodes_visited 1644734 nodes_pruned 1626808
+elapsed_seconds 0
+
+k=10 window=841 prefix_selections=31804119547200 tasks=1260 threads=2
+k 10 window 841 exact_minimum 10 witness_direct_survivors 10 direct_match True
+prefix_witnesses_attaining_minimum_with_a_best_last_pair 998
+selected (0) (0,1) (0,2) (0,1) (0,1) (1,4) (8,10) (3,5) (9,18) (25,17) 
+survivors 149 293 311 359 389 479 509 629 761 821 
+nodes_visited 23660400 nodes_pruned 23473729
+elapsed_seconds 5
+
+k=11 window=961 prefix_selections=12912472536163200 tasks=1260 threads=2
+k 11 window 961 exact_minimum 8 witness_direct_survivors 8 direct_match True
+prefix_witnesses_attaining_minimum_with_a_best_last_pair 30
+selected (1) (0,1) (3,4) (2,6) (3,4) (4,6) (14,16) (8,17) (10,15) (14,28) (14,16) 
+survivors 182 206 242 392 596 722 770 896 
+nodes_visited 68623761 nodes_pruned 68128370
+elapsed_seconds 13
+
+k=12 window=1369 prefix_selections=6004299729315888000 tasks=1260 threads=2
+k 12 window 1369 exact_minimum 13 witness_direct_survivors 13 direct_match True
+prefix_witnesses_attaining_minimum_with_a_best_last_pair 70
+selected (0) (0,1) (0,2) (4,5) (7,9) (2,9) (2,6) (7,8) (5,13) (4,6) (9,29) (11,35) 
+survivors 101 203 239 371 413 569 791 983 989 1031 1169 1199 
+nodes_visited 689589725 nodes_pruned 685262141
+elapsed_seconds 263
+

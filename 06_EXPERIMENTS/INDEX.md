@@ -32,3 +32,4 @@ Next free ID: **EXP029**. Raw data for EXP001–EXP005 lives in `04_RAW_DATA/`; 
 | EXP026 | independent C++ pair-accumulation check of counts to 10^6 | validated (0 mismatches vs EXP025 and EXP005) | goldbach_pair_accumulate_1e6.cpp, compare_counts_exp026.py |
 | EXP027 | position of smaller prime in Goldbach pairs vs 1/(ln p ln q) weight | derived heuristic check (flat ratio 3.998 vs 3.9995) | pair_position_distribution.cpp |
 | EXP028 | counts-only G(n) to 10^7 (FFT), validated vs EXP026 and sampled direct counts | validated (0 mismatches) | goldbach_counts_1e7.py |
+| EXP033 | exact fixed-window minima M_k, k=3..12, by branch and bound, then confirmed by HiGHS MILP at k=10..12 (M_9=5 re-verified; M_10=10, M_11=8, M_12=13 new) | exact finite check, two methods (validated against EXP024, k<=8) | mk_enum_bb.cpp, mk_milp_highs_k10_12.py |
