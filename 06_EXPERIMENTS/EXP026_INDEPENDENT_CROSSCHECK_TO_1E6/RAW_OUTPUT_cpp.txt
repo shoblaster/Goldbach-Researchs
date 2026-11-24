@@ -1,0 +1,1 @@
+primes=78498 rows=499999 zeros=0 min=1 max=15594
