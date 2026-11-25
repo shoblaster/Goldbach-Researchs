@@ -1,0 +1,3 @@
+k=13 B=12 feasible=0 nodes=44934491 time=74.2s
+k=13 B=13 feasible=0 nodes=88448395 time=142.5s
+k=13 B=14 feasible=0 nodes=171511109 time=263.9s
