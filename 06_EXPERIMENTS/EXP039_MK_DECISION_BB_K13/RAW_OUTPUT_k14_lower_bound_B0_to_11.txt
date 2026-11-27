@@ -1,0 +1,7 @@
+k=14 B=5 range=[0,1073741824) feasible=0 nodes=7174768 time=17.2s
+k=14 B=6 range=[0,1073741824) feasible=0 nodes=13003038 time=29.3s
+k=14 B=7 range=[0,1073741824) feasible=0 nodes=25302211 time=53.8s
+k=14 B=8 range=[0,1073741824) feasible=0 nodes=48753321 time=99.9s
+k=14 B=9 range=[0,1073741824) feasible=0 nodes=89692128 time=181.1s
+k=14 B=10 range=[0,1073741824) feasible=0 nodes=158542893 time=312.2s
+k=14 B=11 range=[0,1073741824) feasible=0 nodes=279501587 time=531.8s

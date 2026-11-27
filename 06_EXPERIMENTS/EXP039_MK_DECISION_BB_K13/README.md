@@ -13,3 +13,12 @@
 **Status.** FINITE COMPUTATION, ONE METHOD at k = 13 (no second solver has proved the lower bound). Both this and EXP033 use the same covering model. Novelty not established; a literature search found no table of M_k, but the OEIS full-sequence search could not be run.
 
 **Sequence so far (k = 3..13):** 2, 2, 3, 2, 4, 4, 5, 10, 8, 13, 16. It is not monotone.
+
+## Addendum (27 Nov 2026): second implementation of k = 13, and k = 14 bounds
+
+**M_13 = 16, second implementation.** `03_CODE/mk_exhaustive_second_impl.cpp` was written independently of `mk_decision_bb.cpp` (different branching rule: fewest viable class pairs; extra pair-viability cut; reflection n -> N+1-n used only at q = 3). It proved no choice leaves 15 or fewer survivors (184,070,270 nodes, 1181 s, `RAW_OUTPUT_k13_B15_second_impl.txt`) and reproduces M_9..M_12 = 5, 10, 8, 13. Both implementations use the same pruning *family* (a prime removes at most its top-two class counts), so this is two codes of one technique, not two techniques. A SAT or MILP proof of the k = 13 lower bound is still open. The 16-survivor witness from the first run was recounted directly; the second implementation's witness was recounted again here and also leaves 16.
+
+**k = 14 (p = 43, window 1849).**
+* Upper bound **M_14 <= 14**, from simulated annealing (`03_CODE/mk_anneal_upper_bound.cpp`, witness in `RAW_OUTPUT_k14_anneal_witness.txt`). Survivors 261 279 321 339 369 435 1269 1275 1329 1461 1605 1725 1809 1839; recounted directly from the definition, 14 survivors. The annealer returned the proved value 16 at k = 13, but was run once at k = 14, so 14 may not be optimal.
+* Lower bound **M_14 >= 12**: B = 0..11 proved infeasible by `03_CODE/mk_decision_bb_reflect.cpp` (the decision search with a root reflection symmetry and static buffers, about 1.7x faster; validated on k = 9..12). Largest case B = 11: 2.795e8 nodes, 532 s (`RAW_OUTPUT_k14_lower_bound_B0_to_11.txt`).
+* So **12 <= M_14 <= 14**. No exact value is claimed. B = 12 needs about 950 s and B = 13 about 1700 s.
