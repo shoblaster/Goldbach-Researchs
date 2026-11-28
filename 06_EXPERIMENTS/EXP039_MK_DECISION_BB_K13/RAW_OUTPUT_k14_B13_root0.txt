@@ -1,0 +1,2 @@
+root opt 0/3 done nodes=525946572
+k=14 B=13 range=[0,1) feasible=0 nodes=525946572 time=889.3s

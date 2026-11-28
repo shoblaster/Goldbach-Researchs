@@ -21,4 +21,12 @@
 **k = 14 (p = 43, window 1849).**
 * Upper bound **M_14 <= 14**, from simulated annealing (`03_CODE/mk_anneal_upper_bound.cpp`, witness in `RAW_OUTPUT_k14_anneal_witness.txt`). Survivors 261 279 321 339 369 435 1269 1275 1329 1461 1605 1725 1809 1839; recounted directly from the definition, 14 survivors. The annealer returned the proved value 16 at k = 13, but was run once at k = 14, so 14 may not be optimal.
 * Lower bound **M_14 >= 12**: B = 0..11 proved infeasible by `03_CODE/mk_decision_bb_reflect.cpp` (the decision search with a root reflection symmetry and static buffers, about 1.7x faster; validated on k = 9..12). Largest case B = 11: 2.795e8 nodes, 532 s (`RAW_OUTPUT_k14_lower_bound_B0_to_11.txt`).
-* So **12 <= M_14 <= 14**. No exact value is claimed. B = 12 needs about 950 s and B = 13 about 1700 s.
+* At that point 12 <= M_14 <= 14; see Addendum 2 for the final value.
+
+## Addendum 2 (29 Nov 2026): M_14 = 14
+
+`mk_decision_bb_reflect.cpp` proved B = 12 infeasible for k = 14 (5.17e8 nodes, 913 s, `RAW_OUTPUT_k14_B12.txt`) and B = 13 infeasible in two root-option ranges covering all 3 root options: [0,1) 5.26e8 nodes, 889 s, and [1,3) 5.06e8 nodes, 857 s (`RAW_OUTPUT_k14_B13_root0.txt`, `..._root1_2.txt`). Together with B = 0..11 (earlier addendum) every B <= 13 is infeasible, and the annealing witness leaves exactly 14 survivors (recounted directly). Hence **M_14 = 14**.
+
+Status: FINITE COMPUTATION, ONE IMPLEMENTATION at k = 14 (the reflection-symmetry decision search; the independent second code `mk_exhaustive_second_impl.cpp` was not run at k = 14 and would need hours). The same code reproduces M_9..M_12 and agrees with the other two codes at k = 13. Same covering model and pruning family as above. Novelty not established.
+
+Sequence for k = 3..14: 2, 2, 3, 2, 4, 4, 5, 10, 8, 13, 16, 14.
